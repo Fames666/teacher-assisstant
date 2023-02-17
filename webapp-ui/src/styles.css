@@ -25,6 +25,7 @@
   --color-bg-nav-inactive-tab: #374b5e;  /* = --color-bg-pane */
 
   --color-text-light: #adbece;
+  --color-text-light-hover: #fbfff6;
   --color-text-dark: #8d8276;
   --color-text-darker: #747574;
 
@@ -44,8 +45,21 @@ body {
   font-weight: bold;
   font-style: italic;
 }
+
 .open-sans--italic {
   font-family: 'Open Sans', Tahoma, sans-serif;
   font-style: italic;
 }
 /* Font settings end */
+
+/* Icons settings start */
+.ico {
+  display: flex;
+  align-items: center;
+  height: 100%;  /* Customized through parent element */
+}
+
+.ico--light {
+  color: var(--color-text-light);
+}
+/* Icons settings end */
