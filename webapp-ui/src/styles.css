@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/header/header.component.css";
+
+@font-face {
+  font-family: 'Open Sans';
+  src:
+    url("assets/fonts/OpenSans/OpenSans-Italic.ttf"),
+    url("assets/fonts/OpenSans/OpenSans-Bold-Italic.ttf");
+    /* TODO: replace with dynamic link */
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src:
+    url("assets/fonts/Ubuntu/Ubuntu.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-Italic.ttf");
+    /* TODO: replace with dynamic link */
+}
+
+* {
+  --color-bg-dark: #25313e;
+  --color-bg-darker: #1b252e;
+  --color-bg-pane: #374b5e;
+  --color-bg-notifications: #fb6b5b;
+
+  --color-bg-nav: #41586e;
+  --color-bg-nav-active-tab: #344759;
+  --color-bg-nav-inactive-tab: #374b5e;  /* = --color-bg-pane */
+
+  --color-text-light: #adbece;
+  --color-text-light-hover: #fbfff6;
+  --color-text-dark: #8d8276;
+  --color-text-darker: #747574;
+
+  box-sizing: border-box;
+
+  font-family: 'Ubuntu', 'Open Sans', Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Font settings start */
+.open-sans--bold-italic {
+  font-family: 'Open Sans', Tahoma, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.open-sans--italic {
+  font-family: 'Open Sans', Tahoma, sans-serif;
+  font-style: italic;
+}
+/* Font settings end */
+
+/* Icons settings start */
+.ico {
+  display: flex;
+  align-items: center;
+  height: 100%;  /* Customized through parent element */
+}
+
+.ico--light {
+  color: var(--color-text-light);
+}
+/* Icons settings end */
