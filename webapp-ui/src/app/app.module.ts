@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { CurriculumComponent } from './curriculum/curriculum.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 @NgModule({
@@ -12,6 +13,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     AppComponent,
     HeaderComponent,
     NavigationComponent,
+    CurriculumComponent,
     BreadcrumbsComponent
   ],
   imports: [

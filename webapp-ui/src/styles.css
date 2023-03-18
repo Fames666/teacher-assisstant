@@ -1,6 +1,4 @@
 @import "./app/app.component.css";
-@import "./app/header/header.component.css";
-@import "./app/navigation/navigation.component.css";
 
 @font-face {
   font-family: 'Open Sans';
@@ -12,8 +10,14 @@
 @font-face {
   font-family: 'Ubuntu';
   src:
-    url("assets/fonts/Ubuntu/Ubuntu.ttf"),
-    url("assets/fonts/Ubuntu/Ubuntu-Italic.ttf");
+    url("assets/fonts/Ubuntu/Ubuntu-Regular.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-Italic.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-Bold.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-BoldItalic.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-Light.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-LightItalic.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-Medium.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-MediumItalic.ttf");
     /* TODO: replace with dynamic link */
 }
 
@@ -23,15 +27,16 @@
   --color-bg-pane: #374b5e;
   --color-bg-control: #2e3e4e;
   --color-bg-notifications: #fb6b5b;
+  --color-bg-content: #f7f7f7;
+  --color-bg-green: #89cc97;
+  --color-bg-green-dark: #65bd77;
+  --color-bg-green-darker: #53b567;
 
   --color-text-light: #adbece;
   --color-text-light-hover: #fbfff6;
   --color-text-dark: #8d8276;
   --color-text-darker: #747574;
-
-  --color-bg-green: #89cc97;
-  --color-bg-green-dark: #65bd77;
-  --color-bg-green-darker: #53b567;
+  --color-text-inactive: #999999;
 
   box-sizing: border-box;
 
@@ -66,6 +71,10 @@ button {
   font-family: 'Open Sans', Tahoma, sans-serif;
   font-style: italic;
 }
+
+.font-ico::before {
+  font-family: "Font Awesome 6 Free";
+}
 /* Font settings end */
 
 /* Icons settings start */
@@ -77,5 +86,9 @@ button {
 
 .ico--light {
   color: var(--color-text-light);
+}
+
+.ico--dark-inactive {
+  color: var(--color-text-inactive);
 }
 /* Icons settings end */

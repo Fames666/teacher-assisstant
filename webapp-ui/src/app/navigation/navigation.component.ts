@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: '[element=nav-panel]',
+  selector: '[element=nav]',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })

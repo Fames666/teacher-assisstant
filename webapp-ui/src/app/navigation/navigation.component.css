@@ -1,4 +1,4 @@
-div[element=nav-panel] {
+div[element=nav] {
   --color-bg-nav: #41586e;
   --color-bg-nav-active-tab: #344759;
   --color-bg-nav-hover-tab: #394e62;
@@ -7,13 +7,13 @@ div[element=nav-panel] {
   display: flex;
   flex-direction: column;
 
-  flex: 0 0.05 auto;
+  flex: 0 0 auto;
   width: 15%;
   height: 100%;
   background-color: var(--color-bg-nav);
 }
 
-div[element=nav-panel] > * {
+div[element=nav] > * {
   width: 100%;
 }
 

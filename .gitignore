@@ -24,4 +24,7 @@ hs_err_pid*
 
 # Custom exclusions -------------------------------------------------------
 
-/gitignore/
+/.idea
+/gitignore
+/library
+/auth

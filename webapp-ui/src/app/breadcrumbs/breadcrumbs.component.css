@@ -1,6 +1,6 @@
 div[element=breadcrumbs] {
+  flex: 0 0 35px;
   width: 100%;
-  height: 35px;
 
   background-color: #fff;
   border-bottom: solid 1px #dfdfdf;
