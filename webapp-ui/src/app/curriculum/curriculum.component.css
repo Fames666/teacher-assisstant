@@ -1,3 +1,5 @@
+@import "./card/card.component.css";
+
 div[page=curriculum] {
   padding: 7px;
   width: 100%;
@@ -203,6 +205,7 @@ div[page=curriculum] ul {
 
   flex: 1 1 300px;
   border-top: solid 1px var(--color-text-grey-darker);
+  background-color: var(--color-bg-content);
 }
 
 .dashboard-block[collapsed] .dashboard-data-columns {

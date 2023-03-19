@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { CurriculumComponent } from './curriculum/curriculum.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { CardComponent } from './curriculum/card/card.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     HeaderComponent,
     NavigationComponent,
     CurriculumComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
