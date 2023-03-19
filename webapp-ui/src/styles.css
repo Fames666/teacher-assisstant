@@ -27,16 +27,20 @@
   --color-bg-pane: #374b5e;
   --color-bg-control: #2e3e4e;
   --color-bg-notifications: #fb6b5b;
-  --color-bg-content: #f7f7f7;
   --color-bg-green: #89cc97;
   --color-bg-green-dark: #65bd77;
   --color-bg-green-darker: #53b567;
 
+  --color-bg-content: #f7f7f7;
+  --color-fg-content: #fefefe;
+  --color-border-content: #dfdfdf;
+
   --color-text-light: #adbece;
   --color-text-light-hover: #fbfff6;
-  --color-text-dark: #8d8276;
-  --color-text-darker: #747574;
+  --color-text-grey: #8d8276;
+  --color-text-grey-darker: #747574;
   --color-text-inactive: #999999;
+  --color-text-black: #2e3e4e;
 
   box-sizing: border-box;
 
@@ -45,14 +49,18 @@
 
 html,
 body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  --height-header: 50px;
+
   display: flex;
   flex-direction: column;
 
   margin: 0;
   padding: 0;
-
-  width: 100%;
-  height: 100vh;
 }
 
 button {
@@ -72,6 +80,7 @@ button {
   font-style: italic;
 }
 
+/* TODO: is needed? */
 .font-ico::before {
   font-family: "Font Awesome 6 Free";
 }

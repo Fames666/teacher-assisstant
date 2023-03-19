@@ -1,9 +1,10 @@
 div[page=curriculum] {
+  padding: 7px;
   width: 100%;
   height: 100%;
-  padding: 7px;
 
   overflow-x: scroll;
+  overflow-y: auto;
 }
 
 div[page=curriculum] ul {
@@ -15,32 +16,68 @@ div[page=curriculum] ul {
   list-style: none;
 }
 
+/* Dashboard common styles start */
 .dashboard-counter {
   padding: 1px 3px;
-  background-color: #1a9767;
+  background-color: var(--color-border-content);
   border-radius: 4px;
+
+  color: var(--color-text-grey-darker);
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 .dashboard-separator {
-  margin: 0 10px;
-  background-color: black;
+  margin: 0 calc(var(--width-dashboard-movement-ctl) / 2);
+  background-color: var(--color-text-grey-darker);
 
   width: 0.5px;
   height: 100%;
 }
 
+.dashboard-control {
+  display: flex;
+  justify-content: center;
+
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.dashboard-control:hover {
+  color: var(--color-text-light);
+}
+/* Dashboard common styles end */
+
 .dashboard-wrapper {
   --width-dashboard-movement-ctl: 18px;
 
+  display: flex;
+  flex-direction: column;
   padding: 4px var(--width-dashboard-movement-ctl);
-  width: max-content;
-  height: 100%;  /* TODO: remove later */
+  padding-bottom: 9px;
 
+  width: max-content;
+  min-height: max-content;
+
+  color: var(--color-text-black);
   border-radius: 4px;
-  background-color: #27e29a;
+  background-color: var(--color-fg-content);
+  box-shadow: 0 0 6px var(--color-border-content);
 }
 
 /* Dashboard header styles start */
+.dashboard-header {
+  --height-dashboard-header: 20px;
+
+  position: relative;
+  display: flex;
+  flex: 0 0 var(--height-dashboard-header);
+}
+
+.dashboard-header * {
+  height: 100%;
+}
+
 .dashboard-movement-btn-wrapper {
   display: flex;
   justify-content: center;
@@ -53,21 +90,18 @@ div[page=curriculum] ul {
 .dashboard-movement-btn {
   padding-top: 1px;
   border: none;
+
+  color: var(--color-text-black);
   background-color: transparent;
   cursor: grab;
 }
 
-.dashboard-header {
-  --height-dashboard-header: 20px;
-
-  position: relative;
-  display: flex;
-  margin-bottom: 10px;
-  height: var(--height-dashboard-header);
+.dashboard-movement-btn:hover {
+  color: var(--color-text-light);
 }
 
-.dashboard-header * {
-  height: 100%;
+.dashboard-movement-btn:active {
+  cursor: grabbing;
 }
 
 .dashboard-header__text {
@@ -84,29 +118,34 @@ div[page=curriculum] ul {
   right: 0;
 }
 
-.dashboard-header__control {
-  display: flex;
-  justify-content: center;
-
+.dashboard-header__controls > .dashboard-control {
   width: var(--height-dashboard-header);
-  font-size: 0.8em;
 }
 /* Dashboard header styles end */
 
 /* Dashboard block styles start */
-.dashboard-block{
+.dashboard-block {
   --width-dashboard-column: 240px;
 
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: max-content;
+}
+
+.dashboard-block[collapsed]:not(.first-dashboard-block) {
+  margin-top: 10px;
 }
 
 .dashboard-weekdays {
   display: flex;
   align-items: center;
-  margin-bottom: 7px;
 
-  width: max-content;
-  height: 24px;
+  margin: 10px 0 7px 0;
+  flex: 0 0 24px;
+}
+
+.dashboard-block[collapsed]:not(.first-dashboard-block) > .dashboard-weekdays {
+  display: none;
 }
 
 .dashboard-weekday {
@@ -118,49 +157,56 @@ div[page=curriculum] ul {
   font-weight: bold;
 }
 
-.dashboard {
-  margin: 0 -10px;  /* -1 * (18px - 9px) */
+.dashboard-data {
+  /* Half of --width-dashboard-movement-ctl backwards to create an edge
+     and -1px for the border */
+  --margin-dashboard-edge: calc(-1 * var(--width-dashboard-movement-ctl) / 2 - 1px);
 
-  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 var(--margin-dashboard-edge);
+  flex: 1 1 max-content;
+
+  border: solid 1px var(--color-text-grey-darker);
   border-radius: 3px;
-
-  height: 200px;
 }
 
-.dashboard-block-header {
-  --height-dashboard-block-header: 24px;
+.dashboard-data-header {
+  --height-dashboard-data-header: 24px;
 
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 0px 9px;
-  height: var(--height-dashboard-block-header);
-
-  border-bottom: solid 1px black;
+  padding: 0px calc(var(--width-dashboard-movement-ctl) / 2);
+  flex: 0 0 var(--height-dashboard-data-header);
   font-size: 0.9em;
 }
 
-.dashboard-block-header__controls {
+.dashboard-data-header__controls {
   position: sticky;
   right: 0;
 }
 
-.dashboard-block-header__controls > .dashboard-counter {
-  margin: 0 5px;
+.dashboard-data-header__counter-wrapper {
+  margin: 0 2px;
 }
 
-.dashboard-block-header__control {
-  display: flex;
-  justify-content: center;
-  width: var(--height-dashboard-block-header);
+.dashboard-data-header__controls > .dashboard-control {
+  width: var(--height-dashboard-data-header);
 }
 
-.dashboard-columns {
+.dashboard-data-columns {
   display: flex;
   padding: 5px 9px;
-  height: 100%;
+
+  flex: 1 1 300px;
+  border-top: solid 1px var(--color-text-grey-darker);
+}
+
+.dashboard-block[collapsed] .dashboard-data-columns {
+  display: none;
 }
 
 .dashboard-column {
