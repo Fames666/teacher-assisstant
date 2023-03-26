@@ -1,4 +1,5 @@
 @import "./card/card.component.css";
+@import "./card-details/card-details.component.css";
 
 div[page=curriculum] {
   padding: 7px;
