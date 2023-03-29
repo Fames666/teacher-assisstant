@@ -1,4 +1,6 @@
 div[window=card-details] {
+  --color-bg: #000000A5;
+
   position: absolute;
   top: 0;
   left: 0;
@@ -11,9 +13,10 @@ div[window=card-details] {
 
   width: 100%;
   height: 100%;
-  background-color: #000000A5;
+  background-color: var(--color-bg);
 }
 
+/* Common styles start */
 h1, h2 {
   margin: 0;
 }
@@ -35,6 +38,22 @@ button {
   cursor: pointer;
 }
 
+.card-details-h2-wrapper {
+  --height-heading-block: 20px;
+
+  position: relative;
+  margin-bottom: 15px;
+  height: var(--height-heading-block);
+}
+
+.card-details-h2-icon {
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--margin-edgy-element));
+  height: var(--height-heading-block);
+}
+/* Common styles end */
+
 .card-details-container {
   position: relative;
   padding: 45px 10px 20px 40px;
@@ -46,7 +65,7 @@ button {
   justify-content: space-between;
 
   background-color: var(--color-bg-content);
-  box-shadow: 0 0 10px 5px #000;
+  box-shadow: 0 0 10px 3px var(--color-bg);
   border-radius: 5px;
 }
 
@@ -80,7 +99,7 @@ button {
   --width-edgy-element: calc(2 * var(--margin-edgy-element));
 
   width: 59%;
-  background-color: greenyellow;
+  /* background-color: greenyellow; */
 }
 
 .partition-right {
@@ -135,7 +154,7 @@ button {
   height: 0.5px;
 
   content: '';
-  background-color: var(--color-border-content);
+  background-color: var(--color-text-grey);
 }
 
 .card-details-control-panel-group {
@@ -143,6 +162,8 @@ button {
 }
 
 .card-details-control-panel button {
+  --color-btn-shadow: #8d8276cd;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,6 +177,7 @@ button {
 
   color: var(--color-text-black);
   background-color: var(--color-fg-content);
+  box-shadow: 1px 1px 3px 0 var(--color-btn-shadow);
 }
 
 .card-details-control-panel button:hover {
@@ -163,7 +185,7 @@ button {
 }
 
 .card-details-control-panel button > * {
-  z-index: calc(15 + var(--z-index-card-details));
+  /* z-index: calc(15 + var(--z-index-card-details)); */
 }
 
 .card-details-control-panel-group > button {
@@ -199,6 +221,7 @@ button {
 
   width: max-content;
   border-radius: 0;
+  transform-style: preserve-3d;
 }
 
 .card-details-control-panel__status-btn::before,
@@ -206,13 +229,14 @@ button {
   display: block;
   position: absolute;
   top: 0;
-  z-index: calc(10 + var(--z-index-card-details));
+  transform: translateZ(-50px);
 
   width: var(--width-edgy-element);
   height: var(--width-edgy-element);
   background-color: var(--color-fg-content);
 
   border-radius: 50%;
+  box-shadow: 1px 1px 3px 0 var(--color-btn-shadow);
   content: '';
 }
 
@@ -266,27 +290,65 @@ button {
   flex: 1 1 max-content;
 }
 
-.card-details-h2-wrapper {
-  --height-heading-block: 20px;
-
-  position: relative;
-  margin-bottom: 15px;
-  height: var(--height-heading-block);
-}
-
-.card-details-h2-icon {
-  position: absolute;
-  top: 0;
-  left: calc(-1 * var(--margin-edgy-element));
-  height: var(--height-heading-block);
+.card-details-description {
+  margin-bottom: 20px;
 }
 
 .card-details-description .card-details-h2-icon {
   padding-top: 1px;
 }
 
-.card-details-description > textarea {
-  width: 100%;
-  background-color: #fff;
-  resize: none;
+.card-details-description > span {
+  font-size: 0.95rem;
+}
+
+.card-details-attachments {
+  margin-bottom: 20px;
+}
+
+.card-details-attachment {
+  display: flex;
+  margin-bottom: 10px;
+  height: 65px;
+}
+
+.card-details-attachment > * {
+  height: 100%;
+}
+
+.card-details-attachment-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 15px;
+  width: 90px;
+
+  color: var(--color-bg-content);
+  background-color: var(--color-text-grey);
+  border-radius: 5px;
+}
+
+.card-details-attachment-metadata {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-details-attachment-metadata > .card-details-attachment-metadata-row:first-child {
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.card-details-attachment-metadata > .card-details-attachment-metadata-row:last-child {
+  font-size: 0.78rem;
+  font-style: italic;
+}
+
+.card-details-attachment-metadata-row > span {
+  margin-right: 4px;
+}
+
+span[card-item-id=attachment-metadata-author] {
+  font-weight: bold;
 }
