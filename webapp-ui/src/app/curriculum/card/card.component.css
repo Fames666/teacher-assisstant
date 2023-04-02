@@ -1,0 +1,201 @@
+div[element=curriculum-card] {
+  width: 100%;
+  height: max-content;
+
+  background-color: var(--color-fg-content);
+  box-shadow: 0 0 4px 1px var(--color-border-content);
+  border-radius: 3px;
+
+  font-size: 0.85em;
+  cursor: pointer;
+}
+
+div[element=curriculum-card]:hover {
+  box-shadow: 0 0 6px 2px var(--color-border-content);
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.card-title {
+  --height-card-title: 46px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 5px 6px;
+
+  width: 100%;
+  height: var(--height-card-title);
+
+  color: var(--color-text-light-hover);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+div[element=curriculum-card][type=lesson] .card-title {
+  background: linear-gradient(90deg, var(--color-bg-green-dark), 65%, #9198e5);
+}
+
+div[element=curriculum-card][type=kontrolnaya] .card-title {
+  background: linear-gradient(90deg, var(--color-bg-notifications), 65%, #9198e5);
+}
+
+div[element=curriculum-card][type=subbotnik] .card-title {
+  background: linear-gradient(90deg, var(--color-bg-dark), 65%, #9198e5);
+}
+
+.card-title_primary {
+  flex: 1 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.card-title_secondary {
+  flex: 1 1;
+}
+
+.card-activity-indicator-wrapper {
+  display: flex;
+  justify-content: end;
+
+  padding-top: 2px;
+  flex: 0 0 100%;
+}
+
+.card-activity-indicator {
+  width: 10px;
+  height: 10px;
+
+  background-color: var(--color-text-light-hover);
+  border-radius: 5px;
+
+  animation: card-activity-indicator 1.5s linear 0s infinite alternate none;
+}
+
+@keyframes card-activity-indicator {
+  from {
+    background-color: var(--color-bg-pane);
+  }
+  to {
+    background-color: red;
+  }
+}
+
+.card-content {
+  padding: 8px 6px 6px 6px;
+  width: 100%;
+}
+
+.card-content > * {
+  width: 100%;
+}
+
+.card-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 14px;
+  color: var(--color-text-grey-darker);
+}
+
+.card-timeline > span {
+  flex: 0 0 min-content;
+}
+
+.card-timeline-progress-bar {
+  position: relative;
+  flex: 1 1 100%;
+  height: 0.5px;
+
+  margin: 0 10px;
+  background-color: var(--color-text-grey-darker);
+}
+
+.card-timeline-progress-bar::before {
+  content: '';
+
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  display: inline-block;
+
+  width: 60%;
+  height: 3px;
+
+  background: linear-gradient(90deg, var(--color-bg-green-dark), 65%, #9198e5);
+  border-radius: 3px;
+}
+
+.card-participants {
+  --height-participant-avatar: 27px;
+
+  position: relative;
+  padding: 0 8px;
+  margin-bottom: 8px;
+  height: var(--height-participant-avatar);
+}
+
+.card-participants > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.card-participant-wrapper {
+  margin-left: calc(-1 * var(--height-participant-avatar) / 3);
+  height: 100%;
+}
+
+.card-participant-wrapper:first-child {
+  margin-left: 0;
+}
+
+.card-participant-wrapper > img {
+  height: 100%;
+  border: solid 1px var(--color-text-light);
+  border-radius: 50%;
+}
+
+.card-participants-counter {
+  margin-left: 4px;
+  color: var(--color-text-grey-darker);
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0px 8px;
+  margin: 10px 10px 0 0;
+  height: 22px;
+
+  border-radius: 11px;
+
+  color: var(--color-text-light-hover);
+  font-size: 0.75em;
+  font-weight: bold;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.tag-red {
+  background-color: var(--color-bg-notifications);
+}
+
+.tag-yellow {
+  background-color: #ffc333;
+}
+
+.tag-green {
+  background-color: #4cc0c1;
+}
