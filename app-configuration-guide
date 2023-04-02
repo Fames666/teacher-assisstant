@@ -1,0 +1,2 @@
+Add the following env. variable before start or to start params:
+    - ATTACHMENTS_BASE_DIR="C:\Users\User\AppData\Local\ByEZubkova\TeacherAssistant\"

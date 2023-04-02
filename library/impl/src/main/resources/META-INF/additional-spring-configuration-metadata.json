@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "app-config.attachments.storage.base-path",
+      "type": "java.lang.String",
+      "description": "Folder on disk where all the attachments are stored."
+    }
+  ]
+}
