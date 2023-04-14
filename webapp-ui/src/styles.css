@@ -31,6 +31,9 @@
   --color-bg-green-dark: #65bd77;
   --color-bg-green-darker: #53b567;
 
+  --color-btn-purple: #a44bb9;
+  --color-btn-purple-hover: #9544a8;
+
   --color-bg-content: #f7f7f7;
   --color-fg-content: #fefefe;
   --color-border-content: #dfdfdf;
@@ -41,6 +44,8 @@
   --color-text-grey-darker: #747574;
   --color-text-inactive: #999999;
   --color-text-black: #2e3e4e;
+
+  --z-index-card-details: 5000;
 
   box-sizing: border-box;
 

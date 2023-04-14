@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { CurriculumComponent } from './curriculum/curriculum.component';
+import { CurriculumComponent } from './curriculum/curriculum.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { CardComponent } from './curriculum/card/card.component';
+import { CardDetailsComponent } from './curriculum/card-details/card-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { CardComponent } from './curriculum/card/card.component';
     NavigationComponent,
     CurriculumComponent,
     BreadcrumbsComponent,
-    CardComponent
+    CardComponent,
+    CardDetailsComponent
   ],
   imports: [
     BrowserModule,
