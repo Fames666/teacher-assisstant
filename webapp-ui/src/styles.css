@@ -34,9 +34,6 @@
   --color-btn-purple: #a44bb9;
   --color-btn-purple-hover: #9544a8;
 
-  --color-bg-content: #f7f7f7;
-  --color-fg-content: #fefefe;
-  --color-border-content: #dfdfdf;
 
   --color-text-light: #adbece;
   --color-text-light-hover: #fbfff6;
@@ -46,6 +43,12 @@
   --color-text-black: #2e3e4e;
 
   --z-index-card-details: 5000;
+
+  /* Updated naming */
+  --color-cyan: #4cc0c1;
+  --color-milk-white: #fefefe;  /* Lighter */
+  --color-white-lilac: #f7f7f7;  /* Darker > */
+  --color-light-grey: #dfdfdf;  /* Darker >> */
 
   box-sizing: border-box;
 

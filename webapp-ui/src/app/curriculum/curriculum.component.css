@@ -22,7 +22,7 @@ div[page=curriculum] ul {
 /* Dashboard common styles start */
 .dashboard-counter {
   padding: 1px 3px;
-  background-color: var(--color-border-content);
+  background-color: var(--color-light-grey);
   border-radius: 4px;
 
   color: var(--color-text-grey-darker);
@@ -64,8 +64,8 @@ div[page=curriculum] ul {
 
   color: var(--color-text-black);
   border-radius: 4px;
-  background-color: var(--color-fg-content);
-  box-shadow: 0 0 6px var(--color-border-content);
+  background-color: var(--color-milk-white);
+  box-shadow: 0 0 6px var(--color-light-grey);
 }
 
 /* Dashboard header styles start */
@@ -206,7 +206,7 @@ div[page=curriculum] ul {
 
   flex: 1 1 300px;
   border-top: solid 1px var(--color-text-grey-darker);
-  background-color: var(--color-bg-content);
+  background-color: var(--color-white-lilac);
 }
 
 .dashboard-block[collapsed] .dashboard-data-columns {

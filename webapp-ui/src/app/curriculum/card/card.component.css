@@ -2,8 +2,8 @@ div[element=curriculum-card] {
   width: 100%;
   height: max-content;
 
-  background-color: var(--color-fg-content);
-  box-shadow: 0 0 4px 1px var(--color-border-content);
+  background-color: var(--color-milk-white);
+  box-shadow: 0 0 4px 1px var(--color-light-grey);
   border-radius: 3px;
 
   font-size: 0.85em;
@@ -11,7 +11,7 @@ div[element=curriculum-card] {
 }
 
 div[element=curriculum-card]:hover {
-  box-shadow: 0 0 6px 2px var(--color-border-content);
+  box-shadow: 0 0 6px 2px var(--color-light-grey);
 }
 
 .card-wrapper {

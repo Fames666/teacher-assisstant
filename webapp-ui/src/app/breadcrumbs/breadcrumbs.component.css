@@ -2,8 +2,8 @@ div[element=breadcrumbs] {
   flex: 0 0 35px;
   width: 100%;
 
-  background-color: var(--color-fg-content);
-  border-bottom: solid 1px var(--color-border-content);
+  background-color: var(--color-milk-white);
+  border-bottom: solid 1px var(--color-light-grey);
 
   font-size: 0.7em;
 }
