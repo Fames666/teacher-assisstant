@@ -23,6 +23,12 @@
 
   <dependencies>
     <dependency>
+      <groupId>by.ezubkova.teacher-assistant.user-management</groupId>
+      <artifactId>teacher-assistant-user-management-dao</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
       <groupId>by.ezubkova.teacher-assistant.curriculum</groupId>
       <artifactId>teacher-assistant-curriculum-api</artifactId>
       <version>0.0.1-SNAPSHOT</version>

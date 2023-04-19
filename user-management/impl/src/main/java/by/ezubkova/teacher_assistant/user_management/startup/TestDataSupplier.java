@@ -1,7 +1,10 @@
 package by.ezubkova.teacher_assistant.user_management.startup;
 
+import static java.util.stream.Stream.generate;
+
 import by.ezubkova.teacher_assistant.user_management.jpa.model.User;
-import by.ezubkova.teacher_assistant.user_management.repository.UserRepository;
+import by.ezubkova.teacher_assistant.user_management.jpa.model.UserData;
+import by.ezubkova.teacher_assistant.user_management.jpa.repository.UserRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
 import java.util.ArrayList;
@@ -9,7 +12,9 @@ import java.util.List;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
+@Profile("generate-test-data")
 @Configuration("UserManagementTestDataSupplier")
 @Transactional
 public class TestDataSupplier {
@@ -24,8 +29,9 @@ public class TestDataSupplier {
   );
 
   private static final Set<String> NAMES = Set.of("Anna", "John", "Ivan");
-
   private static final Set<String> SURNAMES = Set.of("Cringe", "Book", "Lorry");
+  private static final Set<String> USERNAMES = Set.of("anna22", "john13", "ivan35");
+  private static final List<String> PASSWORDS = generate(() -> "test").limit(NAMES.size()).toList();
 
   @PostConstruct
   public void initDb() {
@@ -36,16 +42,15 @@ public class TestDataSupplier {
   private List<User> createTestUsers() {
     var names = NAMES.iterator();
     var surnames = SURNAMES.iterator();
+    var usernames = USERNAMES.iterator();
+    var passwords = PASSWORDS.iterator();
     var users = new ArrayList<User>(IDS.size());
 
     for (var id : IDS) {
-      users.add(new User(id,
-                         names.next(),
-                         surnames.next(),
-                         true,
-                         true,
-                         true,
-                         true));
+      var userData = new UserData(names.next(), surnames.next(), null);
+      var user = new User(id, usernames.next(), passwords.next(), true, true, true, true, userData);
+      userData.setUser(user);
+      users.add(user);
     }
     return users;
   }

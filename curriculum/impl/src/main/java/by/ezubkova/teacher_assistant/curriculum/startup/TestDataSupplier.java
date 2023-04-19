@@ -9,7 +9,7 @@ import by.ezubkova.teacher_assistant.curriculum.jpa.model.Card;
 import by.ezubkova.teacher_assistant.curriculum.jpa.model.Curriculum;
 import by.ezubkova.teacher_assistant.curriculum.jpa.repository.CardRepository;
 import by.ezubkova.teacher_assistant.curriculum.jpa.repository.CurriculumRepository;
-import by.ezubkova.teacher_assistant.user_management.repository.UserRepository;
+import by.ezubkova.teacher_assistant.user_management.jpa.repository.UserRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
 import java.time.Month;

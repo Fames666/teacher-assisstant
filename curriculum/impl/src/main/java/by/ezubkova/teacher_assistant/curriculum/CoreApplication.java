@@ -1,7 +1,7 @@
 package by.ezubkova.teacher_assistant.curriculum;
 
 import by.ezubkova.teacher_assistant.curriculum.jpa.repository.CardRepository;
-import by.ezubkova.teacher_assistant.user_management.repository.UserRepository;
+import by.ezubkova.teacher_assistant.user_management.jpa.repository.UserRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;

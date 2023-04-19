@@ -6,7 +6,7 @@ import by.ezubkova.teacher_assistant.curriculum.api.model.CardResponse;
 import by.ezubkova.teacher_assistant.curriculum.api.service.CardService;
 import by.ezubkova.teacher_assistant.curriculum.jpa.repository.CardRepository;
 import by.ezubkova.teacher_assistant.curriculum.mapper.CardMapper;
-import by.ezubkova.teacher_assistant.user_management.repository.UserRepository;
+import by.ezubkova.teacher_assistant.user_management.jpa.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
