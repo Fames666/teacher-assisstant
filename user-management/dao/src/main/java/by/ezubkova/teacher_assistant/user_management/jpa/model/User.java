@@ -1,7 +1,6 @@
 package by.ezubkova.teacher_assistant.user_management.jpa.model;
 
-import static jakarta.persistence.CascadeType.DETACH;
-import static jakarta.persistence.CascadeType.REMOVE;
+import static jakarta.persistence.CascadeType.ALL;
 import static org.hibernate.annotations.FetchMode.JOIN;
 
 import jakarta.persistence.*;
@@ -50,7 +49,7 @@ public class User implements UserDetails {
   @Column(nullable = false)
   private boolean enabled;
 
-  @OneToOne(mappedBy = "user", cascade = {DETACH, REMOVE})
+  @OneToOne(mappedBy = "user", cascade = ALL)
   @Fetch(JOIN)
   private UserData userData;
 

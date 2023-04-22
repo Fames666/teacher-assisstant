@@ -14,9 +14,10 @@ import by.ezubkova.teacher_assistant.journal.jpa.model.Journal;
 import by.ezubkova.teacher_assistant.journal.jpa.model.JournalCell;
 import by.ezubkova.teacher_assistant.journal.jpa.model.JournalRow;
 import by.ezubkova.teacher_assistant.journal.jpa.repository.JournalRepository;
+import by.ezubkova.teacher_assistant.journal.jpa.repository.JournalRowRepository;
 import by.ezubkova.teacher_assistant.user_management.jpa.model.User;
 import by.ezubkova.teacher_assistant.user_management.jpa.repository.UserRepository;
-import jakarta.annotation.PostConstruct;
+import jakarta.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
@@ -34,14 +35,16 @@ import org.springframework.context.annotation.Profile;
 @Profile("generate-test-data")
 @Configuration("JournalTestDataSupplier")
 @DependsOn("UserManagementTestDataSupplier")
-public class TestDataSupplier {
+@Transactional
+public class JournalTestDataSupplier {
 
   @Autowired
   private UserRepository userRepository;
   @Autowired
   private JournalRepository journalRepository;
+  @Autowired
+  private JournalRowRepository journalRowRepository;
 
-  @PostConstruct
   public void initDb() {
     var users = userRepository.findAll();
     short year = (short) now().getYear();
@@ -51,9 +54,9 @@ public class TestDataSupplier {
     journal.setRows(journalRows);
     for (var row : journalRows) {
       row.setCells(createTestJournalCells(year));
-      row.getCells().forEach(cell -> cell.setJournalRow(row));
+      row.getCells().forEach(cell -> cell.getId().setRow(row));
     }
-    journalRepository.saveAndFlush(journal);
+    journalRepository.save(journal);
   }
 
   private List<JournalCell> createTestJournalCells(final int year) {
@@ -131,9 +134,13 @@ public class TestDataSupplier {
 
     var rows = new ArrayList<JournalRow>(rowsAmount);
     for (var journal : journals) {
-      var pkey = new JournalRow.JournalRowPk(journal, usersIter.next());
-      var row = new JournalRow(pkey, rowDecorationsIter.next(), averageMarksIter.next());
-      rows.add(row);
+      for (int i = 0; i < rowsAmount; i++) {
+        var row = new JournalRow(journal,
+                                 usersIter.next(),
+                                 rowDecorationsIter.next(),
+                                 averageMarksIter.next());
+        rows.add(row);
+      }
     }
     return rows;
   }

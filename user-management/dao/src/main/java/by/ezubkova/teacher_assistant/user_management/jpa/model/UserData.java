@@ -12,9 +12,11 @@ import lombok.Setter;
 public class UserData {
 
   @Id
+  private String id;
+
   @MapsId
-  @OneToOne
-  @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "fk_userdata_user"))
+  @OneToOne(optional = false)
+  @PrimaryKeyJoinColumn(foreignKey = @ForeignKey(name = "fk_userdata_user"))
   private User user;
 
   @Column(nullable = false)

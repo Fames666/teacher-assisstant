@@ -1,14 +1,13 @@
 package by.ezubkova.teacher_assistant.journal.jpa.model;
 
-import static jakarta.persistence.FetchType.EAGER;
-import static org.hibernate.annotations.FetchMode.JOIN;
+import static jakarta.persistence.CascadeType.*;
+import static jakarta.persistence.FetchType.LAZY;
 
 import jakarta.persistence.*;
 import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Fetch;
 
 @Getter
 @Setter
@@ -28,10 +27,10 @@ public class Journal {
   @Column(nullable = false, updatable = false)
   private Character classLetter;
 
+  @Column(nullable = false, updatable = false)
   private Short year;
 
-  @OneToMany(fetch = EAGER, orphanRemoval = true, mappedBy = "pkey.journal")
-  @Fetch(JOIN)
+  @OneToMany(mappedBy = "id.journal", fetch = LAZY, cascade = {PERSIST, MERGE, DETACH, REMOVE})
   private List<JournalRow> rows;
 
   public Journal(Long id, Byte classNumber, Character classLetter, Short year) {
