@@ -43,8 +43,9 @@ public class ConclusiveProgressReportGeneratorService {
       document.open();
 
       var table = new PdfPTable(CONCLUSIVE_PROGRESS_REPORT_TOTAL_COLUMNS);
-      applyConstraintsToConclusiveProgressReportTable(table, document);
-      createConclusiveProgressReportHeader(table);
+      applyConstraintsToReportTable(table, document);
+      createHeader(table);
+      createResultsTrack(table);
 
       document.add(table);
     }
@@ -53,7 +54,7 @@ public class ConclusiveProgressReportGeneratorService {
     }
   }
 
-  private void applyConstraintsToConclusiveProgressReportTable(PdfPTable table, Document document) {
+  private void applyConstraintsToReportTable(PdfPTable table, Document document) {
     var totalWidth = document.getPageSize().getWidth() - 2 * PAGE_MIN_MARGIN;
     var columnsAmount = CONCLUSIVE_PROGRESS_REPORT_TOTAL_COLUMNS;
     var relativeColumnsWidths = new float[columnsAmount];
@@ -65,9 +66,16 @@ public class ConclusiveProgressReportGeneratorService {
     table.setTotalWidth(totalWidth);
     table.setWidths(relativeColumnsWidths);
     table.setLockedWidth(true);
+
+    var defaultCell = table.getDefaultCell();
+    defaultCell.setFixedHeight(cmToPoints(0.9F));
+    defaultCell.setVerticalAlignment(ALIGN_MIDDLE);
+//    defaultCell.setHorizontalAlignment(ALIGN_CENTER);
+//    defaultCell.setPadding(0);
+//    defaultCell.setBorderWidth(0);
   }
 
-  private void createConclusiveProgressReportHeader(PdfPTable table) {
+  private void createHeader(PdfPTable table) {
     table.addCell(createCellWithText(CPR_HEADER_CLASS, 2, 1, true));
     table.addCell(createCellWithText(CPR_HEADER_STUDENTS, 2, 1, true));
     table.addCell(createCellWithText(CPR_HEADER_TIME_PERIOD, 2, 1, true));
@@ -78,7 +86,7 @@ public class ConclusiveProgressReportGeneratorService {
     table.addCell(createCellWithText(CPR_HEADER_KNOWLEDGE_QUALITY, 2, 1, false));
     table.addCell(createCellWithText(CPR_HEADER_PROGRAM_COMPLETION, 1, 2, false));
 
-    createConclusiveProgressReportMarksCells(table);
+    createMarksCells(table);
     table.addCell(createCellWithText(CPR_HEADER_THEORETICAL_PART, 1, 1, false));
     table.addCell(createCellWithText(CPR_HEADER_PRACTICAL_PART, 1, 1, false));
 
@@ -86,7 +94,7 @@ public class ConclusiveProgressReportGeneratorService {
     applyRowFixedHeight(table.getRow(1), cmToPoints(1.8F));
   }
 
-  private void createConclusiveProgressReportMarksCells(PdfPTable table) {
+  private void createMarksCells(PdfPTable table) {
     var counter = new AtomicInteger(0);
     generate(counter::incrementAndGet)
         .limit(CONCLUSIVE_PROGRESS_REPORT_MARKS_COLUMNS)
@@ -124,5 +132,30 @@ public class ConclusiveProgressReportGeneratorService {
         .filter(Objects::nonNull)
         .forEach(cell -> cell.setFixedHeight(height));
     row.calculateHeights();
+  }
+
+  private void createResultsTrack(PdfPTable table) {
+    createTrackRow(table, false, 1);
+    createTrackRow(table, false, 2);
+    createTrackRow(table, false, 3);
+    createTrackRow(table, false, 4);
+    createTrackRow(table, true, null);
+  }
+
+  private void createTrackRow(PdfPTable table, boolean yearResultsRow, Integer ordinal) {
+    table.addCell(EMPTY);
+    table.completeRow();
+
+    var lastAppendedRow = table.getRow(table.getRows().size() - 1);
+    var timeRangeCell = lastAppendedRow.getCells()[2];
+
+    if (yearResultsRow) {
+      var cellText = messages.getMessage(CPR_BODY_TIME_RANGE_YEAR, new Object[0], getDefault());
+      timeRangeCell.setPhrase(new Phrase(cellText, defaultFont));
+//      asList(lastAppendedRow.getCells()).forEach(cell -> cell.setBorderWidthBottom(2F));
+    }
+    else {
+      timeRangeCell.setPhrase(new Phrase(ordinal.toString(), defaultFont));
+    }
   }
 }

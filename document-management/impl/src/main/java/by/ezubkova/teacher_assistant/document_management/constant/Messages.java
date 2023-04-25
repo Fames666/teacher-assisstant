@@ -5,6 +5,8 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class Messages {
 
+  public static final String EMPTY = "";
+
   public static final String CPR_HEADER_CLASS = "conclusive-progress-report.header.class";
   public static final String CPR_HEADER_STUDENTS = "conclusive-progress-report.header.students";
   public static final String CPR_HEADER_TIME_PERIOD = "conclusive-progress-report.header.time-period";
@@ -16,4 +18,5 @@ public class Messages {
   public static final String CPR_HEADER_PROGRAM_COMPLETION = "conclusive-progress-report.header.program-completion";
   public static final String CPR_HEADER_THEORETICAL_PART = "conclusive-progress-report.header.theoretical-part";
   public static final String CPR_HEADER_PRACTICAL_PART = "conclusive-progress-report.header.practical-part";
+  public static final String CPR_BODY_TIME_RANGE_YEAR = "conclusive-progress-report.body.time-range.year";
 }
