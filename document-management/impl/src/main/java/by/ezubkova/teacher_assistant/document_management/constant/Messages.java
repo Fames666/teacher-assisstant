@@ -5,7 +5,16 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class Messages {
 
-  public static final String EMPTY = "";
+  public static final String CPR_TPL_CLASS = "{{ cls-%i-%i }}";
+  public static final String CPR_TPL_STUDENTS = "{{ stu-%i-%i }}";
+  public static final String CPR_TPL_TIME_PERIOD = "{{ dat-%i-%i }}";
+  public static final String CPR_TPL_MARK = "{{ mar-%i-%i-%i }}";
+  public static final String CPR_TPL_NA = "{{ na-%i-%i }}";
+  public static final String CPR_TPL_NA_REASON = "{{ nar-%i-%i }}";
+  public static final String CPR_TPL_LEARNING_LEVEL = "{{ lev-%i-%i }}";
+  public static final String CPR_TPL_KNOWLEDGE_QUALITY = "{{ qty-%i-%i }}";
+  public static final String CPR_TPL_THEORETICAL_PART = "{{ the-%i-%i }}";
+  public static final String CPR_TPL_PRACTICAL_PART = "{{ pra-%i-%i }}";
 
   public static final String CPR_HEADER_CLASS = "conclusive-progress-report.header.class";
   public static final String CPR_HEADER_STUDENTS = "conclusive-progress-report.header.students";
