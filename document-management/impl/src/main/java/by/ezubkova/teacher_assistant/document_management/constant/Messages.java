@@ -1,5 +1,9 @@
 package by.ezubkova.teacher_assistant.document_management.constant;
 
+import static java.util.Arrays.asList;
+
+import java.util.LinkedList;
+import java.util.List;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
@@ -16,6 +20,8 @@ public class Messages {
   public static final String CPR_TPL_THEORETICAL_PART = "{{ the-%i-%i }}";
   public static final String CPR_TPL_PRACTICAL_PART = "{{ pra-%i-%i }}";
 
+  public static final List<String> CPR_TEMPLATES;
+
   public static final String CPR_HEADER_CLASS = "conclusive-progress-report.header.class";
   public static final String CPR_HEADER_STUDENTS = "conclusive-progress-report.header.students";
   public static final String CPR_HEADER_TIME_PERIOD = "conclusive-progress-report.header.time-period";
@@ -28,4 +34,13 @@ public class Messages {
   public static final String CPR_HEADER_THEORETICAL_PART = "conclusive-progress-report.header.theoretical-part";
   public static final String CPR_HEADER_PRACTICAL_PART = "conclusive-progress-report.header.practical-part";
   public static final String CPR_BODY_TIME_RANGE_YEAR = "conclusive-progress-report.body.time-range.year";
+
+  static {
+    CPR_TEMPLATES = new LinkedList<>();
+    CPR_TEMPLATES.addAll(
+        asList(CPR_TPL_CLASS, CPR_TPL_STUDENTS, CPR_TPL_TIME_PERIOD,
+               CPR_TPL_MARK, CPR_TPL_NA, CPR_TPL_NA_REASON, CPR_TPL_LEARNING_LEVEL,
+               CPR_TPL_KNOWLEDGE_QUALITY, CPR_TPL_THEORETICAL_PART, CPR_TPL_PRACTICAL_PART)
+    );
+  }
 }

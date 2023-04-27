@@ -6,7 +6,15 @@ import static jakarta.persistence.FetchType.LAZY;
 
 import by.ezubkova.teacher_assistant.journal.jpa.constant.JournalRowDecoration;
 import by.ezubkova.teacher_assistant.user_management.jpa.model.User;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.ForeignKey;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
@@ -30,6 +38,12 @@ public class JournalRow {
 
   @Column(insertable = false)
   private Float averageMark;
+
+  @Column(insertable = false)
+  private boolean notAttested;
+
+  @Column(insertable = false)
+  private String notAttestedReason;
 
   @OneToMany(mappedBy = "id.row", fetch = LAZY, cascade = {PERSIST, MERGE, DETACH, REMOVE})
   private List<JournalCell> cells;

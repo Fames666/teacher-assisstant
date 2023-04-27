@@ -17,18 +17,23 @@
 
   <dependencies>
     <dependency>
+      <groupId>by.ezubkova.teacher-assistant.common</groupId>
+      <artifactId>teacher-assistant-common</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+    <dependency>
       <groupId>by.ezubkova.teacher-assistant.journal</groupId>
       <artifactId>teacher-assistant-journal-api</artifactId>
       <version>${project.parent.version}</version>
     </dependency>
     <dependency>
-      <groupId>by.ezubkova.teacher-assistant.journal</groupId>
-      <artifactId>teacher-assistant-journal-dao</artifactId>
+      <groupId>by.ezubkova.teacher-assistant.document-management</groupId>
+      <artifactId>teacher-assistant-document-management-api</artifactId>
       <version>${project.parent.version}</version>
     </dependency>
     <dependency>
-      <groupId>by.ezubkova.teacher-assistant.common</groupId>
-      <artifactId>teacher-assistant-common</artifactId>
+      <groupId>by.ezubkova.teacher-assistant.journal</groupId>
+      <artifactId>teacher-assistant-journal-dao</artifactId>
       <version>${project.parent.version}</version>
     </dependency>
     <dependency>

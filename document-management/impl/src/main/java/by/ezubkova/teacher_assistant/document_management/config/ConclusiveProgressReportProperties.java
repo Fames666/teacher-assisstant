@@ -12,7 +12,7 @@ public record ConclusiveProgressReportProperties(
     String defaultFontLocation,
     int totalColumns,
     int totalMarksColumns,
-    int totalTracks
+    int tracksPerPage
 ) {
 
   public float minDocumentMargin() {

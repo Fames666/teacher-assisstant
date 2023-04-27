@@ -65,7 +65,7 @@ public class ConclusiveProgressReportGeneratorService {
       applyConstraintsToReportTable(table, document);
 
       createHeader(table);
-      range(0, properties.totalTracks()).forEach(index -> createResultsTrack(table, index));
+      range(0, properties.tracksPerPage()).forEach(index -> createResultsTrack(table, index));
 
       document.add(table);
     }
@@ -139,6 +139,8 @@ public class ConclusiveProgressReportGeneratorService {
   private void createTrackRow(PdfPTable table, String text, boolean lastTrackRow) {
     range(0, CONCLUSIVE_PROGRESS_REPORT_TOTAL_COLUMNS)
         .forEach(__ -> table.addCell(createDCell(text)));
+
+    CPR_TEMPLATES.forEach(tpl -> );
 
     var lastAppendedRow = table.getRow(table.getRows().size() - 1);
     var timeRangeCell = lastAppendedRow.getCells()[2];

@@ -12,4 +12,4 @@ application:
           default-font-location: fonts/times.ttf
           total-marks-columns: 10
           total-columns: ${total-marks-columns} + 9
-          total-tracks: 4
+          tracks-per-page: 4

@@ -5,7 +5,15 @@ import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.FetchType.LAZY;
 
 import by.ezubkova.teacher_assistant.journal.jpa.constant.JournalCellHighlight;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.ForeignKey;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
+import jakarta.persistence.ManyToOne;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -30,7 +38,7 @@ public class JournalCell {
   private Byte mark;
 
   @Column(insertable = false)
-  private Boolean uncertain;
+  private boolean uncertain;
 
   @Column(length = UNCERTAINTY_REASON_LENGTH, insertable = false)
   private String uncertaintyReason;
