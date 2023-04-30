@@ -45,10 +45,25 @@
   --z-index-card-details: 5000;
 
   /* Updated naming */
-  --color-cyan: #4cc0c1;
-  --color-milk-white: #fefefe;  /* Lighter */
+  /* h120 -- hue = 120 */
+  /* s80  -- saturation = 80 */
+  /* b50  -- brightness = 50 */
+  /* o90  -- opacity = 90 */
+  /* 0 if omitted */
+  /* Check parameters here: https://www.color-blindness.com/color-name-hue/ */
+  --color-cyan-h180-s60-b75: #4cc0c1;
   --color-white-lilac: #f7f7f7;  /* Darker > */
-  --color-light-grey: #dfdfdf;  /* Darker >> */
+
+  --color-white-b99: #fefefe;
+  --color-white-b87: #dfdfdf;
+  --color-white-h86-s3-b100: #fbfff6;  /* For fonts only */
+
+  --color-grey-h120-b45: #747574;
+  --color-grey-h120-b45-o176: #747574b0;
+
+  --color-blue-h210-s41-b30: #2e3e4e;
+
+  --color-green-h132-s46-b74: #65bd77;
 
   box-sizing: border-box;
 

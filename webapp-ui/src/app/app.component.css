@@ -3,6 +3,7 @@
 @import "./breadcrumbs/breadcrumbs.component.css";
 @import "./curriculum/curriculum.component.css";
 @import "./library/library.component.css";
+@import "./journal/journal.component.css";
 
 .body-container {
   display: flex;

@@ -11,6 +11,9 @@ import {CurriculumComponent} from './curriculum/curriculum.component';
 import {BreadcrumbsComponent} from './breadcrumbs/breadcrumbs.component';
 import {CardComponent} from './curriculum/card/card.component';
 import {CardDetailsComponent} from './curriculum/card-details/card-details.component';
+import { JournalComponent } from './journal/journal.component';
+import { JournalsListItemComponent } from './journal/journals-list-item/journals-list-item.component';
+import { JournalStudentsItemComponent } from './journal/journal-students-item/journal-students-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import {CardDetailsComponent} from './curriculum/card-details/card-details.compo
     CurriculumComponent,
     BreadcrumbsComponent,
     CardComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    JournalComponent,
+    JournalsListItemComponent,
+    JournalStudentsItemComponent
   ],
   imports: [
     BrowserModule,

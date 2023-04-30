@@ -1,4 +1,4 @@
-div[page=library] {
+main[page=library] {
   padding: 40px 50px;
 
   width: 100%;
@@ -7,7 +7,7 @@ div[page=library] {
 
 .library-control-panel {
   --box-shadow-ctl: 0 1px 5px -3px var(--color-text-inactive);
-  --border-ctl: solid 1px var(--color-light-grey);
+  --border-ctl: solid 1px var(--color-white-b87);
   --border-radius-ctl: 4px;
 
   display: flex;
@@ -33,7 +33,7 @@ div[page=library] {
 
   border: var(--border-ctl);
   border-radius: var(--border-radius-ctl);
-  background-color: var(--color-milk-white);
+  background-color: var(--color-white-b99);
   box-shadow: var(--box-shadow-ctl);
 
   color: var(--color-text-black);
@@ -42,7 +42,7 @@ div[page=library] {
 }
 
 .library-control-btn:hover {
-  background: radial-gradient(var(--color-white-lilac), 60%, var(--color-milk-white));
+  background: radial-gradient(var(--color-white-lilac), 60%, var(--color-white-b99));
   cursor: pointer;
 }
 
@@ -71,7 +71,7 @@ div[page=library] {
 .library-control-btn[lib-ctl-id=favourites-btn]:hover,
 .library-control-btn[lib-ctl-id=favourites-btn][clicked] {
   color: var(--color-white-lilac);
-  background: var(--color-cyan);
+  background: var(--color-cyan-h180-s60-b75);
 }
 
 .library-control-btn[lib-ctl-id=favourites-btn][clicked] {
@@ -103,7 +103,7 @@ div[page=library] {
   height: 100%;
   border-top-left-radius: var(--border-radius-ctl);
   border-bottom-left-radius: var(--border-radius-ctl);
-  background-color: var(--color-milk-white);
+  background-color: var(--color-white-b99);
 }
 
 .library-control-search-wrapper {

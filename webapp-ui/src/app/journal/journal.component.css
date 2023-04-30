@@ -1,0 +1,66 @@
+@import "./journals-list-item/journals-list-item.component.css";
+@import "./journal-students-item/journal-students-item.component.css";
+
+main[page=journal] {
+  --color-text-lighter: var(--color-grey-h120-b45-o176);
+  --color-text: var(--color-grey-h120-b45);
+  --color-fg: var(--color-white-b99);
+  --color-border: var(--color-white-b87);
+  --color-shadow: var(--color-grey-h120-b45);
+
+  --padding-container: 15px;
+
+  --height-item: 50px;
+  --border-radius-item: 3px;
+  --padding-horizontal-item: 15px;
+
+  width: 100%;
+  height: 100%;
+  color: var(--color-text);
+  overflow-y: scroll;
+}
+
+.journals-horizontal-container {
+  display: flex;
+
+  padding: var(--padding-container);
+  width: 100%;
+}
+
+.journals-sub-container {
+  flex: 1 1 auto;
+  width: 60%;
+}
+
+.journals-sub-container:nth-child(2) {
+  width: 40%;
+  margin-left: 15px;
+}
+
+.journals-list-heading {
+  font-weight: normal;
+  font-size: 1.3rem;
+  line-height: 1;
+
+  margin-bottom: 12px;
+}
+
+.journals-list-heading__hint {
+  font-size: 0.8rem;
+}
+
+.journal-students-wrapper {
+  position: sticky;
+  top: var(--padding-container);
+  height: 100%;
+}
+
+.journal-students-searchbox {
+  width: 100%;
+  height: var(--height-item);
+
+  border: solid 1px var(--color-border);
+  border-bottom: none;
+  border-top-left-radius: var(--border-radius-item);
+  border-top-right-radius: var(--border-radius-item);
+}
