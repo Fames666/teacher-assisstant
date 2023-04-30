@@ -11,7 +11,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>teacher-assistant-journal-dao</artifactId>
+  <artifactId>teacher-assistant-journal-dal</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>teacher-assistant :: journal :: dao</name>
 

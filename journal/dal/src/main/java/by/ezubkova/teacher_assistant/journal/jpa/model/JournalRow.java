@@ -4,7 +4,7 @@ import static jakarta.persistence.CascadeType.*;
 import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.FetchType.LAZY;
 
-import by.ezubkova.teacher_assistant.journal.jpa.constant.JournalRowDecoration;
+import by.ezubkova.teacher_assistant.journal.constant.JournalRowDecoration;
 import by.ezubkova.teacher_assistant.user_management.jpa.model.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

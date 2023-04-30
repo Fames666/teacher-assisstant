@@ -1,15 +1,15 @@
 package by.ezubkova.teacher_assistant.journal.config;
 
-import static by.ezubkova.teacher_assistant.journal.jpa.constant.JournalCellHighlight.*;
-import static by.ezubkova.teacher_assistant.journal.jpa.constant.JournalRowDecoration.CROSSED_OUT;
-import static by.ezubkova.teacher_assistant.journal.jpa.constant.JournalRowDecoration.OUTLINED;
+import static by.ezubkova.teacher_assistant.journal.constant.JournalCellHighlight.*;
+import static by.ezubkova.teacher_assistant.journal.constant.JournalRowDecoration.CROSSED_OUT;
+import static by.ezubkova.teacher_assistant.journal.constant.JournalRowDecoration.OUTLINED;
 import static java.time.LocalDate.now;
 import static java.time.LocalDate.of;
 import static java.time.Year.isLeap;
 import static java.util.stream.Stream.generate;
 
-import by.ezubkova.teacher_assistant.journal.jpa.constant.JournalCellHighlight;
-import by.ezubkova.teacher_assistant.journal.jpa.constant.JournalRowDecoration;
+import by.ezubkova.teacher_assistant.journal.constant.JournalCellHighlight;
+import by.ezubkova.teacher_assistant.journal.constant.JournalRowDecoration;
 import by.ezubkova.teacher_assistant.journal.jpa.model.Journal;
 import by.ezubkova.teacher_assistant.journal.jpa.model.JournalCell;
 import by.ezubkova.teacher_assistant.journal.jpa.model.JournalRow;

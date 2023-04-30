@@ -33,7 +33,7 @@
     </dependency>
     <dependency>
       <groupId>by.ezubkova.teacher-assistant.journal</groupId>
-      <artifactId>teacher-assistant-journal-dao</artifactId>
+      <artifactId>teacher-assistant-journal-dal</artifactId>
       <version>${project.parent.version}</version>
     </dependency>
     <dependency>

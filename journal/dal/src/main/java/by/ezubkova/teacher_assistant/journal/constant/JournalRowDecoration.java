@@ -1,4 +1,4 @@
-package by.ezubkova.teacher_assistant.journal.jpa.constant;
+package by.ezubkova.teacher_assistant.journal.constant;
 
 public enum JournalRowDecoration {
 

@@ -4,7 +4,7 @@ import static by.ezubkova.teacher_assistant.journal.api.constant.JournalConstant
 import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.FetchType.LAZY;
 
-import by.ezubkova.teacher_assistant.journal.jpa.constant.JournalCellHighlight;
+import by.ezubkova.teacher_assistant.journal.constant.JournalCellHighlight;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;

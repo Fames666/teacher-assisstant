@@ -19,7 +19,7 @@
 
   <modules>
     <module>api</module>
-    <module>dao</module>
+    <module>dal</module>
     <module>impl</module>
   </modules>
 
