@@ -40,7 +40,7 @@ div[element=breadcrumbs] {
 
 .breadcrumb-with-icon:last-child > .breadcrumb,
 .breadcrumbs-wrapper > .breadcrumb:last-child {
-  color: var(--color-text-grey-darker);
+  color: var(--color-grey-h120-b45);
 }
 
 .breadcrumb::after {

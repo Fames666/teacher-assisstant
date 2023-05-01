@@ -25,14 +25,14 @@ main[page=curriculum] ul {
   background-color: var(--color-white-b87);
   border-radius: 4px;
 
-  color: var(--color-text-grey-darker);
+  color: var(--color-grey-h120-b45);
   font-size: 0.8rem;
   font-weight: bold;
 }
 
 .dashboard-separator {
   margin: 0 calc(var(--width-dashboard-movement-ctl) / 2);
-  background-color: var(--color-text-grey-darker);
+  background-color: var(--color-grey-h120-b45);
 
   width: 0.5px;
   height: 100%;
@@ -62,7 +62,7 @@ main[page=curriculum] ul {
   width: max-content;
   min-height: max-content;
 
-  color: var(--color-text-black);
+  color: var(--color-blue-h210-s41-b30);
   border-radius: 4px;
   background-color: var(--color-white-b99);
   box-shadow: 0 0 6px var(--color-white-b87);
@@ -94,7 +94,7 @@ main[page=curriculum] ul {
   padding-top: 1px;
   border: none;
 
-  color: var(--color-text-black);
+  color: var(--color-blue-h210-s41-b30);
   background-color: transparent;
   cursor: grab;
 }
@@ -171,7 +171,7 @@ main[page=curriculum] ul {
   margin: 0 var(--margin-dashboard-edge);
   flex: 1 1 max-content;
 
-  border: solid 1px var(--color-text-grey-darker);
+  border: solid 1px var(--color-grey-h120-b45);
   border-radius: 3px;
 }
 
@@ -205,7 +205,7 @@ main[page=curriculum] ul {
   padding: 5px 9px;
 
   flex: 1 1 300px;
-  border-top: solid 1px var(--color-text-grey-darker);
+  border-top: solid 1px var(--color-grey-h120-b45);
   background-color: var(--color-white-lilac);
 }
 

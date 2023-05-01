@@ -34,7 +34,7 @@ ul {
 }
 
 button {
-  color: var(--color-text-black);
+  color: var(--color-blue-h210-s41-b30);
   cursor: pointer;
 }
 
@@ -173,7 +173,7 @@ button {
   border: none;
   border-radius: 50%;
 
-  color: var(--color-text-black);
+  color: var(--color-blue-h210-s41-b30);
   background-color: var(--color-fg-content);
   box-shadow: 1px 1px 3px 0 var(--color-btn-shadow);
 }

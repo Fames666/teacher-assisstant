@@ -65,7 +65,7 @@ div[element=nav] > * {
 }
 
 .add-project-btn:hover > .ico {
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
 }
 
 .projects-picker {
@@ -74,7 +74,7 @@ div[element=nav] > * {
   align-items: center;
 
   flex: 1 1 100%;
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
   font-size: 0.8em;
 }
 
@@ -158,7 +158,7 @@ div[element=nav] > * {
 .navigation-option:hover >
   .navigation-option__icon >
     .ico {
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
 }
 
 .navigation-option:hover >
@@ -170,7 +170,7 @@ div[element=nav] > * {
 .navigation-option[selected] >
   .navigation-option__icon >
     .ico {
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
 }
 
 .navigation-option[selected] >
@@ -220,11 +220,11 @@ div[element=nav] > * {
 }
 
 .navigation-option[selected] > span {
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
 }
 
 .navigation-option:hover > .ico {
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
 }
 /* 'Navigation panel' styles end */
 
@@ -267,7 +267,7 @@ div[element=nav] > * {
 }
 
 .communication-panel button:hover > .ico {
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
 }
 
 .communication-options-list {

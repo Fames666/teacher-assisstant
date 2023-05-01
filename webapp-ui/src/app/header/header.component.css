@@ -66,7 +66,7 @@ header .ico {
 }
 
 .activity-bar:hover > .ico {
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
 }
 
 .activity-bar > * {
@@ -79,7 +79,7 @@ header .ico {
 }
 
 .activity-bar:hover > .activity__text {
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
 }
 /* 'Activity bar' styles end */
 
@@ -118,7 +118,7 @@ header .ico {
 }
 
 .notificatons-btn:hover > .ico {
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
 }
 
 .notificatons-btn::after {
@@ -137,7 +137,7 @@ header .ico {
   border: solid 1px var(--color-bg-dark);
   border-radius: 9px;
 
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
   font-weight: bold;
   font-size: 0.6em;
 }
@@ -159,7 +159,7 @@ header .ico {
 }
 
 .search-btn:hover > .ico {
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
 }
 
 .log-in-wrapper {
@@ -172,7 +172,7 @@ header .ico {
 }
 
 .log-in-wrapper:hover > * {
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
 }
 
 .avatar-wrapper {

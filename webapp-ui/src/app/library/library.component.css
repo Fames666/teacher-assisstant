@@ -36,7 +36,7 @@ main[page=library] {
   background-color: var(--color-white-b99);
   box-shadow: var(--box-shadow-ctl);
 
-  color: var(--color-text-black);
+  color: var(--color-blue-h210-s41-b30);
   font-size: 0.95rem;
   font-weight: bold;
 }

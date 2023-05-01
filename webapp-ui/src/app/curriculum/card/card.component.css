@@ -31,7 +31,7 @@ div[element=curriculum-card]:hover {
   width: 100%;
   height: var(--height-card-title);
 
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
@@ -70,7 +70,7 @@ div[element=curriculum-card][type=subbotnik] .card-title {
   width: 10px;
   height: 10px;
 
-  background-color: var(--color-text-light-hover);
+  background-color: var(--color-white-h86-s3-b100);
   border-radius: 5px;
 
   animation: card-activity-indicator 1.5s linear 0s infinite alternate none;
@@ -100,7 +100,7 @@ div[element=curriculum-card][type=subbotnik] .card-title {
   align-items: center;
 
   margin-bottom: 14px;
-  color: var(--color-text-grey-darker);
+  color: var(--color-grey-h120-b45);
 }
 
 .card-timeline > span {
@@ -113,7 +113,7 @@ div[element=curriculum-card][type=subbotnik] .card-title {
   height: 0.5px;
 
   margin: 0 10px;
-  background-color: var(--color-text-grey-darker);
+  background-color: var(--color-grey-h120-b45);
 }
 
 .card-timeline-progress-bar::before {
@@ -162,7 +162,7 @@ div[element=curriculum-card][type=subbotnik] .card-title {
 
 .card-participants-counter {
   margin-left: 4px;
-  color: var(--color-text-grey-darker);
+  color: var(--color-grey-h120-b45);
 }
 
 .card-tags {
@@ -181,7 +181,7 @@ div[element=curriculum-card][type=subbotnik] .card-title {
 
   border-radius: 11px;
 
-  color: var(--color-text-light-hover);
+  color: var(--color-white-h86-s3-b100);
   font-size: 0.75em;
   font-weight: bold;
   line-height: 1;
