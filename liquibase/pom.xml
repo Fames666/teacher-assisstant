@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>by.ezubkova.teacher-assistant.liquibase</groupId>
+  <artifactId>teacher-assistant-liquibase</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>teacher-assistant :: liquibase</name>
+  <description>Database migrations for project</description>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>ddl</module>
+    <module>data-provider</module>
+  </modules>
+
+  <properties>
+    <liquibase.version>4.20.0</liquibase.version>
+    <postgreSql.version>42.5.4</postgreSql.version>
+    <maven.cleanPlugin.version>3.2.0</maven.cleanPlugin.version>
+    <maven.resourcesPlugin.version>3.3.1</maven.resourcesPlugin.version>
+    <maven.jarPlugin.version>3.3.0</maven.jarPlugin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.resources.directory>${project.build.directory}\resources</project.build.resources.directory>
+  </properties>
+
+  <dependencies>
+    <!--suppress VulnerableLibrariesLocal -->
+    <dependency>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-core</artifactId>
+      <version>${liquibase.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.liquibase</groupId>
+          <artifactId>liquibase-commercial</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.liquibase</groupId>
+          <artifactId>liquibase-maven-plugin</artifactId>
+          <version>${liquibase.version}</version>
+          <configuration>
+            <contexts>default</contexts>
+            <searchPath>${project.build.resources.directory}</searchPath>
+            <propertyFile>properties\liquibase.properties</propertyFile>
+            <changeLogFile>changelog\db-changelog.xml</changeLogFile>
+            <url>jdbc:postgresql://localhost:5432/teacher_assistant</url>
+            <username>teacher_assistant_backend</username>
+            <password>q9TEAweN24aQ5uPvVN5</password>
+          </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>org.postgresql</groupId>
+              <artifactId>postgresql</artifactId>
+              <version>${postgreSql.version}</version>
+              <scope>runtime</scope>
+            </dependency>
+          </dependencies>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${maven.resourcesPlugin.version}</version>
+          <executions>
+            <execution>
+              <id>copy-liquibase-resources</id>
+              <phase>process-resources</phase>
+              <goals>
+                <goal>copy-resources</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>${project.build.resources.directory}</outputDirectory>
+                <resources>
+                  <resource>
+                    <directory>${project.basedir}/</directory>
+                    <filtering>false</filtering>
+                    <includes>
+                      <include>properties/</include>
+                      <include>changelog/</include>
+                    </includes>
+                  </resource>
+                </resources>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${maven.jarPlugin.version}</version>
+          <configuration>
+            <classesDirectory>${project.build.resources.directory}</classesDirectory>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>

@@ -40,7 +40,9 @@ public class DefaultJournalCrudServiceImpl implements JournalCrudService {
   public List<JournalResponse> readJournalsAvailableForUser(String userId) {
     var user = findUserById(userId);
     var journals = journalRepository.findAllByTeacherContains(user);
-    return null;
+    return journals.stream()
+                   .map(mapper::toResponse)
+                   .toList();
   }
 
   private User findUserById(String id) {

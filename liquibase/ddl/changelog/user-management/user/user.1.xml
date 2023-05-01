@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+  <property name="author" value="system"/>
+  <property name="schema" value="public"/>
+  <property name="contexts" value="drop-existing"/>
+
+  <changeSet id="user-management.user.1.delete_from_table" author="${author}" contextFilter="${contexts}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="user"/>
+      <tableExists schemaName="${schema}" tableName="user_data"/>
+    </preConditions>
+
+    <dropTable schemaName="${schema}" tableName="user_data"/>
+    <dropTable schemaName="${schema}" tableName="user"/>
+  </changeSet>
+
+
+  <changeSet id="user-management.user.1.create_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="HALT">
+      <not>
+        <tableExists schemaName="${schema}" tableName="user"/>
+        <tableExists schemaName="${schema}" tableName="user_data"/>
+      </not>
+    </preConditions>
+
+    <createTable schemaName="${schema}" tableName="user">
+      <column name="id" type="UUID">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user"/>
+      </column>
+      <column name="username" type="VARCHAR(64)">
+        <constraints nullable="false" unique="true" uniqueConstraintName="uk_user_username"/>
+      </column>
+      <column name="password" type="VARCHAR(64)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="account_non_expired" type="BOOLEAN" defaultOnNull="true" defaultValue="true">
+        <constraints nullable="false"/>
+      </column>
+      <column name="account_non_locked" type="BOOLEAN" defaultOnNull="true" defaultValue="true">
+        <constraints nullable="false"/>
+      </column>
+      <column name="credentials_non_expired" type="BOOLEAN" defaultOnNull="true" defaultValue="true">
+        <constraints nullable="false"/>
+      </column>
+      <column name="enabled" type="BOOLEAN" defaultOnNull="true" defaultValue="true">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+
+    <createTable schemaName="${schema}" tableName="user_data">
+      <column name="id" type="UUID">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user_data"/>
+      </column>
+      <column name="first_name" type="NVARCHAR(32)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="second_name" type="NVARCHAR(32)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="third_name" type="NVARCHAR(32)"/>
+    </createTable>
+
+    <addForeignKeyConstraint baseTableName="user_data"
+                             baseColumnNames="id"
+                             constraintName="fk_userdata_user"
+                             referencedTableName="user"
+                             referencedColumnNames="id"/>
+  </changeSet>
+
+</databaseChangeLog>
