@@ -51,6 +51,7 @@
           <version>${liquibase.version}</version>
           <configuration>
             <contexts>default</contexts>
+            <!-- TODO: find out why liquibase.props not working -->
             <searchPath>${project.build.resources.directory}</searchPath>
             <propertyFile>properties\liquibase.properties</propertyFile>
             <changeLogFile>changelog\db-changelog.xml</changeLogFile>

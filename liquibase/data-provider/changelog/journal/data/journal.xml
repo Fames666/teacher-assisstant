@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+  <property name="author" value="system"/>
+  <property name="schema" value="public"/>
+  <property name="contexts" value="provide-test-data"/>
+  <property name="remove" value="delete_test_data"/>
+  <property name="insert" value="insert_test_data"/>
+
+  <changeSet id="journal.journal.${remove}" author="${author}" context="${contexts}" runAlways="true">
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="journal"/>
+    </preConditions>
+
+    <delete schemaName="${schema}" tableName="journal"/>
+  </changeSet>
+
+  <changeSet id="journal.journal.${insert}" author="${author}" context="${contexts}" runAlways="true">
+    <validCheckSum>8:d71311aa6b81331de5bd35fd636ba86d</validCheckSum>
+
+    <preConditions onFail="HALT">
+      <tableExists schemaName="${schema}" tableName="journal"/>
+    </preConditions>
+
+    <!-- 5А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 5Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 5В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 5Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 6А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 6Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 6В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 6Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 7А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 7Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 7В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 7Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 8А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 8Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 8В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 8Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 9А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 9Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 9В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 9Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 10А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 10Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 10В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 10Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 11А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 11Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 11В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+
+    <!-- 11Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+    </insert>
+  </changeSet>
+
+</databaseChangeLog>

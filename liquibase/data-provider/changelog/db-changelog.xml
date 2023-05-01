@@ -6,6 +6,7 @@
 
   <property name="author" value="system"/>
 
-  <include file="/user-management/user-management.xml" relativeToChangelogFile="true"/>
+  <include file="user-management/user-management.xml" relativeToChangelogFile="true"/>
+  <include file="journal/journal.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

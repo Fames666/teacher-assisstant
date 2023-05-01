@@ -10,7 +10,7 @@
   <property name="remove" value="delete_test_data"/>
   <property name="insert" value="insert_test_data"/>
 
-  <changeSet id="user-management.user.${remove}" author="${author}" context="provide-test-data" runAlways="true">
+  <changeSet id="user-management.user.${remove}" author="${author}" context="${contexts}" runAlways="true">
     <preConditions onFail="MARK_RAN">
       <tableExists schemaName="${schema}" tableName="user"/>
       <tableExists schemaName="${schema}" tableName="user_data"/>
@@ -20,7 +20,7 @@
     <delete schemaName="${schema}" tableName="user"/>
   </changeSet>
 
-  <changeSet id="user-management.user.${insert}" author="${author}" context="provide-test-data" runAlways="true">
+  <changeSet id="user-management.user.${insert}" author="${author}" context="${contexts}" runAlways="true">
     <validCheckSum>8:14f40f6483a89f25ce60ad79c388523e</validCheckSum>
 
     <preConditions onFail="MARK_RAN">
