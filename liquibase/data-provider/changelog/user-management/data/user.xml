@@ -2,25 +2,14 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd"
+                   contextFilter="provide-test-data">
 
   <property name="author" value="system"/>
   <property name="schema" value="public"/>
-  <property name="contexts" value="provide-test-data"/>
-  <property name="remove" value="delete_test_data"/>
   <property name="insert" value="insert_test_data"/>
 
-  <changeSet id="user-management.user.${remove}" author="${author}" context="${contexts}" runAlways="true">
-    <preConditions onFail="MARK_RAN">
-      <tableExists schemaName="${schema}" tableName="user"/>
-      <tableExists schemaName="${schema}" tableName="user_data"/>
-    </preConditions>
-
-    <delete schemaName="${schema}" tableName="user_data"/>
-    <delete schemaName="${schema}" tableName="user"/>
-  </changeSet>
-
-  <changeSet id="user-management.user.${insert}" author="${author}" context="${contexts}" runAlways="true">
+  <changeSet id="user-management.user.${insert}" author="${author}" runAlways="true">
     <validCheckSum>8:14f40f6483a89f25ce60ad79c388523e</validCheckSum>
 
     <preConditions onFail="MARK_RAN">
@@ -36,8 +25,8 @@
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">74148075-b59b-4ac4-860d-92a2dbf74abd</column>
-      <column name="first_name">Sten</column>
-      <column name="second_name">Aslan</column>
+      <column name="first_name">Test</column>
+      <column name="second_name">Teacher</column>
     </insert>
 
     <insert schemaName="${schema}" tableName="user">

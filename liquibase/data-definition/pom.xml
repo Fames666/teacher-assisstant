@@ -11,9 +11,9 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>teacher-assistant-liquibase-ddl</artifactId>
+  <artifactId>teacher-assistant-liquibase-data-definition</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>teacher-assistant :: liquibase :: ddl</name>
+  <name>teacher-assistant :: liquibase :: data-definition</name>
 
   <profiles>
     <profile>

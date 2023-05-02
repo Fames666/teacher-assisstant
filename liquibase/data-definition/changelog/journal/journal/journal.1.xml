@@ -6,17 +6,6 @@
 
   <property name="author" value="system"/>
   <property name="schema" value="public"/>
-  <property name="contexts" value="drop-existing"/>
-
-  <changeSet id="journal.journal.1.drop_table" author="${author}" context="${contexts}">
-    <validCheckSum>ANY</validCheckSum>
-
-    <preConditions onFail="MARK_RAN">
-      <tableExists schemaName="${schema}" tableName="journal"/>
-    </preConditions>
-
-    <dropTable schemaName="${schema}" tableName="journal"/>
-  </changeSet>
 
   <changeSet id="journal.journal.1.create_table" author="${author}">
     <validCheckSum>ANY</validCheckSum>
@@ -43,6 +32,7 @@
       <column name="semester" type="TINYINT UNSIGNED">
         <constraints nullable="false"/>
       </column>
+      <column name="lead_teacher_id" type="UUID"/>
     </createTable>
 
     <addUniqueConstraint schemaName="${schema}"

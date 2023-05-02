@@ -12,8 +12,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
@@ -32,8 +34,8 @@ import lombok.Setter;
                                              columnNames = {
                                                  "className.classNumber",
                                                  "className.classLetter",
-                                                 "activePeriod.year",
-                                                 "activePeriod.semester"
+                                                 "year",
+                                                 "semester"
                                              }))
 public class Journal {
 
@@ -44,8 +46,10 @@ public class Journal {
   @Embedded
   private ClassName className;
 
-  @Embedded
-  private ActivePeriod activePeriod;
+  @ManyToOne(fetch = LAZY, optional = false)
+  @JoinColumns(value = {@JoinColumn(name = "year"), @JoinColumn(name = "semester")},
+               foreignKey = @ForeignKey(name = "fk_journal_academicsemester"))
+  private AcademicSemester academicSemester;
 
   @OneToMany(mappedBy = "id.journal", fetch = LAZY, cascade = {PERSIST, MERGE, DETACH, REMOVE})
   private List<JournalRow> rows;
@@ -54,15 +58,13 @@ public class Journal {
   @JoinTable(name = "journal_teacher",
              joinColumns = @JoinColumn(name = "journal_id"),
              inverseJoinColumns = @JoinColumn(name = "teacher_id"),
-             foreignKey = @ForeignKey(name = "fk_journal_teacher"),
+             foreignKey = @ForeignKey(name = "fk_journaluser_journal"),
              inverseForeignKey = @ForeignKey(name = "fk_teacher_journal"))
-  private List<User> teacher;
+  private List<User> teachers;
 
-  public Journal(Long id, Byte classNumber, Character classLetter, Short year, Byte semester) {
-    this.id = id;
-    this.className = new ClassName(classNumber, classLetter);
-    this.activePeriod = new ActivePeriod(year, semester);
-  }
+  @ManyToOne(fetch = LAZY)
+  @JoinColumn(name = "lead_teacher_id", foreignKey = @ForeignKey(name = "fk_journal_leadteacher"))
+  private User leadTeacher;
 
   @Embeddable
   @Data
@@ -79,18 +81,5 @@ public class Journal {
     public String getFullClassName() {
       return format("%d%s", getClassNumber(), getClassLetter()).toUpperCase();
     }
-  }
-
-  @Embeddable
-  @Data
-  @NoArgsConstructor
-  @AllArgsConstructor
-  private static class ActivePeriod {
-
-    @Column(nullable = false, updatable = false)
-    private Short year;
-
-    @Column(nullable = false, updatable = false)
-    private Byte semester;
   }
 }

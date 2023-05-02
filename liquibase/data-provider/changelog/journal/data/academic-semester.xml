@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd"
+                   contextFilter="provide-test-data">
+
+  <property name="author" value="system"/>
+  <property name="schema" value="public"/>
+  <property name="insert" value="insert_test_data"/>
+
+  <changeSet id="journal.academic-semester.${insert}" author="${author}" runAlways="true">
+    <preConditions onFail="HALT">
+      <tableExists schemaName="${schema}" tableName="academic_semester"/>
+    </preConditions>
+
+    <insert schemaName="${schema}" tableName="academic_semester">
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="start_date" valueDate="2023-09-01"/>
+      <column name="end_date" valueDate="2023-10-28"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="academic_semester">
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="start_date" valueDate="2023-11-08"/>
+      <column name="end_date" valueDate="2023-12-23"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="academic_semester">
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="start_date" valueDate="2023-01-08"/>
+      <column name="end_date" valueDate="2023-03-23"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="academic_semester">
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="start_date" valueDate="2023-04-01"/>
+      <column name="end_date" valueDate="2023-05-31"/>
+    </insert>
+  </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd"
+                   contextFilter="provide-test-data">
+
+  <property name="author" value="system"/>
+  <property name="schema" value="public"/>
+  <property name="remove" value="delete_test_data"/>
+
+  <changeSet id="journal.journal_user.${remove}" author="${author}" runAlways="true">
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="journal_user"/>
+    </preConditions>
+
+    <delete schemaName="${schema}" tableName="journal_user"/>
+  </changeSet>
+
+  <changeSet id="user-management.user.${remove}" author="${author}" runAlways="true">
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="user"/>
+      <tableExists schemaName="${schema}" tableName="user_data"/>
+    </preConditions>
+
+    <delete schemaName="${schema}" tableName="user_data"/>
+    <delete schemaName="${schema}" tableName="user"/>
+  </changeSet>
+
+  <changeSet id="journal.academic-semester.${remove}" author="${author}" runAlways="true">
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="academic_semester"/>
+    </preConditions>
+
+    <delete schemaName="${schema}" tableName="academic_semester"/>
+  </changeSet>
+
+  <changeSet id="journal.journal.${remove}" author="${author}" runAlways="true">
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="journal"/>
+    </preConditions>
+
+    <delete schemaName="${schema}" tableName="journal"/>
+  </changeSet>
+
+</databaseChangeLog>

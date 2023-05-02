@@ -6,20 +6,6 @@
 
   <property name="author" value="system"/>
   <property name="schema" value="public"/>
-  <property name="contexts" value="drop-existing"/>
-
-  <changeSet id="user-management.user.1.drop_table" author="${author}" contextFilter="${contexts}">
-    <validCheckSum>ANY</validCheckSum>
-
-    <preConditions onFail="MARK_RAN">
-      <tableExists schemaName="${schema}" tableName="user"/>
-      <tableExists schemaName="${schema}" tableName="user_data"/>
-    </preConditions>
-
-    <dropTable schemaName="${schema}" tableName="user_data"/>
-    <dropTable schemaName="${schema}" tableName="user"/>
-  </changeSet>
-
 
   <changeSet id="user-management.user.1.create_table" author="${author}">
     <validCheckSum>ANY</validCheckSum>

@@ -5,5 +5,7 @@
                                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
 
   <include file="journal/journal.1.xml" relativeToChangelogFile="true"/>
+  <include file="journal/journal_user.1.xml" relativeToChangelogFile="true"/>
+  <include file="academic-semester/academic-semester.1.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
