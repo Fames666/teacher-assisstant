@@ -9,22 +9,20 @@
   <property name="schema" value="public"/>
   <property name="remove" value="delete_test_data"/>
 
-  <changeSet id="journal.journal_user.${remove}" author="${author}" runAlways="true">
+  <changeSet id="journal.journal-teacher.${remove}" author="${author}" runAlways="true">
     <preConditions onFail="MARK_RAN">
-      <tableExists schemaName="${schema}" tableName="journal_user"/>
+      <tableExists schemaName="${schema}" tableName="journal_teacher"/>
     </preConditions>
 
-    <delete schemaName="${schema}" tableName="journal_user"/>
+    <delete schemaName="${schema}" tableName="journal_teacher"/>
   </changeSet>
 
-  <changeSet id="user-management.user.${remove}" author="${author}" runAlways="true">
+  <changeSet id="journal.journal.${remove}" author="${author}" runAlways="true">
     <preConditions onFail="MARK_RAN">
-      <tableExists schemaName="${schema}" tableName="user"/>
-      <tableExists schemaName="${schema}" tableName="user_data"/>
+      <tableExists schemaName="${schema}" tableName="journal"/>
     </preConditions>
 
-    <delete schemaName="${schema}" tableName="user_data"/>
-    <delete schemaName="${schema}" tableName="user"/>
+    <delete schemaName="${schema}" tableName="journal"/>
   </changeSet>
 
   <changeSet id="journal.academic-semester.${remove}" author="${author}" runAlways="true">
@@ -35,12 +33,14 @@
     <delete schemaName="${schema}" tableName="academic_semester"/>
   </changeSet>
 
-  <changeSet id="journal.journal.${remove}" author="${author}" runAlways="true">
+  <changeSet id="user-management.user.${remove}" author="${author}" runAlways="true">
     <preConditions onFail="MARK_RAN">
-      <tableExists schemaName="${schema}" tableName="journal"/>
+      <tableExists schemaName="${schema}" tableName="user"/>
+      <tableExists schemaName="${schema}" tableName="user_data"/>
     </preConditions>
 
-    <delete schemaName="${schema}" tableName="journal"/>
+    <delete schemaName="${schema}" tableName="user_data"/>
+    <delete schemaName="${schema}" tableName="user"/>
   </changeSet>
 
 </databaseChangeLog>

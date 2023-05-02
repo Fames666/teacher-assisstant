@@ -4,8 +4,10 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
 
-  <include file="journal/journal.1.xml" relativeToChangelogFile="true"/>
-  <include file="journal/journal_user.1.xml" relativeToChangelogFile="true"/>
   <include file="academic-semester/academic-semester.1.xml" relativeToChangelogFile="true"/>
+  <include file="journal/journal.1.xml" relativeToChangelogFile="true"/>
+  <include file="journal/journal-teacher.1.xml" relativeToChangelogFile="true"/>
+  <include file="journal-row/journal-row.1.xml" relativeToChangelogFile="true"/>
+  <include file="journal-cell/journal-cell.1.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

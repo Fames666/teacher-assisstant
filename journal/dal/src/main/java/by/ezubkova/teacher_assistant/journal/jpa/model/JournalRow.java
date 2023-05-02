@@ -1,16 +1,13 @@
 package by.ezubkova.teacher_assistant.journal.jpa.model;
 
 import static jakarta.persistence.CascadeType.*;
-import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.FetchType.LAZY;
 
-import by.ezubkova.teacher_assistant.journal.constant.JournalRowDecoration;
 import by.ezubkova.teacher_assistant.user_management.jpa.model.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -32,10 +29,6 @@ public class JournalRow {
   @EmbeddedId
   private JournalRowPk id;
 
-  @Column(nullable = false)
-  @Enumerated(STRING)
-  private JournalRowDecoration decorationType;
-
   @Column(insertable = false)
   private Float averageMark;
 
@@ -47,15 +40,6 @@ public class JournalRow {
 
   @OneToMany(mappedBy = "id.row", fetch = LAZY, cascade = {PERSIST, MERGE, DETACH, REMOVE})
   private List<JournalCell> cells;
-
-  public JournalRow(Journal journal,
-                    User student,
-                    JournalRowDecoration decorationType,
-                    Float averageMark) {
-    this.id = new JournalRowPk(journal, student);
-    this.decorationType = decorationType;
-    this.averageMark = averageMark;
-  }
 
   @Getter
   @Setter

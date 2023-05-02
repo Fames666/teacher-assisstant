@@ -66,12 +66,8 @@ public class JournalCell {
     private static final long serialVersionUID = 8578148734239307004L;
 
     @ManyToOne(fetch = LAZY, optional = false)
-    @JoinColumns({
-        @JoinColumn(name = "row_id",
-                    foreignKey = @ForeignKey(name = "fk_journalcell_journalrow_row")),
-        @JoinColumn(name = "student_id",
-                    foreignKey = @ForeignKey(name = "fk_journalcell_journalrow_stu"))
-    })
+    @JoinColumns(value = {@JoinColumn(name = "row_id"), @JoinColumn(name = "student_id")},
+                 foreignKey = @ForeignKey(name = "fk_journalcell_journalrow"))
     private JournalRow row;
 
     @Column(nullable = false, updatable = false)

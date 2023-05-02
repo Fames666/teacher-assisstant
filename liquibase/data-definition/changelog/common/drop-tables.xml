@@ -8,26 +8,44 @@
   <property name="author" value="system"/>
   <property name="schema" value="public"/>
 
-  <changeSet id="journal.journal_user.1.drop_table" author="${author}">
+  <changeSet id="journal.journal-teacher.1.drop_table" author="${author}">
     <validCheckSum>ANY</validCheckSum>
 
     <preConditions onFail="MARK_RAN">
-      <tableExists schemaName="${schema}" tableName="journal_user"/>
+      <tableExists schemaName="${schema}" tableName="journal_teacher"/>
     </preConditions>
 
-    <dropTable schemaName="${schema}" tableName="journal_user"/>
+    <dropTable schemaName="${schema}" tableName="journal_teacher"/>
   </changeSet>
 
-  <changeSet id="user-management.user.1.drop_table" author="${author}">
+  <changeSet id="journal.journal-cell.1.drop_table" author="${author}">
     <validCheckSum>ANY</validCheckSum>
 
     <preConditions onFail="MARK_RAN">
-      <tableExists schemaName="${schema}" tableName="user"/>
-      <tableExists schemaName="${schema}" tableName="user_data"/>
+      <tableExists schemaName="${schema}" tableName="journal_cell"/>
     </preConditions>
 
-    <dropTable schemaName="${schema}" tableName="user_data"/>
-    <dropTable schemaName="${schema}" tableName="user"/>
+    <dropTable schemaName="${schema}" tableName="journal_cell"/>
+  </changeSet>
+
+  <changeSet id="journal.journal-row.1.drop_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="journal_row"/>
+    </preConditions>
+
+    <dropTable schemaName="${schema}" tableName="journal_row"/>
+  </changeSet>
+
+  <changeSet id="journal.journal.1.drop_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="journal"/>
+    </preConditions>
+
+    <dropTable schemaName="${schema}" tableName="journal"/>
   </changeSet>
 
   <changeSet id="journal.academic-semester.1.drop_table" author="${author}">
@@ -40,14 +58,16 @@
     <dropTable schemaName="${schema}" tableName="academic_semester"/>
   </changeSet>
 
-  <changeSet id="journal.journal.1.drop_table" author="${author}">
+  <changeSet id="user-management.user.1.drop_table" author="${author}">
     <validCheckSum>ANY</validCheckSum>
 
     <preConditions onFail="MARK_RAN">
-      <tableExists schemaName="${schema}" tableName="journal"/>
+      <tableExists schemaName="${schema}" tableName="user"/>
+      <tableExists schemaName="${schema}" tableName="user_data"/>
     </preConditions>
 
-    <dropTable schemaName="${schema}" tableName="journal"/>
+    <dropTable schemaName="${schema}" tableName="user_data"/>
+    <dropTable schemaName="${schema}" tableName="user"/>
   </changeSet>
 
 </databaseChangeLog>

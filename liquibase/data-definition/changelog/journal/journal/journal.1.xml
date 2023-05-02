@@ -37,7 +37,19 @@
 
     <addUniqueConstraint schemaName="${schema}"
                          tableName="journal"
+                         constraintName="uk_journal"
                          columnNames="class_number,class_letter,year,semester"/>
+
+    <addForeignKeyConstraint baseTableName="journal"
+                             baseColumnNames="lead_teacher_id"
+                             constraintName="fk_journal_leadteacher"
+                             referencedTableName="user"
+                             referencedColumnNames="id"/>
+    <addForeignKeyConstraint baseTableName="journal"
+                             baseColumnNames="year,semester"
+                             constraintName="fk_journal_academicsemester"
+                             referencedTableName="academic_semester"
+                             referencedColumnNames="year,semester"/>
 
     <createSequence sequenceName="s_journal" startValue="1" maxValue="9223372036854775807" cycle="true"/>
   </changeSet>

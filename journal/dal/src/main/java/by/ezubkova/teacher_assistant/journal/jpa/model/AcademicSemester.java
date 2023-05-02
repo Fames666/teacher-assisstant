@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 import lombok.Data;
@@ -30,6 +31,9 @@ public class AcademicSemester {
 
   @Data
   public static class AcademicSemesterPk implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 140493940829960185L;
 
     @Column(nullable = false, updatable = false)
     private Short year;
