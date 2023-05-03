@@ -31,7 +31,7 @@ public class DefaultJournalCrudServiceImpl implements JournalCrudService {
   public JournalResponse getJournalByParameters(Byte classNumber,
                                                 Character classLetter,
                                                 Short year) {
-    var journal = journalRepository.findByClassNumberAndClassLetterAndYear(classNumber, classLetter, year)
+    var journal = journalRepository.findByClassNameClassNumberAndClassNameClassLetterAndAcademicSemesterYear(classNumber, classLetter, year)
                                    .orElseThrow(() -> new JournalNotFoundException("Journal not found"));
     return mapper.toResponse(journal);
   }
@@ -39,7 +39,7 @@ public class DefaultJournalCrudServiceImpl implements JournalCrudService {
   @Override
   public List<JournalResponse> readJournalsAvailableForUser(String userId) {
     var user = findUserById(userId);
-    var journals = journalRepository.findAllByTeacherContains(user);
+    var journals = journalRepository.findAllByTeachersContains(user);
     return journals.stream()
                    .map(mapper::toResponse)
                    .toList();

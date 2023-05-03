@@ -4,7 +4,6 @@ import static jakarta.persistence.CascadeType.*;
 import static jakarta.persistence.FetchType.LAZY;
 
 import by.ezubkova.teacher_assistant.user_management.jpa.model.User;
-import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -29,17 +28,30 @@ public class JournalRow {
   @EmbeddedId
   private JournalRowPk id;
 
-  @Column(insertable = false)
+//  @Column(insertable = false)
   private Float averageMark;
 
-  @Column(insertable = false)
+//  @Column(insertable = false)
   private boolean notAttested;
 
-  @Column(insertable = false)
+//  @Column(insertable = false)
   private String notAttestedReason;
 
   @OneToMany(mappedBy = "id.row", fetch = LAZY, cascade = {PERSIST, MERGE, DETACH, REMOVE})
   private List<JournalCell> cells;
+
+  public JournalRow(Journal journal,
+                    User student,
+                    Float averageMark,
+                    boolean notAttested,
+                    String notAttestedReason,
+                    List<JournalCell> cells) {
+    this.id = new JournalRowPk(journal, student);
+    this.averageMark = averageMark;
+    this.notAttested = notAttested;
+    this.notAttestedReason = notAttestedReason;
+    this.cells = cells;
+  }
 
   @Getter
   @Setter

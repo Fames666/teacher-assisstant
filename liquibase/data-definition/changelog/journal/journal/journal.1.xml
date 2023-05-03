@@ -32,7 +32,7 @@
       <column name="semester" type="TINYINT UNSIGNED">
         <constraints nullable="false"/>
       </column>
-      <column name="lead_teacher_id" type="UUID"/>
+      <column name="lead_teacher_id" type="CHAR(36)"/>
     </createTable>
 
     <addUniqueConstraint schemaName="${schema}"

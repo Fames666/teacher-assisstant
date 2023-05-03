@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface JournalRepository extends JpaRepository<Journal, Long> {
 
-  Optional<Journal> findByClassNumberAndClassLetterAndYear(Byte classNumber,
+  Optional<Journal> findByClassNameClassNumberAndClassNameClassLetterAndAcademicSemesterYear(Byte classNumber,
                                                            Character classLetter,
                                                            Short year);
 
-  List<Journal> findAllByTeacherContains(User teacher);
+  List<Journal> findAllByTeachersContains(User teacher);
 }

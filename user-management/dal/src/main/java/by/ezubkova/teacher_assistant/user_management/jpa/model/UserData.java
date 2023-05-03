@@ -1,6 +1,11 @@
 package by.ezubkova.teacher_assistant.user_management.jpa.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ForeignKey;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,7 +19,6 @@ public class UserData {
   @Id
   private String id;
 
-  @MapsId
   @OneToOne(optional = false)
   @PrimaryKeyJoinColumn(foreignKey = @ForeignKey(name = "fk_userdata_user"))
   private User user;
@@ -26,10 +30,4 @@ public class UserData {
   private String secondName;
 
   private String thirdName;
-
-  public UserData(String firstName, String secondName, String thirdName) {
-    this.firstName = firstName;
-    this.secondName = secondName;
-    this.thirdName = thirdName;
-  }
 }

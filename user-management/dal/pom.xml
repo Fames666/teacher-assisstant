@@ -11,9 +11,9 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>teacher-assistant-user-management-dao</artifactId>
+  <artifactId>teacher-assistant-user-management-dal</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>teacher-assistant :: user-management :: dao</name>
+  <name>teacher-assistant :: user-management :: dal</name>
 
   <dependencies>
     <dependency>

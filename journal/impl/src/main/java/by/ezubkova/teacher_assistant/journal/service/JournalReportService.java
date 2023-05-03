@@ -36,10 +36,10 @@ public class JournalReportService {
 
   public List<ConclusiveProgressReportRow> fetchDataForConclusiveProgressReport(String teacherId) {
     var teacher = findTeacher(teacherId);
-    var journals = journalRepository.findAllByTeacher(teacher);  // TODO: add year param
+    var journals = journalRepository.findAllByTeachersContains(teacher);  // TODO: add year param
     var groupedByClassJournals = new HashMap<String, List<Journal>>();
     journals.forEach(journal -> appendValueToListsMap(groupedByClassJournals,
-                                                      journal.composeFullClassName(),
+                                                      journal.getClassName().retrieveFullClassName(),
                                                       journal));
     return groupedByClassJournals.entrySet().stream()
                                  .map(entry -> populateConclusiveProgressReportRequestList(entry.getKey(), entry.getValue()))
@@ -53,7 +53,7 @@ public class JournalReportService {
         .stream()
         .map(journal -> {
           var studentsAmount = (short) journal.getRows().size();
-          var period = journal.getSemester().toString();
+          var period = journal.getAcademicSemester().getSemester().toString();
           var reportRow = new ConclusiveProgressReportRow(className, studentsAmount, period);
           populateConclusiveProgressReportRequest(className, singletonList(journal), reportRow);
           return reportRow;

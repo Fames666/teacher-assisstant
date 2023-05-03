@@ -17,8 +17,6 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,13 +28,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(uniqueConstraints = @UniqueConstraint(name = "uk_journal",
-                                             columnNames = {
-                                                 "className.classNumber",
-                                                 "className.classLetter",
-                                                 "year",
-                                                 "semester"
-                                             }))
+//@Table(uniqueConstraints = @UniqueConstraint(name = "uk_journal",
+//                                             columnNames = {
+//                                                 "classNumber",
+//                                                 "classLetter",
+//                                                 "year",
+//                                                 "semester"
+//                                             }))
 public class Journal {
 
   @Id
@@ -47,7 +45,9 @@ public class Journal {
   private ClassName className;
 
   @ManyToOne(fetch = LAZY, optional = false)
-  @JoinColumns(value = {@JoinColumn(name = "year"), @JoinColumn(name = "semester")},
+  @JoinColumns(value =
+                   {@JoinColumn(name = "year", referencedColumnName = "year"),
+                       @JoinColumn(name = "semester", referencedColumnName = "semester")},
                foreignKey = @ForeignKey(name = "fk_journal_academicsemester"))
   private AcademicSemester academicSemester;
 
@@ -73,12 +73,12 @@ public class Journal {
   public static class ClassName {
 
     @Column(nullable = false, updatable = false)
-    private Byte classNumber;
-
-    @Column(nullable = false, updatable = false)
     private Character classLetter;
 
-    public String getFullClassName() {
+    @Column(nullable = false, updatable = false)
+    private Byte classNumber;
+
+    public String retrieveFullClassName() {
       return format("%d%s", getClassNumber(), getClassLetter()).toUpperCase();
     }
   }

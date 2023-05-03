@@ -38,7 +38,7 @@
     </dependency>
     <dependency>
       <groupId>by.ezubkova.teacher-assistant.user-management</groupId>
-      <artifactId>teacher-assistant-user-management-dao</artifactId>
+      <artifactId>teacher-assistant-user-management-dal</artifactId>
       <version>${project.parent.version}</version>
     </dependency>
 
