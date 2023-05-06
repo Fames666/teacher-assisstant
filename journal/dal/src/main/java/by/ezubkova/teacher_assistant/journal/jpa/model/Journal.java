@@ -2,12 +2,9 @@ package by.ezubkova.teacher_assistant.journal.jpa.model;
 
 import static jakarta.persistence.CascadeType.*;
 import static jakarta.persistence.FetchType.LAZY;
-import static java.lang.String.format;
 
 import by.ezubkova.teacher_assistant.user_management.jpa.model.User;
 import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.Id;
@@ -18,8 +15,6 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -41,8 +36,11 @@ public class Journal {
   //  @GeneratedValue(strategy = SEQUENCE, generator = "s_journal")
   private Long id;
 
-  @Embedded
-  private ClassName className;
+  @Column(nullable = false, updatable = false)
+  private Character classLetter;
+
+  @Column(nullable = false, updatable = false)
+  private Byte classNumber;
 
   @ManyToOne(fetch = LAZY, optional = false)
   @JoinColumns(value =
@@ -65,21 +63,4 @@ public class Journal {
   @ManyToOne(fetch = LAZY)
   @JoinColumn(name = "lead_teacher_id", foreignKey = @ForeignKey(name = "fk_journal_leadteacher"))
   private User leadTeacher;
-
-  @Embeddable
-  @Data
-  @NoArgsConstructor
-  @AllArgsConstructor
-  public static class ClassName {
-
-    @Column(nullable = false, updatable = false)
-    private Character classLetter;
-
-    @Column(nullable = false, updatable = false)
-    private Byte classNumber;
-
-    public String retrieveFullClassName() {
-      return format("%d%s", getClassNumber(), getClassLetter()).toUpperCase();
-    }
-  }
 }

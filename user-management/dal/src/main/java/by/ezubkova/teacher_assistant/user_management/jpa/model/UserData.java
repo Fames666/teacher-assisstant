@@ -1,5 +1,7 @@
 package by.ezubkova.teacher_assistant.user_management.jpa.model;
 
+import static jakarta.persistence.FetchType.LAZY;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -19,7 +21,7 @@ public class UserData {
   @Id
   private String id;
 
-  @OneToOne(optional = false)
+  @OneToOne(optional = false, fetch = LAZY)
   @PrimaryKeyJoinColumn(foreignKey = @ForeignKey(name = "fk_userdata_user"))
   private User user;
 

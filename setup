@@ -2,4 +2,4 @@
   -Duser.language=ru
   -Duser.country=RU
 2. Add Env. variables:
-  LOCALE=ru_RU
+  RESOURCES_LOCALE=ru_RU

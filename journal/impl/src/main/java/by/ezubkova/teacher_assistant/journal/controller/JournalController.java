@@ -1,6 +1,6 @@
 package by.ezubkova.teacher_assistant.journal.controller;
 
-import by.ezubkova.teacher_assistant.journal.api.model.JournalResponse;
+import by.ezubkova.teacher_assistant.journal.api.model.JournalPreviewResponse;
 import by.ezubkova.teacher_assistant.journal.api.service.JournalCrudService;
 import jakarta.validation.constraints.NotBlank;
 import java.util.List;
@@ -24,7 +24,7 @@ public class JournalController {
   }
 
   @GetMapping(params = "requesterId")
-  public List<JournalResponse> getAllJournals(@NotBlank @RequestParam String requesterId) {
+  public List<JournalPreviewResponse> getAllJournals(@NotBlank @RequestParam String requesterId) {
     return journalCrudService.readJournalsAvailableForUser(requesterId);
   }
 }

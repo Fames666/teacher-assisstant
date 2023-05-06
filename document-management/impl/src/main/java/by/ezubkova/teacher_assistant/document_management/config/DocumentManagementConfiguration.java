@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class DocumentManagementConfiguration {
 
   private static final String MESSAGES_FILENAME = "messages";
-  private static final String DEFAULT_ENCODING = "UTF-32";
+  private static final String DEFAULT_ENCODING = "UTF-8";
 
   @Value("${application.messages.prefixes.document-management}")
   private final String messagesModulePrefix;

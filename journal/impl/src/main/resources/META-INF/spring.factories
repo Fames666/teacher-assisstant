@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  by.ezubkova.teacher_assistant.user_management.startup.TestDataSupplier\
-  by.ezubkova.teacher_assistant.journal.config.JournalTestDataSupplier

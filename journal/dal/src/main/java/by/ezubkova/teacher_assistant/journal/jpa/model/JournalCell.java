@@ -1,6 +1,5 @@
 package by.ezubkova.teacher_assistant.journal.jpa.model;
 
-import static by.ezubkova.teacher_assistant.journal.api.constant.JournalConstants.UNCERTAINTY_REASON_LENGTH;
 import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.FetchType.LAZY;
 
@@ -30,17 +29,17 @@ public class JournalCell {
   @EmbeddedId
   private JournalCellPk id;
 
-  @Column(nullable = false)
+  //  @Column(nullable = false)
   @Enumerated(STRING)
   private JournalCellHighlight highlightType;
 
-  @Column(insertable = false)
+  //  @Column(insertable = false)
   private Byte mark;
 
-  @Column(insertable = false)
-  private boolean uncertain;
+  //  @Column(insertable = false)
+  private Boolean uncertain;
 
-  @Column(length = UNCERTAINTY_REASON_LENGTH, insertable = false)
+  //  @Column(length = UNCERTAINTY_REASON_LENGTH, insertable = false)
   private String uncertaintyReason;
 
   public JournalCell(LocalDate date,

@@ -1,7 +1,7 @@
 package by.ezubkova.teacher_assistant.user_management.jpa.model;
 
 import static jakarta.persistence.CascadeType.ALL;
-import static org.hibernate.annotations.FetchMode.JOIN;
+import static jakarta.persistence.FetchType.LAZY;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,7 +14,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Fetch;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -57,8 +56,8 @@ public class User implements UserDetails {
   @Column(nullable = false)
   private boolean enabled;
 
-  @OneToOne(mappedBy = "user", cascade = ALL)
-  @Fetch(JOIN)
+  // TODO: merge in one table
+  @OneToOne(mappedBy = "user", cascade = ALL, fetch = LAZY)
   private UserData userData;
 
   @Override

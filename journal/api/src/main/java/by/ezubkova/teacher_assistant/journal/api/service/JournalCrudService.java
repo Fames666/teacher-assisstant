@@ -1,5 +1,6 @@
 package by.ezubkova.teacher_assistant.journal.api.service;
 
+import by.ezubkova.teacher_assistant.journal.api.model.JournalPreviewResponse;
 import by.ezubkova.teacher_assistant.journal.api.model.JournalResponse;
 import jakarta.validation.constraints.NotNull;
 import java.util.List;
@@ -14,5 +15,5 @@ public interface JournalCrudService {
                                          @NotNull Character classLetter,
                                          @NotNull Short year);
 
-  List<JournalResponse> readJournalsAvailableForUser(@NotNull String userId);
+  List<JournalPreviewResponse> readJournalsAvailableForUser(@NotNull String userId);
 }
