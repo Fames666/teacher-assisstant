@@ -5,19 +5,11 @@
       <span class="journals-list-heading__hint">{{ journalsListHeaderHint }}</span>
     </h1>
     <ul>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
-      <li element="journals-list-item"></li>
+      <li *ngFor="let journalPreview of journalsPreviews; let idx = index"
+          element="journals-list-item"
+          [id]="journalPreview.id"
+          [journalFullName]="journalPreview.journalFullName"
+          [listItemIndex]="idx + 1"></li>
     </ul>
   </div>
   <div class="journal-students-wrapper journals-sub-container">
@@ -26,7 +18,12 @@
       <button>Search</button>
     </div>
     <ul>
-      <li element="journal-students-item"></li>
+      <li *ngFor="let journalUserPreview of journalUsersPreviews; let idx = index"
+          element="journal-students-item"
+          [fullName]="journalUserPreview.fullName"
+          [lastOnline]="journalUserPreview.lastOnline"
+          [marker]="journalUserPreview.marker"
+          [remarksAmount]="journalUserPreview.remarksAmount"></li>
     </ul>
   </div>
 </div>

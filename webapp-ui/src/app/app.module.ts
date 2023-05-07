@@ -15,6 +15,8 @@ import { JournalsListItemComponent } from './journals-list/journals-list-item/jo
 import { JournalStudentsItemComponent } from './journals-list/journal-students-item/journal-students-item.component';
 import { JournalsListComponent } from './journals-list/journals-list.component';
 
+import { JournalsListService } from './service/journals-list-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,7 @@ import { JournalsListComponent } from './journals-list/journals-list.component';
     HttpClientModule,
     MarkdownModule.forRoot({ loader: HttpClient, sanitize: SecurityContext.NONE })
   ],
-  providers: [],
+  providers: [JournalsListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
