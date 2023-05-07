@@ -20,3 +20,5 @@ application:
       prefixes:
         #        document-management-module: by.ezubkova.teacher-assistant.document-management
         journal-module-message-source: by.ezubkova.teacher-assistant.journal
+        user-management-module-message-source: by.ezubkova.teacher-assistant.user-management
+

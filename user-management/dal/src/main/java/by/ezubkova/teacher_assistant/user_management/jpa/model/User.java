@@ -3,7 +3,9 @@ package by.ezubkova.teacher_assistant.user_management.jpa.model;
 import static jakarta.persistence.CascadeType.ALL;
 import static jakarta.persistence.FetchType.LAZY;
 
+import by.ezubkova.teacher_assistant.user_management.jpa.model.extension.LastActivity;
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -59,6 +61,9 @@ public class User implements UserDetails {
   // TODO: merge in one table
   @OneToOne(mappedBy = "user", cascade = ALL, fetch = LAZY)
   private UserData userData;
+
+  @Embedded
+  private LastActivity lastActivity;
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {

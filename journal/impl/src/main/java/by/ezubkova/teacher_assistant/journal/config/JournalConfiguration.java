@@ -1,6 +1,6 @@
 package by.ezubkova.teacher_assistant.journal.config;
 
-import static by.ezubkova.teacher_assistant.common.constant.CommonConstants.JOURNAL_MODULE_MSG_SRC;
+import static by.ezubkova.teacher_assistant.journal.api.constant.JournalConstants.JOURNAL_MODULE_MSG_SRC;
 
 import by.ezubkova.teacher_assistant.common.factory.MessageSourceFactory;
 import by.ezubkova.teacher_assistant.common.factory.product.PrefixedMessageSource;

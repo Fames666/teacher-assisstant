@@ -3,3 +3,4 @@
   -Duser.country=RU
 2. Add Env. variables:
   RESOURCES_LOCALE=ru_RU
+3. Check whether application.yaml file is on classpath

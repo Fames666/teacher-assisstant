@@ -5,9 +5,12 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class CommonConstants {
 
-  public static final String JOURNAL_MODULE_MSG_SRC = "journal-module-message-source";
-
   public static final String EMPTY = "";
   public static final String DOT = ".";
+  public static final String DASH = "-";
   public static final String UNDERSCORE = "_";
+  public static final String SPACE = " ";
+  public static final String SLASH = "/";
+
+  public static final String REGEX_DOT = "\\.";
 }

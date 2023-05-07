@@ -2,12 +2,13 @@ package by.ezubkova.teacher_assistant.journal.api.service;
 
 import by.ezubkova.teacher_assistant.journal.api.model.JournalPreviewResponse;
 import by.ezubkova.teacher_assistant.journal.api.model.JournalResponse;
+import by.ezubkova.teacher_assistant.journal.api.model.JournalUserPreviewResponse;
 import jakarta.validation.constraints.NotNull;
 import java.util.List;
 import org.springframework.validation.annotation.Validated;
 
 @Validated
-public interface JournalCrudService {
+public interface JournalService {
 
   void getJournal(@NotNull Long id);
 
@@ -15,5 +16,7 @@ public interface JournalCrudService {
                                          @NotNull Character classLetter,
                                          @NotNull Short year);
 
-  List<JournalPreviewResponse> readJournalsAvailableForUser(@NotNull String userId);
+  List<JournalPreviewResponse> findJournalsAvailableForUser(@NotNull String userId);
+
+  List<JournalUserPreviewResponse> createJournalUsersPreviews(@NotNull Long journalId);
 }

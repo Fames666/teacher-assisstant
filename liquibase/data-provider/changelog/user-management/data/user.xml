@@ -22,6 +22,7 @@
       <column name="id">74148075-b59b-4ac4-860d-92a2dbf74abd</column>
       <column name="username">test_teacher.1</column>
       <column name="password">test</column>
+      <column name="online">true</column>
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">74148075-b59b-4ac4-860d-92a2dbf74abd</column>
@@ -33,6 +34,7 @@
       <column name="id">efd30ad0-dc93-4602-9fc3-bb8c31820c12</column>
       <column name="username">test_teacher.2</column>
       <column name="password">test</column>
+      <column name="online">false</column>
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">efd30ad0-dc93-4602-9fc3-bb8c31820c12</column>
@@ -44,6 +46,7 @@
       <column name="id">7a24a9fb-fe24-42d9-8676-8c2bbd9d469e</column>
       <column name="username">test_teacher.3</column>
       <column name="password">test</column>
+      <column name="online">true</column>
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">7a24a9fb-fe24-42d9-8676-8c2bbd9d469e</column>
@@ -56,6 +59,7 @@
       <column name="id">92bceed0-e29b-45a0-b825-e359b1a95126</column>
       <column name="username">test_teacher.4</column>
       <column name="password">test</column>
+      <column name="online">false</column>
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">92bceed0-e29b-45a0-b825-e359b1a95126</column>
@@ -68,6 +72,7 @@
       <column name="id">78604e90-6498-4b60-8139-88891c4ea6c6</column>
       <column name="username">test_teacher.5</column>
       <column name="password">test</column>
+      <column name="online">true</column>
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">78604e90-6498-4b60-8139-88891c4ea6c6</column>
@@ -79,6 +84,7 @@
       <column name="id">c551e374-8f86-43f8-b8ef-96be1cd8543c</column>
       <column name="username">test_teacher.6</column>
       <column name="password">test</column>
+      <column name="online">false</column>
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">c551e374-8f86-43f8-b8ef-96be1cd8543c</column>
@@ -90,6 +96,7 @@
       <column name="id">3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f</column>
       <column name="username">test_teacher.7</column>
       <column name="password">test</column>
+      <column name="online">true</column>
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f</column>
@@ -101,6 +108,7 @@
       <column name="id">4ede5553-5360-4c4e-8e49-768773ba9528</column>
       <column name="username">test_teacher.8</column>
       <column name="password">test</column>
+      <column name="online">false</column>
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">4ede5553-5360-4c4e-8e49-768773ba9528</column>
@@ -112,6 +120,7 @@
       <column name="id">b301872d-cc1d-43a2-ba7c-902d1808183e</column>
       <column name="username">test_teacher.9</column>
       <column name="password">test</column>
+      <column name="online">true</column>
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">b301872d-cc1d-43a2-ba7c-902d1808183e</column>
@@ -124,6 +133,7 @@
       <column name="id">ac012069-31d3-4e90-be0d-00afffbe883a</column>
       <column name="username">test_teacher.10</column>
       <column name="password">test</column>
+      <column name="online">false</column>
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">ac012069-31d3-4e90-be0d-00afffbe883a</column>
@@ -137,6 +147,8 @@
       <column name="id">ec250799-8299-4f51-94e8-783627bb5385</column>
       <column name="username">test_student.1</column>
       <column name="password">test</column>
+      <column name="online">false</column>
+      <column name="last_online_at">2023-07-05T18:00:00</column>
     </insert>
     <insert schemaName="${schema}" tableName="user_data">
       <column name="id">ec250799-8299-4f51-94e8-783627bb5385</column>

@@ -17,6 +17,22 @@
     <delete schemaName="${schema}" tableName="journal_teacher"/>
   </changeSet>
 
+  <changeSet id="journal.journal-cell.${remove}" author="${author}" runAlways="true">
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="journal_cell"/>
+    </preConditions>
+
+    <delete schemaName="${schema}" tableName="journal_cell"/>
+  </changeSet>
+
+  <changeSet id="journal.journal-row.${remove}" author="${author}" runAlways="true">
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="journal_row"/>
+    </preConditions>
+
+    <delete schemaName="${schema}" tableName="journal_row"/>
+  </changeSet>
+
   <changeSet id="journal.journal.${remove}" author="${author}" runAlways="true">
     <preConditions onFail="MARK_RAN">
       <tableExists schemaName="${schema}" tableName="journal"/>

@@ -36,6 +36,7 @@ public class JournalCell {
   //  @Column(insertable = false)
   private Byte mark;
 
+  // TODO: rename to "remarked"
   //  @Column(insertable = false)
   private Boolean uncertain;
 

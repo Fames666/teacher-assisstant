@@ -1,7 +1,8 @@
 package by.ezubkova.teacher_assistant.journal.controller;
 
 import by.ezubkova.teacher_assistant.journal.api.model.JournalPreviewResponse;
-import by.ezubkova.teacher_assistant.journal.api.service.JournalCrudService;
+import by.ezubkova.teacher_assistant.journal.api.model.JournalUserPreviewResponse;
+import by.ezubkova.teacher_assistant.journal.api.service.JournalService;
 import jakarta.validation.constraints.NotBlank;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -16,15 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class JournalController {
 
-  private final JournalCrudService journalCrudService;
-
-  @GetMapping("/{journalId}")
-  public String getJournal(@PathVariable Long journalId) {
-    return null;
-  }
+  private final JournalService journalService;
 
   @GetMapping(params = "requesterId")
-  public List<JournalPreviewResponse> getAllJournals(@NotBlank @RequestParam String requesterId) {
-    return journalCrudService.readJournalsAvailableForUser(requesterId);
+  public List<JournalPreviewResponse> getJournalsForRequester(@NotBlank @RequestParam String requesterId) {
+    return journalService.findJournalsAvailableForUser(requesterId);
+  }
+
+  @GetMapping("/{journalId}/users")
+  public List<JournalUserPreviewResponse> getJournalUsersPreviews(@PathVariable Long journalId) {
+    return journalService.createJournalUsersPreviews(journalId);
   }
 }

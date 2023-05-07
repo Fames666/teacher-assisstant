@@ -26,6 +26,11 @@
       <artifactId>teacher-assistant-user-management-dal</artifactId>
       <version>${parent.version}</version>
     </dependency>
+    <dependency>
+      <groupId>by.ezubkova.teacher-assistant.common</groupId>
+      <artifactId>teacher-assistant-common</artifactId>
+      <version>${parent.version}</version>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>

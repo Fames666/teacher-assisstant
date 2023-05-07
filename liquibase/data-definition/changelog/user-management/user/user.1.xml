@@ -39,6 +39,10 @@
       <column name="enabled" type="BOOLEAN" defaultOnNull="true" defaultValue="true">
         <constraints nullable="false"/>
       </column>
+      <column name="online" type="BOOLEAN" defaultOnNull="true" defaultValue="false">
+        <constraints nullable="false"/>
+      </column>
+      <column name="last_online_at" type="TIMESTAMP"/>
     </createTable>
 
     <createTable schemaName="${schema}" tableName="user_data">
