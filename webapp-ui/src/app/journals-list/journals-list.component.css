@@ -1,4 +1,5 @@
 @import "./journals-list-item/journals-list-item.component.css";
+@import "./journals-list-item-loading-dummy/journals-list-item-loading-dummy.component.css";
 @import "./journal-students-item/journal-students-item.component.css";
 
 main[page=journal] {
@@ -104,3 +105,15 @@ main[page=journal] {
 .journal-students-searchbox > button:active {
   box-shadow: inset 0 2px 4px -4px var(--color-shadow);
 }
+
+.journal-students-awaiting-dummy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: calc(var(--height-item) * 1.5);
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+}
+

@@ -1,4 +1,5 @@
-*[element=journals-list-item] {
+.journals-list-item,
+*[element=journals-list-item-loading-dummy] {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,6 +14,14 @@
   background-color: var(--color-fg);
   border: solid 1px var(--color-border);
   border-radius: var(--border-radius-item);
+}
+
+.journals-list-item:hover {
+  box-shadow: 0 0 5px -3px var(--color-shadow);
+}
+
+.journals-list-item.clicked {
+  border-color: var(--color-border-active);
 }
 
 .journals-list-item-group {

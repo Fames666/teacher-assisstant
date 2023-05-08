@@ -1,4 +1,5 @@
-*[element=journal-students-item] {
+*[element=journal-students-item],
+.journal-students-awaiting-dummy {
   --color-text-name: var(--color-blue-h210-s41-b30);
   --color-text-indicator: var(--color-white-h86-s3-b100);
   --color-indicator-online: var(--color-green-h132-s46-b74);
