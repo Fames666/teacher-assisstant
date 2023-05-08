@@ -8,7 +8,8 @@
   </div>
 </div>
 <div class="journal-students-item-group">
-  <div class="journal-students-item__indicator" type="remark">
-    <span class="journal-students-item__indicator-counter">{{ remarksAmount }}</span>
+  <div class="journal-students-item__indicator" [attr.type]="resolveMarkerType()">
+    <span *ngIf="resolveMarkerType() === 'remark'"
+          class="journal-students-item__indicator-counter">{{ remarksAmount }}</span>
   </div>
 </div>
