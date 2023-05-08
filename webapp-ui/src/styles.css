@@ -1,1 +1,123 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/app.component.css";
+
+@font-face {
+  font-family: 'Open Sans';
+  src:
+    url("assets/fonts/OpenSans/OpenSans-Italic.ttf"),
+    url("assets/fonts/OpenSans/OpenSans-Bold-Italic.ttf");
+    /* TODO: replace with dynamic link */
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src:
+    url("assets/fonts/Ubuntu/Ubuntu-Regular.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-Italic.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-Bold.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-BoldItalic.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-Light.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-LightItalic.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-Medium.ttf"),
+    url("assets/fonts/Ubuntu/Ubuntu-MediumItalic.ttf");
+    /* TODO: replace with dynamic link */
+}
+
+* {
+  --color-bg-dark: #25313e;
+  --color-bg-darker: #1b252e;
+  --color-bg-pane: #374b5e;
+  --color-bg-control: #2e3e4e;
+  --color-bg-notifications: #fb6b5b;
+  --color-bg-green: #89cc97;
+  --color-bg-green-dark: #65bd77;
+  --color-bg-green-darker: #53b567;
+
+  --color-btn-purple: #a44bb9;
+  --color-btn-purple-hover: #9544a8;
+
+
+  --color-text-light: #adbece;
+  --color-text-grey: #8d8276;
+  --color-text-inactive: #999999;
+
+  --z-index-card-details: 5000;
+
+  /* Updated naming */
+  /* h120 -- hue = 120 */
+  /* s80  -- saturation = 80 */
+  /* b50  -- brightness = 50 */
+  /* o90  -- opacity = 90 */
+  /* 0 if omitted */
+  /* Check parameters here: https://www.color-blindness.com/color-name-hue/ */
+  --color-cyan-h180-s60-b75: #4cc0c1;
+  --color-white-lilac: #f7f7f7;  /* Darker > */
+
+  --color-white-b99: #fefefe;
+  --color-white-b87: #dfdfdf;
+  --color-white-h86-s3-b100: #fbfff6;  /* For fonts only */
+
+  --color-grey-h120-b45: #747574;
+  --color-grey-h120-b45-o176: #747574b0;
+
+  --color-blue-h210-s41-b30: #2e3e4e;
+
+  --color-green-h132-s46-b74: #65bd77;
+
+  box-sizing: border-box;
+
+  font-family: 'Ubuntu', 'Open Sans', Tahoma, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  --height-header: 50px;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+}
+
+/* Font settings start */
+.open-sans--bold-italic {
+  font-family: 'Open Sans', Tahoma, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.open-sans--italic {
+  font-family: 'Open Sans', Tahoma, sans-serif;
+  font-style: italic;
+}
+
+/* TODO: is needed? */
+.font-ico::before {
+  font-family: "Font Awesome 6 Free";
+}
+/* Font settings end */
+
+/* Icons settings start */
+.ico {
+  display: flex;
+  align-items: center;
+  height: 100%;  /* Customized through parent element */
+}
+
+.ico--light {
+  color: var(--color-text-light);
+}
+
+.ico--dark-inactive {
+  color: var(--color-text-inactive);
+}
+/* Icons settings end */

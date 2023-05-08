@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>by.ezubkova.teacher-assistant.journal</groupId>
+    <artifactId>teacher-assistant-journal</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>teacher-assistant-journal-dal</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>teacher-assistant :: journal :: dao</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>by.ezubkova.teacher-assistant.journal</groupId>
+      <artifactId>teacher-assistant-journal-api</artifactId>
+      <version>${parent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>by.ezubkova.teacher-assistant.user-management</groupId>
+      <artifactId>teacher-assistant-user-management-dal</artifactId>
+      <version>${parent.version}</version>
+    </dependency>
+
+    <!--suppress VulnerableLibrariesLocal -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <!--suppress VulnerableLibrariesLocal -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+</project>

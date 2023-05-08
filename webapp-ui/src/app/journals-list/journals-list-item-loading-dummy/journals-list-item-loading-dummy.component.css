@@ -1,0 +1,24 @@
+.journals-list-item-loading-text {
+  color: transparent;
+
+  background: right linear-gradient(90deg,
+                                    var(--color-border) 42%,
+                                    transparent,
+                                    var(--color-border) 58%);
+  background-size: 300% 100%;
+  background-position-x: 0%;
+  border-radius: 2px;
+
+  -webkit-animation: JournalsListItemLoadingText 2.5s ease infinite;
+  -moz-animation: JournalsListItemLoadingText 2.5s ease infinite;
+  animation: JournalsListItemLoadingText 2.5s ease infinite;
+}
+
+@keyframes JournalsListItemLoadingText {
+  from {
+    background-position-x: 100%;
+  }
+  to {
+    background-position-x: 0%;
+  }
+}

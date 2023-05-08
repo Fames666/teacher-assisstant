@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "application.resources.messages.default-locale",
+      "type": "java.lang.String",
+      "description": "Default locale for MessageSource."
+    },
+    {
+      "name": "application.resources.messages.prefixes",
+      "type": "java.util.Map",
+      "description": "Mapping between module's MessageSource and module related messages' prefixes."
+    }
+  ]
+}

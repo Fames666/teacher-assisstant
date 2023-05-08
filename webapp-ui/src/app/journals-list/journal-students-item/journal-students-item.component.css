@@ -1,0 +1,86 @@
+*[element=journal-students-item],
+.journal-students-awaiting-dummy {
+  --color-text-name: var(--color-blue-h210-s41-b30);
+  --color-text-indicator: var(--color-white-h86-s3-b100);
+  --color-indicator-online: var(--color-green-h132-s46-b74);
+  --color-indicator-offline: var(--color-grey-h120-b45-o176);
+  --color-indicator-remark: var(--color-cyan-h180-s60-b75);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 var(--padding-horizontal-item);
+  height: var(--height-item);
+  background-color: var(--color-fg);
+  border: solid 1px var(--color-border);
+}
+
+.journal-students-item-group {
+  display: flex;
+  align-items: center;
+  height: 70%;
+}
+
+.journal-students-item__avatar-holder {
+  --height-avatar: 35px;
+
+  height: var(--height-avatar);
+  width: var(--height-avatar);
+}
+
+.journal-students-item__avatar-holder > img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.journal-students-item__short-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-left: 10px;
+  height: 100%;
+}
+
+.journal-students-item__short-data__name {
+  color: var(--color-text-name);
+  font-weight: lighter;
+  font-size: 0.9rem;
+}
+
+.journal-students-item__short-data__last-online {
+  font-size: 0.8rem;
+}
+
+.journal-students-item__indicator {
+  --height-indicator: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: var(--height-indicator);
+  width: var(--height-indicator);
+  border-radius: 50%;
+}
+
+.journal-students-item__indicator[type=online] {
+  background-color: var(--color-indicator-online);
+  border: solid 2px var(--color-indicator-online);
+}
+
+.journal-students-item__indicator[type=offline] {
+  background-color: transparent;
+  border: solid 2px var(--color-indicator-offline);
+}
+
+.journal-students-item__indicator[type=remark] {
+  background-color: var(--color-indicator-remark);
+  border: solid 2px var(--color-indicator-remark);
+}
+
+.journal-students-item__indicator-counter {
+  color: var(--color-text-indicator);
+  font-size: 0.7rem;
+}

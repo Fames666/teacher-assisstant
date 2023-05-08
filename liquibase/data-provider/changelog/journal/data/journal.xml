@@ -1,0 +1,2298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd"
+                   contextFilter="provide-test-data">
+
+  <property name="author" value="system"/>
+  <property name="schema" value="public"/>
+  <property name="insert" value="insert_test_data"/>
+
+  <changeSet id="journal.journal.${insert}" author="${author}" runAlways="true">
+    <validCheckSum>8:c85b035ffd36fba22af4bac88df0f978</validCheckSum>
+
+    <preConditions onFail="HALT">
+      <tableExists schemaName="${schema}" tableName="journal"/>
+    </preConditions>
+
+    <!-- 5А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <!-- 5Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <!-- 5В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <!-- 5Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="5"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <!-- 6А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="ac012069-31d3-4e90-be0d-00afffbe883a"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="ac012069-31d3-4e90-be0d-00afffbe883a"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="ac012069-31d3-4e90-be0d-00afffbe883a"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="ac012069-31d3-4e90-be0d-00afffbe883a"/>
+    </insert>
+
+    <!-- 6Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <!-- 6В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <!-- 6Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="6"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <!-- 7А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <!-- 7Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <!-- 7В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <!-- 7Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="7"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <!-- 8А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+
+    <!-- 8Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <!-- 8В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <!-- 8Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="8"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <!-- 9А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <!-- 9Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <!-- 9В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <!-- 9Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="9"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <!-- 10А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <!-- 10Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+
+    <!-- 10В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <!-- 10Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="10"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <!-- 11А class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="А"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="92bceed0-e29b-45a0-b825-e359b1a95126"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="78604e90-6498-4b60-8139-88891c4ea6c6"/>
+    </insert>
+
+    <!-- 11Б class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Б"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="c551e374-8f86-43f8-b8ef-96be1cd8543c"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f"/>
+    </insert>
+
+    <!-- 11В class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="В"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="4ede5553-5360-4c4e-8e49-768773ba9528"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="b301872d-cc1d-43a2-ba7c-902d1808183e"/>
+    </insert>
+
+    <!-- 11Г class -->
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="1"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="2"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="3"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="journal">
+      <column name="id" valueSequenceNext="s_journal"/>
+      <column name="class_number" valueNumeric="11"/>
+      <column name="class_letter" value="Г"/>
+      <column name="year" valueNumeric="2023"/>
+      <column name="semester" valueNumeric="4"/>
+      <column name="lead_teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="74148075-b59b-4ac4-860d-92a2dbf74abd"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="efd30ad0-dc93-4602-9fc3-bb8c31820c12"/>
+    </insert>
+    <insert schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" valueSequenceCurrent="s_journal"/>
+      <column name="teacher_id" value="7a24a9fb-fe24-42d9-8676-8c2bbd9d469e"/>
+    </insert>
+  </changeSet>
+
+</databaseChangeLog>

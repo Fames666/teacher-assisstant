@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+  <property name="author" value="system"/>
+  <property name="schema" value="public"/>
+
+  <changeSet id="journal.journal_teacher.1.create_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="HALT">
+      <not>
+        <tableExists schemaName="${schema}" tableName="journal_teacher"/>
+      </not>
+    </preConditions>
+
+    <createTable schemaName="${schema}" tableName="journal_teacher">
+      <column name="journal_id" type="BIGINT">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_journal_teacher"/>
+      </column>
+      <column name="teacher_id" type="CHAR(36)">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_journal_teacher"/>
+      </column>
+    </createTable>
+
+    <addForeignKeyConstraint baseTableName="journal_teacher"
+                             baseColumnNames="journal_id"
+                             constraintName="fk_journaluser_journal"
+                             referencedTableName="journal"
+                             referencedColumnNames="id"/>
+    <addForeignKeyConstraint baseTableName="journal_teacher"
+                             baseColumnNames="teacher_id"
+                             constraintName="fk_journaluser_teacher"
+                             referencedTableName="user"
+                             referencedColumnNames="id"/>
+  </changeSet>
+
+</databaseChangeLog>

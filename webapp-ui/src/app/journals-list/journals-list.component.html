@@ -1,0 +1,48 @@
+<div class="journals-horizontal-container">
+  <div class="journals-sub-container">
+    <h1 class="journals-list-heading">
+      {{ journalsListHeader }}
+      <span class="journals-list-heading__hint">{{ journalsListHeaderHint }}</span>
+    </h1>
+    <ul>
+      <ng-container *ngIf="journalsPreviews.length > 0; else journalsListItemLoadingDummyTpl">
+        <li *ngFor="let journalPreview of journalsPreviews; let idx = index"
+            element="journals-list-item"
+            [class.clicked]=""
+            [id]="journalPreview.id"
+            [journalFullName]="journalPreview.journalFullName"
+            [listItemIndex]="idx + 1"
+            [parentObservable]="journalListObservable"
+            (journalSelected)="onJournalSelected($event)"
+            (usersLoaded)="onUsersLoaded($event)"></li>
+      </ng-container>
+      <ng-template #journalsListItemLoadingDummyTpl>
+        <li *ngFor="let _ of dummiesIndexes"
+            element="journals-list-item-loading-dummy"></li>
+      </ng-template>
+    </ul>
+  </div>
+  <div class="journal-students-wrapper journals-sub-container">
+    <div class="journal-students-searchbox">
+      <input placeholder="Search">
+      <button>Search</button>
+    </div>
+    <ul>
+      <ng-container *ngIf="showUsersList && usersListLoaded; else journalStudentsAwaitingDummyTpl">
+        <li *ngFor="let journalUserPreview of journalUsersPreviews; let idx = index"
+            element="journal-students-item"
+            [fullName]="journalUserPreview.fullName"
+            [lastOnline]="journalUserPreview.lastOnline"
+            [marker]="journalUserPreview.marker"
+            [remarksAmount]="journalUserPreview.remarksAmount"></li>
+      </ng-container>
+      <ng-template #journalStudentsAwaitingDummyTpl>
+        <li class="journal-students-awaiting-dummy">
+          <span>{{ journalStudentsAwaitingDummyText }}</span>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
+</div>
+
+

@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  datasource:
+    username: teacher_assistant_backend
+    password: q9TEAweN24aQ5uPvVN5
+    url: jdbc:postgresql://localhost:5432/teacher_assistant
+    driver-class-name: org.postgresql.Driver
+
+application:
+  resources:
+    messages:
+      default-locale: ${RESOURCES_LOCALE:ru-RU}
+      prefixes:
+        #        document-management-module: by.ezubkova.teacher-assistant.document-management
+        journal-module-message-source: by.ezubkova.teacher-assistant.journal
+        user-management-module-message-source: by.ezubkova.teacher-assistant.user-management
+

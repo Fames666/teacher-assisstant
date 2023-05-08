@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+  <property name="author" value="system"/>
+  <property name="schema" value="public"/>
+
+  <changeSet id="journal.journal-cell.1.create_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="HALT">
+      <not>
+        <tableExists schemaName="${schema}" tableName="journal_cell"/>
+      </not>
+    </preConditions>
+
+    <createTable schemaName="${schema}" tableName="journal_cell">
+      <column name="row_id" type="BIGINT">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_journal_cell"/>
+      </column>
+      <column name="student_id" type="CHAR(36)">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_journal_cell"/>
+      </column>
+      <column name="date" type="DATE">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_journal_cell"/>
+      </column>
+      <column name="highlight_type" type="VARCHAR(64)"/>
+      <column name="mark" type="TINYINT UNSIGNED"/>
+      <column name="uncertain" type="BOOLEAN"/>
+      <column name="uncertainty_reason" type="VARCHAR(512)"/>
+    </createTable>
+
+    <addForeignKeyConstraint baseTableName="journal_cell"
+                             baseColumnNames="row_id,student_id"
+                             constraintName="fk_journalcell_journalrow"
+                             referencedTableName="journal_row"
+                             referencedColumnNames="journal_id,student_id"/>
+  </changeSet>
+
+</databaseChangeLog>

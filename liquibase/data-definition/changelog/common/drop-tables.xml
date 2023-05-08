@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd"
+                   contextFilter="drop-existing">
+
+  <property name="author" value="system"/>
+  <property name="schema" value="public"/>
+
+  <changeSet id="journal.journal-teacher.1.drop_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="journal_teacher"/>
+    </preConditions>
+
+    <dropTable schemaName="${schema}" tableName="journal_teacher"/>
+  </changeSet>
+
+  <changeSet id="journal.journal-cell.1.drop_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="journal_cell"/>
+    </preConditions>
+
+    <dropTable schemaName="${schema}" tableName="journal_cell"/>
+  </changeSet>
+
+  <changeSet id="journal.journal-row.1.drop_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="journal_row"/>
+    </preConditions>
+
+    <dropTable schemaName="${schema}" tableName="journal_row"/>
+  </changeSet>
+
+  <changeSet id="journal.journal.1.drop_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="journal"/>
+    </preConditions>
+
+    <dropTable schemaName="${schema}" tableName="journal"/>
+  </changeSet>
+
+  <changeSet id="journal.academic-semester.1.drop_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="academic_semester"/>
+    </preConditions>
+
+    <dropTable schemaName="${schema}" tableName="academic_semester"/>
+  </changeSet>
+
+  <changeSet id="user-management.user.1.drop_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="user"/>
+      <tableExists schemaName="${schema}" tableName="user_data"/>
+    </preConditions>
+
+    <dropTable schemaName="${schema}" tableName="user_data"/>
+    <dropTable schemaName="${schema}" tableName="user"/>
+  </changeSet>
+
+</databaseChangeLog>

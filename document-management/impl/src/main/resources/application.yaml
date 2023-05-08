@@ -1,0 +1,15 @@
+application:
+  messages:
+    prefixes:
+      document-management: by.ezubkova.teacher-assistant.document-management.
+    default-locale: ${LOCALE:ru_RU}
+  configuration-properties:
+    document-management:
+      reports:
+        conclusive-progress-report:
+          min-document-margin: 0.5  # in centimeters
+          max-document-margin: 2  # in centimeters
+          default-font-location: fonts/times.ttf
+          total-marks-columns: 10
+          total-columns: ${total-marks-columns} + 9
+          tracks-per-page: 4

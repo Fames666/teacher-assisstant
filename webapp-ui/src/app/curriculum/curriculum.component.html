@@ -1,0 +1,328 @@
+<div class="dashboard-wrapper">
+
+  <div class="dashboard-header">
+    <div class="dashboard-movement-btn-wrapper">
+      <button class="dashboard-movement-btn">
+        <i class="fa-solid fa-grip-vertical ico"></i>
+      </button>
+    </div>
+    <span class="dashboard-header__text">Сентябрь 2023</span>  <!-- TODO: replace with variable -->
+    <div class="dashboard-header__free-space"></div>
+    <ul class="dashboard-header__controls">
+      <li class="dashboard-control">
+        <i class="fa-solid fa-plus ico"></i>
+      </li>
+      <li class="dashboard-control">
+        <i class="fa-solid fa-link ico"></i>
+      </li>
+      <li class="dashboard-control">
+        <i class="fa-solid fa-ellipsis-vertical ico"></i>
+      </li>
+      <li class="dashboard-control">
+        <i class="fa-solid fa-angle-up ico"></i>
+      </li>
+    </ul>
+  </div>
+
+  <div class="dashboard-block first-dashboard-block">
+    <ul class="dashboard-weekdays">
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Понедельник</span>  <!-- TODO: replace with variable -->
+        <span class="dashboard-counter">5</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Вторник</span>
+        <span class="dashboard-counter">1</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Среда</span>
+        <span class="dashboard-counter">124</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Четверг</span>
+        <span class="dashboard-counter">55</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Пятница</span>
+        <span class="dashboard-counter">0</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Суббота</span>
+        <span class="dashboard-counter">2222</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Воскресенье</span>
+        <span class="dashboard-counter">228</span>
+      </li>
+    </ul>
+
+    <div class="dashboard-data">
+      <div class="dashboard-data-header">
+        <div class="dashboard-data-header__text">1-я неделя</div>
+        <ul class="dashboard-data-header__controls">
+          <li class="dashboard-control">
+            <i class="fa-solid fa-ellipsis-vertical ico"></i>
+          </li>
+          <li class="dashboard-data-header__counter-wrapper">
+            <span class="dashboard-counter">1488</span>
+          </li>
+          <li class="dashboard-control">
+            <i class="fa-solid fa-angle-up ico"></i>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="dashboard-data-columns">
+        <li dashboard-col-id="mon" class="dashboard-column">
+          <div element="curriculum-card" type="lesson"></div>
+          <div element="curriculum-card" type="lesson"></div>
+        </li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="tue" class="dashboard-column">
+          <div element="curriculum-card" type="kontrolnaya"></div>
+          <div element="curriculum-card" type="lesson"></div>
+          <div element="curriculum-card" type="kontrolnaya"></div>
+        </li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="wen" class="dashboard-column">
+          <div element="curriculum-card" type="subbotnik"></div>
+        </li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="thu" class="dashboard-column"></li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="fri" class="dashboard-column">
+          <div element="curriculum-card" type="kontrolnaya"></div>
+          <div element="curriculum-card" type="subbotnik"></div>
+        </li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="sat" class="dashboard-column"></li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="sun" class="dashboard-column"></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="dashboard-block" collapsed>
+    <ul class="dashboard-weekdays">
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Понедельник</span>  <!-- TODO: replace with variable -->
+        <span class="dashboard-counter">5</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Вторник</span>
+        <span class="dashboard-counter">1</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Среда</span>
+        <span class="dashboard-counter">124</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Четверг</span>
+        <span class="dashboard-counter">55</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Пятница</span>
+        <span class="dashboard-counter">0</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Суббота</span>
+        <span class="dashboard-counter">2222</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Воскресенье</span>
+        <span class="dashboard-counter">228</span>
+      </li>
+    </ul>
+
+    <div class="dashboard-data">
+      <div class="dashboard-data-header">
+        <div class="dashboard-data-header__text">2-я неделя</div>
+        <ul class="dashboard-data-header__controls">
+          <li class="dashboard-control">
+            <i class="fa-solid fa-ellipsis-vertical ico"></i>
+          </li>
+          <li class="dashboard-data-header__counter-wrapper">
+            <span class="dashboard-counter">9</span>
+          </li>
+          <li class="dashboard-control">
+            <i class="fa-solid fa-angle-up ico"></i>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="dashboard-data-columns">
+        <li dashboard-col-id="mon" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="tue" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="wen" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="thu" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="fri" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="sat" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="sun" class="dashboard-column">1</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dashboard-block" collapsed>
+    <ul class="dashboard-weekdays">
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Понедельник</span>  <!-- TODO: replace with variable -->
+        <span class="dashboard-counter">5</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Вторник</span>
+        <span class="dashboard-counter">1</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Среда</span>
+        <span class="dashboard-counter">124</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Четверг</span>
+        <span class="dashboard-counter">55</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Пятница</span>
+        <span class="dashboard-counter">0</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Суббота</span>
+        <span class="dashboard-counter">2222</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Воскресенье</span>
+        <span class="dashboard-counter">228</span>
+      </li>
+    </ul>
+
+    <div class="dashboard-data">
+      <div class="dashboard-data-header">
+        <div class="dashboard-data-header__text">3-я неделя</div>
+        <ul class="dashboard-data-header__controls">
+          <li class="dashboard-control">
+            <i class="fa-solid fa-ellipsis-vertical ico"></i>
+          </li>
+          <li class="dashboard-data-header__counter-wrapper">
+            <span class="dashboard-counter">8</span>
+          </li>
+          <li class="dashboard-control">
+            <i class="fa-solid fa-angle-up ico"></i>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="dashboard-data-columns">
+        <li dashboard-col-id="mon" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="tue" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="wen" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="thu" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="fri" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="sat" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="sun" class="dashboard-column">1</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dashboard-block" collapsed>
+    <ul class="dashboard-weekdays">
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Понедельник</span>  <!-- TODO: replace with variable -->
+        <span class="dashboard-counter">5</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Вторник</span>
+        <span class="dashboard-counter">1</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Среда</span>
+        <span class="dashboard-counter">124</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Четверг</span>
+        <span class="dashboard-counter">55</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Пятница</span>
+        <span class="dashboard-counter">0</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Суббота</span>
+        <span class="dashboard-counter">2222</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Воскресенье</span>
+        <span class="dashboard-counter">228</span>
+      </li>
+    </ul>
+
+    <div class="dashboard-data">
+      <div class="dashboard-data-header">
+        <div class="dashboard-data-header__text">4-я неделя</div>
+        <ul class="dashboard-data-header__controls">
+          <li class="dashboard-control">
+            <i class="fa-solid fa-ellipsis-vertical ico"></i>
+          </li>
+          <li class="dashboard-data-header__counter-wrapper">
+            <span class="dashboard-counter">12</span>
+          </li>
+          <li class="dashboard-control">
+            <i class="fa-solid fa-angle-up ico"></i>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="dashboard-data-columns">
+        <li dashboard-col-id="mon" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="tue" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="wen" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="thu" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="fri" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="sat" class="dashboard-column">1</li>
+        <li class="dashboard-separator"></li>
+        <li dashboard-col-id="sun" class="dashboard-column">1</li>
+      </ul>
+    </div>
+  </div>
+
+</div>

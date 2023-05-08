@@ -1,0 +1,12 @@
+<div class="journals-list-item" [class.clicked]="clicked" (click)="onClick()">
+  <div class="journals-list-item-group">
+    <i class="fa-solid fa-sort ico"></i>
+    <span>{{ formatListItemIndex() }}</span>
+    <span>{{ journalFullName }}</span>
+  </div>
+  <div class="journals-list-item-group">
+    <i class="fa-solid fa-eye-slash ico"></i>
+    <i class="fa-solid fa-circle-info ico"></i>
+    <i class="fa-solid fa-arrow-right ico"></i>
+  </div>
+</div>

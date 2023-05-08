@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd"
+                   contextFilter="provide-test-data">
+
+  <property name="author" value="system"/>
+  <property name="schema" value="public"/>
+  <property name="insert" value="insert_test_data"/>
+
+  <changeSet id="user-management.user.${insert}" author="${author}" runAlways="true">
+    <validCheckSum>8:14f40f6483a89f25ce60ad79c388523e</validCheckSum>
+
+    <preConditions onFail="MARK_RAN">
+      <tableExists schemaName="${schema}" tableName="user"/>
+      <tableExists schemaName="${schema}" tableName="user_data"/>
+    </preConditions>
+
+    <!-- Generate test Teachers -->
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">74148075-b59b-4ac4-860d-92a2dbf74abd</column>
+      <column name="username">test_teacher.1</column>
+      <column name="password">test</column>
+      <column name="online">true</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">74148075-b59b-4ac4-860d-92a2dbf74abd</column>
+      <column name="first_name">Test</column>
+      <column name="second_name">Teacher</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">efd30ad0-dc93-4602-9fc3-bb8c31820c12</column>
+      <column name="username">test_teacher.2</column>
+      <column name="password">test</column>
+      <column name="online">false</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">efd30ad0-dc93-4602-9fc3-bb8c31820c12</column>
+      <column name="first_name">Waman</column>
+      <column name="second_name">Tisiphone</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">7a24a9fb-fe24-42d9-8676-8c2bbd9d469e</column>
+      <column name="username">test_teacher.3</column>
+      <column name="password">test</column>
+      <column name="online">true</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">7a24a9fb-fe24-42d9-8676-8c2bbd9d469e</column>
+      <column name="first_name">Joi</column>
+      <column name="second_name">Uzziah</column>
+      <column name="third_name">Heinz</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">92bceed0-e29b-45a0-b825-e359b1a95126</column>
+      <column name="username">test_teacher.4</column>
+      <column name="password">test</column>
+      <column name="online">false</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">92bceed0-e29b-45a0-b825-e359b1a95126</column>
+      <column name="first_name">Gilberto</column>
+      <column name="second_name">Niilas</column>
+      <column name="third_name">Renata</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">78604e90-6498-4b60-8139-88891c4ea6c6</column>
+      <column name="username">test_teacher.5</column>
+      <column name="password">test</column>
+      <column name="online">true</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">78604e90-6498-4b60-8139-88891c4ea6c6</column>
+      <column name="first_name">Jerry</column>
+      <column name="second_name">Carsten</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">c551e374-8f86-43f8-b8ef-96be1cd8543c</column>
+      <column name="username">test_teacher.6</column>
+      <column name="password">test</column>
+      <column name="online">false</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">c551e374-8f86-43f8-b8ef-96be1cd8543c</column>
+      <column name="first_name">Pascual</column>
+      <column name="second_name">Jennie</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f</column>
+      <column name="username">test_teacher.7</column>
+      <column name="password">test</column>
+      <column name="online">true</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">3c7a75a2-1117-4f3e-9013-1cc3af6d0f3f</column>
+      <column name="first_name">Aglaia</column>
+      <column name="second_name">Trajan</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">4ede5553-5360-4c4e-8e49-768773ba9528</column>
+      <column name="username">test_teacher.8</column>
+      <column name="password">test</column>
+      <column name="online">false</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">4ede5553-5360-4c4e-8e49-768773ba9528</column>
+      <column name="first_name">Mikael</column>
+      <column name="second_name">Klotho</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">b301872d-cc1d-43a2-ba7c-902d1808183e</column>
+      <column name="username">test_teacher.9</column>
+      <column name="password">test</column>
+      <column name="online">true</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">b301872d-cc1d-43a2-ba7c-902d1808183e</column>
+      <column name="first_name">Naveen</column>
+      <column name="second_name">Milica</column>
+      <column name="third_name">Nina</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">ac012069-31d3-4e90-be0d-00afffbe883a</column>
+      <column name="username">test_teacher.10</column>
+      <column name="password">test</column>
+      <column name="online">false</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">ac012069-31d3-4e90-be0d-00afffbe883a</column>
+      <column name="first_name">Leo</column>
+      <column name="second_name">Amaterasu</column>
+      <column name="third_name">Maya</column>
+    </insert>
+
+    <!-- Generate test students -->
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">ec250799-8299-4f51-94e8-783627bb5385</column>
+      <column name="username">test_student.1</column>
+      <column name="password">test</column>
+      <column name="online">false</column>
+      <column name="last_online_at">2023-07-05T18:00:00</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">ec250799-8299-4f51-94e8-783627bb5385</column>
+      <column name="first_name">Heikki</column>
+      <column name="second_name">Ariella</column>
+      <column name="third_name">Albaer</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">ff0c53f6-b90c-45e8-97db-938d5982ed60</column>
+      <column name="username">test_student.2</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">ff0c53f6-b90c-45e8-97db-938d5982ed60</column>
+      <column name="first_name">Diogenes</column>
+      <column name="second_name">Liva</column>
+      <column name="third_name">Seppo</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">b5ae54e5-fe51-4cb0-b5ec-f7b855bd34e8</column>
+      <column name="username">test_student.3</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">b5ae54e5-fe51-4cb0-b5ec-f7b855bd34e8</column>
+      <column name="first_name">Tekla</column>
+      <column name="second_name">Matryona</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">26e60216-689e-464e-9fe5-4a67ccd3258f</column>
+      <column name="username">test_student.4</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">26e60216-689e-464e-9fe5-4a67ccd3258f</column>
+      <column name="first_name">Lugubelinos</column>
+      <column name="second_name">Tiamat</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">f1bae56f-6813-4a73-9ecb-bd769fda0515</column>
+      <column name="username">test_student.5</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">f1bae56f-6813-4a73-9ecb-bd769fda0515</column>
+      <column name="first_name">Kingston</column>
+      <column name="second_name">Andile</column>
+      <column name="third_name">Yehoyakim</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">c9008c01-a68b-4316-979f-61cac0504fcc</column>
+      <column name="username">test_student.6</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">c9008c01-a68b-4316-979f-61cac0504fcc</column>
+      <column name="first_name">Mukami</column>
+      <column name="second_name">Danial</column>
+      <column name="third_name">Iddo</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">efa857bf-fa0a-4408-894a-710de358e34f</column>
+      <column name="username">test_student.7</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">efa857bf-fa0a-4408-894a-710de358e34f</column>
+      <column name="first_name">Jennie</column>
+      <column name="second_name">Wolodymir</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">e9d9db35-f969-4c9b-94dd-6f18b5679553</column>
+      <column name="username">test_student.8</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">e9d9db35-f969-4c9b-94dd-6f18b5679553</column>
+      <column name="first_name">Txomin</column>
+      <column name="second_name">Brunella</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">6a795d80-5b11-4ded-bd9a-4cf7f74e0b0f</column>
+      <column name="username">test_student.9</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">6a795d80-5b11-4ded-bd9a-4cf7f74e0b0f</column>
+      <column name="first_name">Ruud</column>
+      <column name="second_name">Marlen</column>
+      <column name="third_name">Padma</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">69c22334-590a-4e53-b53c-e676cffff716</column>
+      <column name="username">test_student.10</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">69c22334-590a-4e53-b53c-e676cffff716</column>
+      <column name="first_name">Olwen</column>
+      <column name="second_name">Henrietta</column>
+      <column name="third_name">Rufina</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">cddb8026-6e36-4f3e-99b7-16236aa2111f</column>
+      <column name="username">test_student.11</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">cddb8026-6e36-4f3e-99b7-16236aa2111f</column>
+      <column name="first_name">Ramesh</column>
+      <column name="second_name">Saoul</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">ab082704-f72b-4802-99ca-39d47d4b2225</column>
+      <column name="username">test_student.12</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">ab082704-f72b-4802-99ca-39d47d4b2225</column>
+      <column name="first_name">Mwanahawa</column>
+      <column name="second_name">Oskars</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">2e2d1f55-8683-45cd-9505-272dbf269d0c</column>
+      <column name="username">test_student.13</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">2e2d1f55-8683-45cd-9505-272dbf269d0c</column>
+      <column name="first_name">Berenice</column>
+      <column name="second_name">Mordred</column>
+      <column name="third_name">Sprita</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">3b609a78-0129-4d9c-89e4-1e523e9983bc</column>
+      <column name="username">test_student.14</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">3b609a78-0129-4d9c-89e4-1e523e9983bc</column>
+      <column name="first_name">Carsten</column>
+      <column name="second_name">Kephalos</column>
+      <column name="third_name">Wolfgang</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">a98a582a-6504-4fa7-838e-f83b1946ae05</column>
+      <column name="username">test_student.15</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">a98a582a-6504-4fa7-838e-f83b1946ae05</column>
+      <column name="first_name">Sanjiv</column>
+      <column name="second_name">Galaktion</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">1ef3d5dd-4daa-4b26-a070-7b6a654dec86</column>
+      <column name="username">test_student.16</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">1ef3d5dd-4daa-4b26-a070-7b6a654dec86</column>
+      <column name="first_name">Seweryn</column>
+      <column name="second_name">Birgitte</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">e79b9330-7707-4fa4-98af-5f9afe6c6643</column>
+      <column name="username">test_student.17</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">e79b9330-7707-4fa4-98af-5f9afe6c6643</column>
+      <column name="first_name">Helka</column>
+      <column name="second_name">Matrona</column>
+      <column name="third_name">Ashmedai</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">50290eee-1338-4ae7-a227-16822431c2a3</column>
+      <column name="username">test_student.18</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">50290eee-1338-4ae7-a227-16822431c2a3</column>
+      <column name="first_name">Vincente</column>
+      <column name="second_name">Aylin</column>
+      <column name="third_name">Adam</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">eceb0c5f-8948-4c0a-916d-dc79f9ee8b28</column>
+      <column name="username">test_student.19</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">eceb0c5f-8948-4c0a-916d-dc79f9ee8b28</column>
+      <column name="first_name">Barbora</column>
+      <column name="second_name">Thurayya</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">060287ac-4f0b-447b-8fa1-56927017cadf</column>
+      <column name="username">test_student.20</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">060287ac-4f0b-447b-8fa1-56927017cadf</column>
+      <column name="first_name">Jenna</column>
+      <column name="second_name">Georgiana</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">28ced6a0-6915-42d5-bee7-cda840d80d74</column>
+      <column name="username">test_student.21</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">28ced6a0-6915-42d5-bee7-cda840d80d74</column>
+      <column name="first_name">Vragi</column>
+      <column name="second_name">Naveed</column>
+      <column name="third_name">Lachtnae</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">e886b7f1-be55-428a-9e21-44a7a67d5bff</column>
+      <column name="username">test_student.22</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">e886b7f1-be55-428a-9e21-44a7a67d5bff</column>
+      <column name="first_name">Hadrian</column>
+      <column name="second_name">Laurissa</column>
+      <column name="third_name">Genevieve</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">7a7f2e19-7a77-4678-9987-61bca9184a21</column>
+      <column name="username">test_student.23</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">7a7f2e19-7a77-4678-9987-61bca9184a21</column>
+      <column name="first_name">Guim</column>
+      <column name="second_name">Shem</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">efb84fc3-7f7f-4998-ad2a-947eef5c96eb</column>
+      <column name="username">test_student.24</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">efb84fc3-7f7f-4998-ad2a-947eef5c96eb</column>
+      <column name="first_name">Viktoria</column>
+      <column name="second_name">Sudheer</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">e39d719b-867f-4054-82a1-6f702151a355</column>
+      <column name="username">test_student.25</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">e39d719b-867f-4054-82a1-6f702151a355</column>
+      <column name="first_name">Chi</column>
+      <column name="second_name">Roni</column>
+      <column name="third_name">Christina</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">92a514f5-6f3f-46b1-84dd-9a1d88075b54</column>
+      <column name="username">test_student.26</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">92a514f5-6f3f-46b1-84dd-9a1d88075b54</column>
+      <column name="first_name">Goronwy</column>
+      <column name="second_name">Vitilsav</column>
+      <column name="third_name">Zaur</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">acce0718-1cab-4e76-b679-32be4757efa1</column>
+      <column name="username">test_student.27</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">acce0718-1cab-4e76-b679-32be4757efa1</column>
+      <column name="first_name">Caeso</column>
+      <column name="second_name">Yakov</column>
+    </insert>
+
+    <insert schemaName="${schema}" tableName="user">
+      <column name="id">3a0595cb-eec7-4edb-b73d-39691ec9b251</column>
+      <column name="username">test_student.28</column>
+      <column name="password">test</column>
+    </insert>
+    <insert schemaName="${schema}" tableName="user_data">
+      <column name="id">3a0595cb-eec7-4edb-b73d-39691ec9b251</column>
+      <column name="first_name">Dominik</column>
+      <column name="second_name">Nadya</column>
+    </insert>
+  </changeSet>
+
+</databaseChangeLog>

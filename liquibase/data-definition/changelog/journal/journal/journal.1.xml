@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+  <property name="author" value="system"/>
+  <property name="schema" value="public"/>
+
+  <changeSet id="journal.journal.1.create_table" author="${author}">
+    <validCheckSum>ANY</validCheckSum>
+
+    <preConditions onFail="HALT">
+      <not>
+        <tableExists schemaName="${schema}" tableName="journal"/>
+      </not>
+    </preConditions>
+
+    <createTable schemaName="${schema}" tableName="journal">
+      <column name="id" type="BIGINT">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_journal"/>
+      </column>
+      <column name="class_number" type="TINYINT UNSIGNED">
+        <constraints nullable="false"/>
+      </column>
+      <column name="class_letter" type="NCHAR(1)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="year" type="SMALLINT UNSIGNED">
+        <constraints nullable="false"/>
+      </column>
+      <column name="semester" type="TINYINT UNSIGNED">
+        <constraints nullable="false"/>
+      </column>
+      <column name="lead_teacher_id" type="CHAR(36)"/>
+    </createTable>
+
+    <addUniqueConstraint schemaName="${schema}"
+                         tableName="journal"
+                         constraintName="uk_journal"
+                         columnNames="class_number,class_letter,year,semester"/>
+
+    <addForeignKeyConstraint baseTableName="journal"
+                             baseColumnNames="lead_teacher_id"
+                             constraintName="fk_journal_leadteacher"
+                             referencedTableName="user"
+                             referencedColumnNames="id"/>
+    <addForeignKeyConstraint baseTableName="journal"
+                             baseColumnNames="year,semester"
+                             constraintName="fk_journal_academicsemester"
+                             referencedTableName="academic_semester"
+                             referencedColumnNames="year,semester"/>
+
+    <createSequence sequenceName="s_journal" startValue="1" maxValue="9223372036854775807" cycle="true"/>
+  </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,15 @@
+<div class="journal-students-item-group">
+  <div class="journal-students-item__avatar-holder">
+    <img src="../../../assets/images/avatar.jpg">
+  </div>
+  <div class="journal-students-item__short-data">
+    <span class="journal-students-item__short-data__name">{{ fullName }}</span>
+    <span class="journal-students-item__short-data__last-online">{{ lastOnline }}</span>
+  </div>
+</div>
+<div class="journal-students-item-group">
+  <div class="journal-students-item__indicator" [attr.type]="resolveMarkerType()">
+    <span *ngIf="resolveMarkerType() === 'remark'"
+          class="journal-students-item__indicator-counter">{{ remarksAmount }}</span>
+  </div>
+</div>

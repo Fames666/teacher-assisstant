@@ -1,0 +1,57 @@
+div[element=breadcrumbs] {
+  flex: 0 0 35px;
+  width: 100%;
+
+  background-color: var(--color-white-b99);
+  border-bottom: solid 1px var(--color-white-b87);
+
+  font-size: 0.7em;
+}
+
+.breadcrumbs-wrapper {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.breadcrumb-with-icon {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.breadcrumb-with-icon > .ico {
+  margin-right: 5px;
+  font-size: 0.85em;
+}
+
+.breadcrumb {
+  font-weight: 100;
+  text-decoration: none;
+  color: var(--color-text-inactive);
+}
+
+.breadcrumb:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-with-icon:last-child > .breadcrumb,
+.breadcrumbs-wrapper > .breadcrumb:last-child {
+  color: var(--color-grey-h120-b45);
+}
+
+.breadcrumb::after {
+  content: '/';
+  margin: 0 8px;
+
+  font-size: 0.75em;
+}
+
+.breadcrumb-with-icon:last-child > .breadcrumb::after,
+.breadcrumbs-wrapper > .breadcrumb:last-child::after {
+  margin: 0;
+  content: '';
+}

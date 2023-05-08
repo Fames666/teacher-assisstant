@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "application.curriculum.card-types",
+      "type": "java.lang.String",
+      "description": "Types of cards to separate concerns and display cards differently on a board."
+    },
+    {
+      "name": "application.curriculum.card-type-to-color-mappings",
+      "type": "java.util.Map<java.lang.String, java.lang.String>",
+      "description": "Card type to card color mappings."
+    }
+  ]
+}
