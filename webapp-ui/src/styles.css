@@ -40,6 +40,7 @@
   --color-text-inactive: #999999;
 
   --z-index-card-details: 5000;
+  --z-index-max-value: 65535;
 
   /* Updated naming */
   /* h120 -- hue = 120 */
@@ -61,6 +62,7 @@
   --color-blue-h210-s41-b30: #2e3e4e;
 
   --color-green-h132-s46-b74: #65bd77;
+  --color-orange-h42-s80-b100: #ffc333;
 
   box-sizing: border-box;
 

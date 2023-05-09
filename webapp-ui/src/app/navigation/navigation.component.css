@@ -188,7 +188,7 @@ div[element=nav] > * {
 .navigation-option[nav-id=resources] >
   .navigation-option__icon >
     .navigation-option__icon-bg::before {
-  background: #ffc333;
+  background: var(--color-orange-h42-s80-b100);
 }
 
 .navigation-option[nav-id=journals] >

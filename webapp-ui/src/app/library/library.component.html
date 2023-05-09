@@ -1,3 +1,9 @@
+<div class="library-heading">
+  <h1>Учебные материалы и другие ресурсы</h1>
+  <p>В данном разделе доступны учебники и прочие ресурсы в форматах PDF, DOCX, XLSX и пр.</p>
+  <p class="hint">(Если Вам не удаётся найти нужный файл/папку или не получается создать/добавить
+     новый ресурс или каталог, убедитесь, что Вам были выданы соответствующие разрешения администратором.)</p>
+</div>
 <div class="library-control-panel">
   <div class="library-control-sub-panel">
     <button lib-ctl-id="tags-btn" class="library-control-btn">
@@ -11,11 +17,219 @@
     </button>
   </div>
   <div class="library-control-search-panel">
+    <ng-container>
+
+
+      <div class="tooltip tooltip-position warning">
+        <div class="tooltip-pointer-holder">
+          <div class="tooltip-pointer tooltip-pointer-position"></div>
+        </div>
+        <i class="fa-solid fa-triangle-exclamation ico"></i>
+        <span class="tooltip-text">
+          <span class="tooltip-strong-text">Обратите внимание:</span>
+          Вы ввели символы, недопустимые для использования в качестве имён каталогов и файлов.
+          Результат поиска будет пустым.
+        </span>
+      </div>
+
+
+    </ng-container>
     <div class="library-control-search-wrapper">
-      <input class="library-control-search" type="text">
+      <input class="library-control-search" type="text" placeholder="Поиск">
     </div>
     <button lib-ctl-id="search-btn" class="library-control-btn">
       <i class="fa-solid fa-magnifying-glass ico"></i>
     </button>
   </div>
 </div>
+<div class="library-content-area">
+  <div class="library-item">
+    <ng-container>
+      <div class="library-item-preview-decoration background"></div>
+    </ng-container>
+    <div class="library-item-preview folder">
+      <ng-container>
+        <div class="library-item-preview-decoration"></div>
+      </ng-container>
+      <div class="library-item-preview-icons">
+        <img src="../../assets/icons/pdf-icon.png"/>
+        <img src="../../assets/icons/word-icon.png"/>
+        <img src="../../assets/icons/excel-icon.png"/>
+      </div>
+      <div class="library-item-preview-options">
+        <span>Архив материалов 5В класса</span>
+        <div class="library-item-preview-actions-wrapper">
+          <button class="library-control-btn item-options-btn">
+            <i class="fa-solid fa-folder-plus"></i>
+          </button>
+          <button class="library-control-btn item-options-btn">
+            <i class="fa-regular fa-star ico"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="library-item-info">
+      <div class="library-item-info-group">
+        <img class="library-item-info__avatar" src="../../assets/images/avatar.jpg" alt="avatar"/>
+        <p class="library-item-info__author">Федченко Жанна Ивановна</p>
+      </div>
+      <div class="library-item-info-group">
+        <div class="library-item-info__counter">
+          <i class="fa-solid fa-star ico"></i>
+          <span>128</span>
+        </div>
+        <div class="library-item-info__counter highlighted">
+          <i class="fa-solid fa-user ico"></i>
+          <span>128</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="library-item">
+    <ng-container>
+      <div class="library-item-preview-decoration background"></div>
+    </ng-container>
+    <div class="library-item-preview folder">
+      <ng-container>
+        <div class="library-item-preview-decoration"></div>
+      </ng-container>
+      <div class="library-item-preview-icons">
+        <img src="../../assets/icons/pdf-icon.png"/>
+        <img src="../../assets/icons/excel-icon.png"/>
+      </div>
+      <div class="library-item-preview-options hidden">
+        <span>Архив материалов 5В класса</span>
+        <div class="library-item-preview-actions-wrapper">
+          <button class="library-control-btn item-options-btn">
+            <i class="fa-solid fa-folder-plus"></i>
+          </button>
+          <button class="library-control-btn item-options-btn">
+            <i class="fa-regular fa-star ico"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="library-item-info">
+      <div class="library-item-info-group">
+        <img class="library-item-info__avatar" src="../../assets/images/avatar.jpg" alt="avatar"/>
+        <p class="library-item-info__author">Федченко Жанна Ивановна</p>
+      </div>
+      <div class="library-item-info-group">
+        <div class="library-item-info__counter">
+          <i class="fa-solid fa-star ico"></i>
+          <span>128</span>
+        </div>
+        <div class="library-item-info__counter highlighted">
+          <i class="fa-solid fa-user ico"></i>
+          <span>128</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="library-item">
+    <ng-container>
+      <!-- <div class="library-item-preview-decoration background"></div> -->
+    </ng-container>
+    <div class="library-item-preview preset-background">
+      <ng-container>
+        <!-- <div class="library-item-preview-decoration"></div> -->
+      </ng-container>
+      <ng-container>
+        <div class="library-item-preview-decoration2">
+          <img src="../../assets/icons/pdf-icon.png"/>
+        </div>
+      </ng-container>
+      <div class="library-item-preview-icons">
+
+      </div>
+      <div class="library-item-preview-options hidden">
+        <span>Архив материалов 5В класса</span>
+        <div class="library-item-preview-actions-wrapper">
+          <button class="library-control-btn item-options-btn">
+            <i class="fa-solid fa-folder-plus"></i>
+          </button>
+          <button class="library-control-btn item-options-btn">
+            <i class="fa-regular fa-star ico"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="library-item-info">
+      <div class="library-item-info-group">
+        <img class="library-item-info__avatar" src="../../assets/images/avatar.jpg" alt="avatar"/>
+        <p class="library-item-info__author">Федченко Жанна Ивановна</p>
+      </div>
+      <div class="library-item-info-group">
+        <div class="library-item-info__counter">
+          <i class="fa-solid fa-star ico"></i>
+          <span>128</span>
+        </div>
+        <div class="library-item-info__counter highlighted">
+          <i class="fa-solid fa-user ico"></i>
+          <span>128</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="library-item">
+    <ng-container>
+      <div class="library-item-preview-decoration background"></div>
+    </ng-container>
+    <div class="library-item-preview folder">
+      <ng-container>
+        <div class="library-item-preview-decoration"></div>
+      </ng-container>
+      <div class="library-item-preview-icons">
+        <img src="../../assets/icons/excel-icon.png"/>
+      </div>
+      <div class="library-item-preview-options hidden">
+        <span>Архив материалов 5В класса</span>
+        <div class="library-item-preview-actions-wrapper">
+          <button class="library-control-btn item-options-btn">
+            <i class="fa-solid fa-folder-plus"></i>
+          </button>
+          <button class="library-control-btn item-options-btn">
+            <i class="fa-regular fa-star ico"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="library-item-info">
+      <div class="library-item-info-group">
+        <img class="library-item-info__avatar" src="../../assets/images/avatar.jpg" alt="avatar"/>
+        <p class="library-item-info__author">Федченко Жанна Ивановна</p>
+      </div>
+      <div class="library-item-info-group">
+        <div class="library-item-info__counter">
+          <i class="fa-solid fa-star ico"></i>
+          <span>128</span>
+        </div>
+        <div class="library-item-info__counter highlighted">
+          <i class="fa-solid fa-user ico"></i>
+          <span>128</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="library-item">
+    <ng-container>
+      <div class="library-item-preview-decoration background"></div>
+    </ng-container>
+    <div class="library-item-preview folder">
+      <ng-container>
+        <div class="library-item-preview-decoration"></div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="library-item">
+    <ng-container>
+      <div class="library-item-preview-decoration background"></div>
+    </ng-container>
+    <div class="library-item-preview folder">
+      <ng-container>
+        <div class="library-item-preview-decoration"></div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
