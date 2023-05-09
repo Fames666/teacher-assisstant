@@ -17,6 +17,23 @@
     </button>
   </div>
   <div class="library-control-search-panel">
+    <ng-container>
+
+
+      <div class="tooltip tooltip-position warning">
+        <div class="tooltip-pointer-holder">
+          <div class="tooltip-pointer tooltip-pointer-position"></div>
+        </div>
+        <i class="fa-solid fa-triangle-exclamation ico"></i>
+        <span class="tooltip-text">
+          <span class="tooltip-strong-text">Обратите внимание:</span>
+          Вы ввели символы, недопустимые для использования в качестве имён каталогов и файлов.
+          Результат поиска будет пустым.
+        </span>
+      </div>
+
+
+    </ng-container>
     <div class="library-control-search-wrapper">
       <input class="library-control-search" type="text" placeholder="Поиск">
     </div>

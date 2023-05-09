@@ -1,3 +1,72 @@
+/* Requires parent.position = relative */
+/* Override class 'tooltip-position' to set tooltip position */
+.tooltip {
+  position: absolute;
+  z-index: var(--z-index-max-value);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+
+  width: max-content;
+  max-width: 400px;
+
+  border-radius: 4px;
+  background-color: var(--color-white-b99);
+  box-shadow: 0 1px 5px -3px var(--color-text-inactive);
+}
+
+.tooltip-pointer-holder {
+  position: relative;
+  width: 0px;
+}
+
+.tooltip-pointer {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+
+  background-color: var(--color-white-b99);
+  box-shadow: 1px 1px 5px -3px var(--color-text-inactive);
+  border-bottom-right-radius: 4px;
+  transform: rotate(45deg);
+}
+
+.tooltip-text {
+  font-size: 0.75rem;
+}
+
+.tooltip-strong-text {
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.tooltip > .ico {
+  display: none;
+  margin-right: 10px;
+}
+
+/* Overrides for WARNING */
+.tooltip.warning {
+  border: solid 1px var(--color-orange-h42-s80-b100);
+}
+
+.tooltip.warning .tooltip-pointer {
+  display: block;
+  border-right: solid 1px var(--color-orange-h42-s80-b100);
+  border-bottom: solid 1px var(--color-orange-h42-s80-b100);
+}
+
+.tooltip.warning .tooltip-strong-text {
+  color: var(--color-orange-h42-s80-b100);
+}
+
+.tooltip.warning > .ico {
+  display: flex;
+  color: var(--color-orange-h42-s80-b100);
+}
+
 main[page=library] {
   --color-text: var(--color-grey-h120-b45);
   --color-text-strong: var(--color-blue-h210-s41-b30);
@@ -122,8 +191,19 @@ main[page=library] p {
 /* 'favourites-btn' button styles start */
 
 .library-control-search-panel {
+  position: relative;
   display: flex;
   box-shadow: var(--box-shadow-ctl);
+}
+
+.library-control-search-panel > .tooltip-position {
+  left: 0;
+  top: -60px;
+}
+
+.library-control-search-panel .tooltip-pointer-position {
+  top: 20px;
+  left: 2px;
 }
 
 .library-control-search-wrapper,
