@@ -431,13 +431,32 @@ span[card-item-id=attachment-metadata-author] {
   border-radius: 50%;
 }
 
-.card-details-comments-textbox > textarea {
+.card-details-comments-textarea-wrapper {
+  display: flex;
+  flex-direction: column;
   flex: 1 1 auto;
+}
 
+.card-details-comments-textarea {
   border: none;
   background-color: var(--color-white-b87);
   resize: none;
   outline: none;
+}
+
+.card-details-comments-textbox.error .card-details-comments-textarea {
+  border: solid 1px var(--color-bg-notifications);
+  background-color: #fb6b5b46;
+}
+
+.card-details-comments-textarea-hint {
+  display: none;
+  color: var(--color-bg-notifications);
+  font-size: 0.7rem;
+}
+
+.card-details-comments-textbox.error .card-details-comments-textarea-hint {
+  display: inline-block;
 }
 
 .card-details-comments-textbox-control-block {
