@@ -18,6 +18,7 @@ import { JournalsListComponent } from './journals-list/journals-list.component';
 import { JournalsListService } from './journals-list/service/journals-list-service.service';
 import { JournalsListItemLoadingDummyComponent } from './journals-list/journals-list-item-loading-dummy/journals-list-item-loading-dummy.component';
 import { LibraryComponent } from './library/library.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LibraryComponent } from './library/library.component';
     JournalsListItemComponent,
     JournalStudentsItemComponent,
     JournalsListItemLoadingDummyComponent,
-    LibraryComponent
+    LibraryComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

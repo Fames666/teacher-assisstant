@@ -4,6 +4,7 @@
 @import "./curriculum/curriculum.component.css";
 @import "./library/library.component.css";
 @import "./journals-list/journals-list.component.css";
+@import "./sign-in/sign-in.component.css";
 
 .body-container {
   display: flex;
