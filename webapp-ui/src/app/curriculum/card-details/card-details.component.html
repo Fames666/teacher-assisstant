@@ -4,11 +4,11 @@
   </button>
 
   <div class="card-details-partition partition-left">
-    <h1 class="card-details-heading">[Android] Бесконечный репрайс на оплате</h1>
+    <h1 class="card-details-heading">Математика. 5В класс</h1>
     <div class="card-details-metadata">
       <a class="card-details-metadata__number" href="">#403506</a>
       <span class="card-details-metadata__action-performer-role">Создатель</span>
-      <a class="card-details-metadata__action-performer" href="">Anastsia Maksimenko,</a>
+      <a class="card-details-metadata__action-performer" href="">Апполинария Швец,</a>
       <span class="card-details-metadata__action">создано</span>
       <span class="card-details-metadata__action-datetime">8 минут назад</span>
     </div>
@@ -45,11 +45,32 @@
       </li>
       <li class="card-details-property">
         <span class="card-details-property-key">Участники</span>
-        <span class="card-details-property-value">1, 2 , 3, 4, 5 ,6</span>
+        <span class="card-details-property-value participants">
+          <div class="card-participant-wrapper">
+            <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+          </div>
+          <div class="card-participant-wrapper">
+            <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+          </div>
+          <div class="card-participant-wrapper">
+            <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+          </div>
+          <div class="card-participant-wrapper">
+            <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+          </div>
+          <div class="card-participant-wrapper">
+            <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+          </div>
+          <span class="card-participants-counter">+9 участников</span>
+        </span>
       </li>
       <li class="card-details-property">
         <span class="card-details-property-key">Теги</span>
-        <span class="card-details-property-value">Тег1, Тег2, Тег3</span>
+        <span class="card-details-property-value tags">
+          <div class="card-tag tag-red">Матем</div>
+          <div class="card-tag tag-yellow">Матем</div>
+          <div class="card-tag tag-green">Матем</div>
+        </span>
       </li>
       <li class="card-details-property">
         <span class="card-details-property-key">Время начала</span>
@@ -84,6 +105,7 @@
       <ul class="card-details-attachments-list">
         <li class="card-details-attachment">
           <div class="card-details-attachment-preview">
+            <div class="card-details-attachment-decoration"></div>
             <!-- <img src="#" alt="CHLS"> -->
             <span>CHLS</span>
           </div>
@@ -94,12 +116,13 @@
             </div>
             <div class="card-details-attachment-metadata-row">
               <span card-item-id="attachment-metadata-date">Added a day ago,</span>
-              <span card-item-id="attachment-metadata-author">Anastasia Maksimenko</span>
+              <span card-item-id="attachment-metadata-author">Апполинария Швец</span>
             </div>
           </div>
         </li>
         <li class="card-details-attachment">
           <div class="card-details-attachment-preview">
+            <div class="card-details-attachment-decoration"></div>
             <!-- <img src="#" alt="CHLS"> -->
             <span>CHLS</span>
           </div>
@@ -110,7 +133,7 @@
             </div>
             <div class="card-details-attachment-metadata-row">
               <span card-item-id="attachment-metadata-date">Added a day ago,</span>
-              <span card-item-id="attachment-metadata-author">Anastasia Maksimenko</span>
+              <span card-item-id="attachment-metadata-author">Апполинария Швец</span>
             </div>
           </div>
         </li>
@@ -124,12 +147,89 @@
         </div>
         <h2>Ссылки</h2>
       </div>
-
       <span>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        http://localhost:8080/Lorem-Ipsum-is-simply-dummy-text-of-the-printing
+      </span>
+      <span>
+        http://localhost:8080/Lorem-Ipsum-has-been-the-industrys-standard-dummy
       </span>
     </div>
   </div>
 
-  <div class="card-details-partition partition-right"></div>
+  <div class="card-details-partition partition-right">
+    <div class="card-details-todo-section">
+      <div class="card-details-h2-wrapper">
+        <div class="card-details-h2-icon">
+          <i class="fa-solid fa-list-check ico"></i>
+        </div>
+        <h2>Цели</h2>
+      </div>
+      <ul>
+        <li class="card-details-todo-goal done">
+          <div class="card-details-todo-status-icon">
+            <i class="fa-solid fa-check ico"></i>
+          </div>
+          <span>Подготовить доклад к уроку</span>
+        </li>
+        <li class="card-details-todo-goal pending">
+          <div class="card-details-todo-status-icon">
+            <i class="fa-solid fa-minus"></i>
+          </div>
+          <span>Занести отчёт перед уроком в учительскую</span>
+        </li>
+      </ul>
+    </div>
+    <div class="card-details-comments">
+      <div class="card-details-h2-wrapper">
+        <div class="card-details-h2-icon">
+          <i class="fa-solid fa-comment-dots"></i>
+        </div>
+        <h2>Комментарии</h2>
+      </div>
+      <div class="card-details-comments-textbox">
+        <div class="card-details-comments-message-block_avatar-wrapper">
+          <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+        </div>
+        <textarea type="text" placeholder="Комментарий..."></textarea>
+        <div class="card-details-comments-textbox-control-block">
+          <button>
+            <i class="fa-solid fa-paper-plane ico"></i>
+          </button>
+          <button>
+            <i class="fa-solid fa-xmark ico"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-details-comments-section">
+        <div class="card-details-comment">
+          <div class="card-details-comments-message-block_avatar-wrapper">
+            <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+          </div>
+          <div class="card-details-comment-data">
+            <div class="card-details-comment-info">
+              <span class="card-details-comment-info-author">Фёдор Иван</span>
+              <span class="card-details-comment-info-datetime">09.04.2023 14:22</span>
+            </div>
+            <div class="card-details-comment-text">
+              is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </div>
+          </div>
+        </div>
+        <div class="card-details-comment">
+          <div class="card-details-comments-message-block_avatar-wrapper">
+            <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+          </div>
+          <div class="card-details-comment-data">
+            <div class="card-details-comment-info">
+              <span class="card-details-comment-info-author">Фёдор Иван</span>
+              <span class="card-details-comment-info-datetime">09.04.2023 14:22</span>
+            </div>
+            <div class="card-details-comment-text">
+              is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
