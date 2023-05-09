@@ -216,4 +216,61 @@ main[page=curriculum] ul {
 .dashboard-column {
   width: var(--width-dashboard-column);
 }
+
+.curriculum-card-create-dialog {
+  display: flex;
+  padding: 5px 5px 5px 10px;
+  background-color: var(--color-white-b99);
+  box-shadow: 0 0 6px -3px var(--color-grey-h120-b45);
+}
+
+.curriculum-card-create-dialog-textarea {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.curriculum-card-create-dialog-textarea > textarea {
+  border: none;
+  background-color: var(--color-white-b87);
+  resize: none;
+  outline: none;
+}
+
+.curriculum-card-create-dialog.error .curriculum-card-create-dialog-textarea > textarea {
+  border: solid 1px var(--color-bg-notifications);
+  background-color: #fb6b5b46;
+}
+
+.curriculum-card-create-dialog-hint {
+  display: none;
+  color: var(--color-bg-notifications);
+  font-size: 0.7rem;
+}
+
+.curriculum-card-create-dialog.error .curriculum-card-create-dialog-hint {
+  display: inline-block;
+}
+
+.curriculum-card-create-dialog-controls {
+  display: flex;
+  align-items: end;
+  margin-left: 5px;
+
+  flex: 0 0 auto;
+  width: min-content;
+}
+
+.curriculum-card-create-dialog-controls > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  border: none;
+  background-color: transparent;
+}
 /* Dashboard block styles end */
