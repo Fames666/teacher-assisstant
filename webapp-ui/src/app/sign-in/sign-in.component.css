@@ -1,0 +1,186 @@
+*[page=sign-in] {
+  --color-bg: var(--color-blue-h210-s41-b30);
+  --color-fg: var(--color-white-b99);
+  --color-fg-darker: var(--color-white-b87);
+  --color-border: var(--color-grey-h120-b45-o176);
+  --color-text-light-heading: var(--color-blue-h209-s16-b80);
+  --color-text-dark-heading: var(--color-blue-h210-s41-b30);
+  --color-text-default: var(--color-grey-h120-b45);
+  --color-text-btn-action: var(--color-fg);
+  --color-error: var(--color-orange-h6-s63-b98);
+  --color-btn-action: var(--color-green-h132-s46-b74);
+  --color-btn-shadow: var(--color-grey-h120-b45);
+
+  --border-radius-form: 4px;
+  --margin-between-blocks: 25px;
+
+  width: 100%;
+  height: 100%;
+
+  color: var(--color-text-default);
+  font-size: 0.9rem;
+  background-color: var(--color-bg);
+}
+
+*[page=sign-in] h1 {
+  margin-bottom: 50px;
+  color: var(--color-text-light-heading);
+  text-align: center;
+}
+
+*[page=sign-in] button {
+  box-shadow: 1px 2px 4px -2px var(--color-btn-shadow);
+}
+
+.sign-in-page-container {
+  padding: 60px;
+  width: 100%;
+  height: 100%;
+}
+
+.sign-in-form {
+  margin: 0 auto;
+  width: 30%;
+
+  border-radius: var(--border-radius-form);
+  background-color: var(--color-fg);
+}
+
+.sign-in-form > h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 40px;
+  background-color: var(--color-fg-darker);
+  color: var(--color-text-dark-heading);
+  font-size: 0.9rem;
+
+  border-top-left-radius: var(--border-radius-form);
+  border-top-right-radius: var(--border-radius-form);
+  border-bottom: solid 1px var(--color-border);
+}
+
+.form-blocks{
+  padding: 30px;
+}
+
+.form-input-fields-block {
+  margin-bottom: var(--margin-between-blocks);
+}
+
+.form-input-fields-block.error > .form-input-wrapper {
+  border-color: var(--color-error);
+  background-color: #fb6b5b46;
+}
+
+.form-input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 6px;
+  padding: 6px 2px 6px 12px;
+  width: 100%;
+
+  border: solid 1px var(--color-border);
+  border-radius: 2px;
+}
+
+.form-input-wrapper > input {
+  margin-right: 5px;
+  width: 100%;
+
+  border: none;
+  font-size: 1.15rem;
+  background-color: transparent;
+  outline: none;
+}
+
+.form-input-wrapper > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 25px;
+  height: 25px;
+
+  border: none;
+  background-color: transparent;
+  font-size: 1.1rem;
+  box-shadow: none;
+}
+
+.form-input-fields-block > span {
+  display: none;
+  margin-top: 5px;
+
+  color: var(--color-error);
+  font-size: 0.7rem;
+}
+
+.form-input-fields-block.error > span {
+  display: block;
+}
+
+.form-input-remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.form-input-remember-me > input {
+  margin: 0;
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.form-input-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: var(--margin-between-blocks);
+}
+
+.form-input-controls > button {
+  width: 80px;
+  height: 40px;
+
+  color: var(--color-text-btn-action);
+  font-weight: bold;
+
+  border: none;
+  border-radius: 2px;
+  background-color: var(--color-btn-action);
+}
+
+.form-input-controls > a {
+  color: var(--color-text-dark-heading);
+  font-size: 0.8rem;
+}
+
+.form-separator {
+  margin: 20px 0;
+  width: 100%;
+  height: 1px;
+
+  border: none;
+  border-top: dashed 1px var(--color-border);
+}
+
+.form-suggest-text {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.form-suggest-action {
+  margin-top: 20px;
+
+  width: 100%;
+  height: 30px;
+
+  background-color: var(--color-fg);
+  border: solid 1px var(--color-border);
+  border-radius: 2px;
+}
