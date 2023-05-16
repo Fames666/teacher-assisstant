@@ -56,8 +56,11 @@
   --color-white-b87: #dfdfdf;
   --color-white-h86-s3-b100: #fbfff6;  /* For fonts only */
 
+  --color-grey: rgb(125, 125, 125);
   --color-grey-h120-b45: #747574;
   --color-grey-h120-b45-o176: #747574b0;
+
+  --color-grey-text: #7d7c81;
 
   --color-blue-h209-s16-b80: #adbece;
   --color-blue-h210-s41-b30: #2e3e4e;
