@@ -6,6 +6,7 @@
 @import "./journals-list/journals-list.component.css";
 @import "./sign-in/sign-in.component.css";
 @import url('./messages-page/messages-page.component.css');
+@import url('./notes-page/notes-page.component.css');
 
 .body-container {
   display: flex;
