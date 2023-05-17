@@ -209,6 +209,12 @@ div[element=nav] > * {
   background: #4cc0c1;
 }
 
+.navigation-option[nav-id=admin] >
+  .navigation-option__icon >
+    .navigation-option__icon-bg::before {
+  background: #8fadca;
+}
+
 .navigation-option > span {
   margin-left: 10px;
 }
@@ -217,6 +223,10 @@ div[element=nav] > * {
   padding-top: 3px;
   margin-left: auto;
   font-size: 0.7em;
+}
+
+.navigation-option > .ico.angle-rotated {
+  transform: rotate(180deg);
 }
 
 .navigation-option[selected] > span {

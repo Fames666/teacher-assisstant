@@ -176,6 +176,9 @@ header .ico {
 }
 
 .avatar-wrapper {
+  display: flex;
+  align-items: center;
+
   flex: 0 0 min-content;
   height: 100%;
 }
@@ -184,6 +187,12 @@ header .ico {
   height: 100%;
   border: solid 1px var(--color-text-light);
   border-radius: 50%;
+}
+
+.avatar-wrapper.admin > img {
+  height: 80%;
+  border: none;
+  border-radius: 0;
 }
 
 .nickname {
