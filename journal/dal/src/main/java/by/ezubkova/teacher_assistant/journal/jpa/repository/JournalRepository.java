@@ -17,21 +17,33 @@ public interface JournalRepository extends JpaRepository<Journal, Long> {
   List<Journal> findAllByTeachersContains(User teacher);
 
   @Query("""
-         FROM Journal jrl
-           JOIN jrl.rows jrr
-           JOIN jrr.cells
-           JOIN jrr.id.student stu
-           JOIN stu.userData
-         WHERE jrl.id = :journalId
-         """)
+      FROM Journal jrl
+        JOIN jrl.rows jrr
+        JOIN jrr.cells
+        JOIN jrr.id.student stu
+        JOIN stu.userData
+      WHERE jrl.id = :journalId
+      """)
   Optional<Journal> findByIdWithStudents(@NotNull Long journalId);
 
   // TODO: add leadTeacher
   @Query("""
-         FROM Journal jrl
-           JOIN jrl.teachers tch
-           JOIN tch.userData
-         WHERE  jrl.id = :journalId
-         """)
+      FROM Journal jrl
+        JOIN jrl.teachers tch
+        JOIN tch.userData
+      WHERE  jrl.id = :journalId
+      """)
   Optional<Journal> findByIdWithTeachers(@NotNull Long journalId);
+
+  @Query("""
+      SELECT journal FROM Journal journal
+        JOIN journal.rows rows
+        JOIN rows.cells
+        JOIN FETCH journal.academicSemester semester
+        JOIN FETCH journal.leadTeacher
+      WHERE journal.classNumber = :classNumber
+        AND journal.classLetter = :classLetter
+        AND semester.year = :year
+      """)
+  List<Journal> findAllByClassAndYear(Byte classNumber, Character classLetter, Short year);
 }

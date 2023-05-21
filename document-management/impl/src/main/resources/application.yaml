@@ -2,7 +2,7 @@ application:
   messages:
     prefixes:
       document-management: by.ezubkova.teacher-assistant.document-management.
-    default-locale: ${LOCALE:ru_RU}
+    default-locale: ${LOCALE:ru-RU}
   configuration-properties:
     document-management:
       reports:
