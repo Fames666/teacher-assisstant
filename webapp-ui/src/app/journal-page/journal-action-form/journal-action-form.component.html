@@ -1,0 +1,13 @@
+<form class="journal-action-panel">
+  <div class="journal-action-panel-input-hint">Введите отметку:</div>
+  <div class="journal-action-panel-input">
+    <input type="number" max="10" min="0" [(ngModel)]="mark" [value]="mark" name="mark-input"/>
+    <button (click)="onConfirm()">
+      <i class="fa-solid fa-check ico"></i>
+    </button>
+    <button>
+      <i class="fa-solid fa-xmark ico"></i>
+    </button>
+  </div>
+  <button class="additional-option">Ремарка</button>
+</form>

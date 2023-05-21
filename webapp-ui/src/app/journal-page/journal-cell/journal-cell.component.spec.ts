@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { JournalCellComponent } from './journal-cell.component';
+
+describe('JournalCellComponent', () => {
+  let component: JournalCellComponent;
+  let fixture: ComponentFixture<JournalCellComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ JournalCellComponent ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(JournalCellComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

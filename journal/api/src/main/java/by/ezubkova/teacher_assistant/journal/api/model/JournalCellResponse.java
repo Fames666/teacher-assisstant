@@ -6,10 +6,6 @@ import lombok.Data;
 @Data
 public class JournalCellResponse {
 
-  private Long rowId;
-
-  private String studentId;
-
   private LocalDate date;
 
   private String highlightType;

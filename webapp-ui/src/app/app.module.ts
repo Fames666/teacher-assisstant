@@ -21,6 +21,13 @@ import { LibraryComponent } from './library/library.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { NotesPageComponent } from './notes-page/notes-page.component';
 import { MessagesPageComponent } from './messages-page/messages-page.component';
+import { JournalPageComponent } from './journal-page/journal-page.component';
+import { JournalAsideRowComponent } from './journal-page/journal-aside-row/journal-aside-row.component';
+import { JournalRowComponent } from './journal-page/journal-row/journal-row.component';
+import { JournalDateBlockComponent } from './journal-page/journal-date-block/journal-date-block.component';
+import { JournalCellComponent } from './journal-page/journal-cell/journal-cell.component';
+import { JournalActionFormComponent } from './journal-page/journal-action-form/journal-action-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,9 +45,16 @@ import { MessagesPageComponent } from './messages-page/messages-page.component';
     LibraryComponent,
     SignInComponent,
     NotesPageComponent,
-    MessagesPageComponent
+    MessagesPageComponent,
+    JournalPageComponent,
+    JournalAsideRowComponent,
+    JournalRowComponent,
+    JournalDateBlockComponent,
+    JournalCellComponent,
+    JournalActionFormComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

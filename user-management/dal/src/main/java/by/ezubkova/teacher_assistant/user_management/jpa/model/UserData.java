@@ -2,6 +2,7 @@ package by.ezubkova.teacher_assistant.user_management.jpa.model;
 
 import static jakarta.persistence.FetchType.LAZY;
 
+import by.ezubkova.teacher_assistant.common.util.structure.FullNameAware;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -16,7 +17,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-public class UserData {
+public class UserData implements FullNameAware {
 
   @Id
   private String id;

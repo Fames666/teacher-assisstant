@@ -2,7 +2,7 @@
 @import "./journals-list-item-loading-dummy/journals-list-item-loading-dummy.component.css";
 @import "./journal-students-item/journal-students-item.component.css";
 
-main[page=journal] {
+main[page=journals-list] {
   --color-text-lighter: var(--color-grey-h120-b45-o176);
   --color-text: var(--color-grey-h120-b45);
   --color-fg: var(--color-white-b99);

@@ -1,0 +1,58 @@
+<div class="journal-header">
+  <h1>
+    Журнал {{ journal?.classNumber }}{{ journal?.classLetter }} класса,
+    {{ academicSemester?.semester }}-я четверть
+  </h1>
+</div>
+<div class="journal-info">
+  <span><b>Предмет:</b> Математика</span>
+  <span><b>Класссный руководитель:</b> {{ journal?.leadTeacher }}</span>
+
+  <div element="journal-action-form"
+       (markConfirmed)="onMarkConfirmed($event)"></div>
+</div>
+
+<div class="journal-tables-wrapper">
+
+  <table class="journal-aside">
+    <tr class="journal-aside-head text-light">
+      <div class="journal-aside-headings-container">
+        <th class="journal-aside-cell fullname-column">ФИО</th>
+        <th class="journal-aside-cell">Успеваемость</th>
+        <th class="journal-aside-cell">Средний балл</th>
+        <th class="journal-aside-cell">Кол-во ремарок</th>
+        <div class="journal-aside-border invisible"></div>
+      </div>
+    </tr>
+
+    <div class="journal-aside-body">
+      <ul class="journal-aside-body-rows">
+        <ng-template ngFor let-row [ngForOf]="journalRows">
+          <tr element="journal-aside-row" [fullName]="row.student.fullName" [progressLevel]="row.progressLevel"
+            [averageMark]="row.averageMark" [remarksAmount]="row.remarksAmount"></tr>
+        </ng-template>
+      </ul>
+      <div class="journal-aside-border"></div>
+    </div>
+  </table>
+
+  <table class="journal-main">
+    <div class="journal-main-scrollable-content">
+      <tr class="journal-main-dates">
+        <ng-template ngFor let-partition [ngForOf]="academicSemesterPartitions">
+          <div class="journal-main-dates-month-container" element="journal-date-block" [month]="partition.month"
+            [daysOfWeek]="partition.daysOfWeek">
+          </div>
+        </ng-template>
+      </tr>
+      <div class="journal-main-marks">
+        <ng-template ngFor let-row [ngForOf]="journalRows">
+          <tr element="journal-row" [studentId]="row.student.id" [journalCells]="extractJournalCells(row.student.id)"
+            [cellClickedParentObservable]="cellClickedObservable" (cellClicked)="onCellClicked($event)">
+          </tr>
+        </ng-template>
+      </div>
+    </div>
+  </table>
+
+</div>

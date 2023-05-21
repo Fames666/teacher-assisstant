@@ -1,7 +1,10 @@
 package by.ezubkova.teacher_assistant.journal.config;
 
+import static by.ezubkova.teacher_assistant.common.util.CollectionUtils.findAll;
 import static by.ezubkova.teacher_assistant.journal.constant.JournalCellHighlight.*;
+import static java.lang.Math.random;
 import static java.time.LocalDate.of;
+import static java.time.temporal.ChronoUnit.DAYS;
 import static java.util.stream.Stream.generate;
 
 import by.ezubkova.teacher_assistant.journal.constant.JournalCellHighlight;
@@ -16,9 +19,9 @@ import by.ezubkova.teacher_assistant.user_management.jpa.repository.UserReposito
 import jakarta.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.Month;
-import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +58,7 @@ public class JournalTestDataSupplier {
   }
 
   private List<JournalCell> createTestJournalCells(AcademicSemester semester) {
-    var daysInSemester = Period.between(semester.getStartDate(), semester.getEndDate()).getDays();
+    var daysInSemester = (int) DAYS.between(semester.getStartDate(), semester.getEndDate());
     var dates = createTestLocalDates(semester.getYear(), daysInSemester);
     var highlights = createTestHighlights(daysInSemester);
     var marks = createTestMarks(daysInSemester);
@@ -91,10 +94,13 @@ public class JournalTestDataSupplier {
     return generate(() -> {
       var value = random.nextDouble();
       if (value < 0.07) {
-        return HIGH_PRIORITY;
+        return ABSENCE_WITH_REASON;
       }
       else if (value < 0.1) {
-        return LOW_PRIORITY;
+        return ABSENCE_WITHOUT_REASON;
+      }
+      else if (value < 0.2) {
+        return ATTENTION;
       }
       return NONE;
     }).limit(daysInSemester).toList();
@@ -102,8 +108,10 @@ public class JournalTestDataSupplier {
 
   private List<Byte> createTestMarks(final int daysInSemester) {
     var random = new Random();
-    return generate(() -> random.nextDouble() < 0.3 ? (byte) random.nextInt() : null)
-        .limit(daysInSemester).toList();
+    return generate(() -> {
+      var intValue = random() * 10;
+      return random.nextDouble() < 0.15 ? (byte) intValue : null;
+    }).limit(daysInSemester).toList();
   }
 
   private List<Boolean> createTestUncertaintyFlags(final int daysInSemester) {
@@ -120,17 +128,22 @@ public class JournalTestDataSupplier {
 
   private List<JournalRow> createTestJournalRows(Journal journal, List<User> users) {
     var rowsAmount = users.size();
-    var averageMarks = createTestAverageMarks(rowsAmount);
+    //    var averageMarks = createTestAverageMarks(rowsAmount);
 
     var usersIter = users.iterator();
-    var averageMarksIter = averageMarks.iterator();
+    //    var averageMarksIter = averageMarks.iterator();
 
     var rows = new ArrayList<JournalRow>(rowsAmount);
     for (int i = 0; i < rowsAmount; i++) {
       var cells = createTestJournalCells(journal.getAcademicSemester());
+      var averageMarksCount = findAll(cells, JournalCell::getMark, Objects::nonNull).size();
+      int averageMarksSum = findAll(cells, JournalCell::getMark, Objects::nonNull)
+          .stream()
+          .map(Byte::intValue)
+          .reduce(0, Integer::sum);
       var row = new JournalRow(journal,
                                usersIter.next(),
-                               averageMarksIter.next(),
+                               (float) (averageMarksSum * 1.0 / averageMarksCount),
                                false,
                                null,
                                cells);

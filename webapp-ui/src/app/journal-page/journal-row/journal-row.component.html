@@ -1,0 +1,10 @@
+<ng-template ngFor let-cell [ngForOf]="journalCells">
+  <td class="journal-main-mark-cell"
+      element="journal-cell"
+      [mark]="cell.mark"
+      [cellId]="calculateCellId(cell.date)"
+      [highlight]="cell.highlightType"
+      [cellClickedParentObservable]="cellClickedParentObservable"
+      (cellClicked)="onCellClicked($event)">
+  </td>
+</ng-template>

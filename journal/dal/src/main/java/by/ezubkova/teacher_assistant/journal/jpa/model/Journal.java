@@ -37,10 +37,10 @@ public class Journal {
   private Long id;
 
   @Column(nullable = false, updatable = false)
-  private Character classLetter;
+  private Byte classNumber;
 
   @Column(nullable = false, updatable = false)
-  private Byte classNumber;
+  private Character classLetter;
 
   @ManyToOne(fetch = LAZY, optional = false)
   @JoinColumns(value =

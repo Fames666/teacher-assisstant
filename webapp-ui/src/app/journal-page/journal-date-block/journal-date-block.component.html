@@ -1,0 +1,11 @@
+<div class="journal-main-dates-month">
+  <span>{{ month }}</span>
+</div>
+<div class="journal-main-dates-days">
+  <ng-template ngFor let-dayOfWeek [ngForOf]="daysOfWeek | keyvalue: originalOrder">
+    <td class="journal-main-dates-day text-light">
+      <span>{{ dayOfWeek.key }}</span>
+      <span>{{ dayOfWeek.value }}</span>
+    </td>
+  </ng-template>
+</div>
