@@ -1,0 +1,218 @@
+@import url('./journal-row/journal-row.component.css');
+@import url('./journal-cell/journal-cell.component.css');
+@import url('./journal-action-form/journal-action-form.component.css');
+
+*[page=journal] {
+  --color-jrn-green: #197d58;
+  --color-jrn-text-light: #fbfff6;
+  --color-jrn-border: #d9d9d9b0;
+
+  --color-jrn-bg-white: #fefefe;
+  --color-jrn-bg-grey: #f7f7f7;
+
+  --height-table-head: 100px;
+  --height-table-head-month: 25px;
+  --height-table-head-day: calc(var(--height-table-head) - var(--height-table-head-month));
+  --height-table-cell-default: 40px;
+  --width-table-cell-default: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+  padding-right: 0;
+  width: 100%;
+  height: 100%;
+
+  overflow-y: auto;
+  font-size: 0.8rem;
+}
+
+*[page=journal] th, td, table {
+  padding: 0;
+  column-gap: 0;
+  border: none;
+}
+
+*[page=journal] .text-light {
+  color: var(--color-jrn-text-light);
+  font-weight: bold;
+}
+
+.journal-header,
+.journal-info {
+  margin: 0 20px 20px 0;
+  padding: 10px;
+}
+
+.journal-header {
+  border-radius: 6px;
+  background-color: var(--color-jrn-bg-white);
+  box-shadow: 0 0 6px -4px var(--color-grey);
+}
+
+.journal-header > h1 {
+  font-size: 1.2rem;
+}
+
+.journal-info {
+  position: relative;
+}
+
+.journal-info > span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.journal-tables-wrapper {
+  display: flex;
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+.journal-aside {
+  --width-max-fullname: 160px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 0 0 auto;
+  width: max-content;
+  height: 100%;
+}
+
+.journal-aside-border {
+  flex: 0 0 auto;
+  width: 5px;
+
+  border-left: solid 1px var(--color-jrn-bg-grey);
+  border-right: solid 1px var(--color-jrn-bg-grey);
+  background-color: var(--color-jrn-bg-white);
+}
+
+.journal-aside-border.invisible {
+  border: none;
+  background-color: transparent;
+}
+
+.journal-aside-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 5px;
+  flex: 1 1 min-content;
+}
+
+.journal-aside-cell.fullname-column {
+  justify-content: start;
+  flex: 0 0 auto;
+  width: var(--width-max-fullname);
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.journal-aside-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  flex: 0 0 auto;
+  width: max-content;
+  height: var(--height-table-head);
+}
+
+.journal-aside-headings-container {
+  display: flex;
+  flex: 0 0 auto;
+  height: 40%;
+  background-color: var(--color-jrn-green);
+}
+
+.journal-aside-body {
+  display: flex;
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+.journal-aside-body-rows {
+  flex: 1 1 100%;
+}
+
+.journal-aside-body-rows > tr {
+  display: flex;
+  height: var(--height-table-cell-default);
+}
+
+.journal-aside-body-rows > tr:nth-child(2n - 1) {
+  background-color: var(--color-jrn-bg-white);
+}
+
+.journal-main {
+  display: flex;
+  flex: 0 1 100%;
+
+  margin-bottom: -14px;
+  overflow-x: auto;
+}
+
+.journal-main-scrollable-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-main-dates {
+  display: flex;
+  border-top: solid 2px var(--color-jrn-green);
+
+  flex: 0 0 auto;
+  width: max-content;
+  height: var(--height-table-head);
+}
+
+.journal-main-dates-month-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.journal-main-dates-month {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  height: var(--height-table-head-month);
+  font-weight: bold;
+}
+
+.journal-main-dates-month > span {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.journal-main-dates-days {
+  display: flex;
+}
+
+.journal-main-dates-day {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 4px 0;
+  height: var(--height-table-head-day);
+  width: var(--width-table-cell-default);
+
+  border-left: solid 1px var(--color-jrn-bg-white);
+  background-color: var(--color-jrn-green);
+}
+
+.journal-main-marks {
+  flex: 1 1 100%;
+  width: 100%;
+}

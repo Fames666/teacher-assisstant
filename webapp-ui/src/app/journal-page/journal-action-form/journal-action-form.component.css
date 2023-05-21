@@ -1,0 +1,35 @@
+.journal-action-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: 8px;
+
+  border-radius: 4px;
+  background-color: var(--color-jrn-bg-white);
+  box-shadow: 0 0 6px -4px var(--color-grey);
+}
+
+.journal-action-panel-input-hint {
+  font-weight: bold;
+}
+
+.journal-action-panel-input {
+  display: flex;
+  align-items: center;
+  margin: 6px 0;
+}
+
+.journal-action-panel-input > * {
+  outline: none;
+}
+
+.journal-action-panel-input > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 4px;
+  width: 20px;
+  height: 20px;
+}

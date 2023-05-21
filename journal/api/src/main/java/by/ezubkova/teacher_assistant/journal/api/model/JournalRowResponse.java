@@ -12,9 +12,15 @@ public class JournalRowResponse {
 
   private StudentData student;
 
-  private String decorationType;
-
   private BigDecimal averageMark;
 
-  private List<JournalCellResponse> cells = new ArrayList<>();
+  private Byte progressLevel;
+
+  private Integer remarksAmount;
+
+  private Boolean notAttested;
+
+  private String notAttestedReason;
+
+  private List<JournalCellResponse> cells;
 }

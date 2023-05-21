@@ -1,0 +1,6 @@
+<div class="mark-container"
+     [attr.focused]="focused"
+     [attr.highlight]="highlight === 'attention'"
+     (click)="onClick()">
+  <span>{{ mark ?? '' }}</span>
+</div>

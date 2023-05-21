@@ -17,6 +17,13 @@
 
   <dependencies>
     <dependency>
+      <groupId>by.ezubkova.teacher-assistant.common</groupId>
+      <artifactId>teacher-assistant-common</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+
+    <!--suppress VulnerableLibrariesLocal -->
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>

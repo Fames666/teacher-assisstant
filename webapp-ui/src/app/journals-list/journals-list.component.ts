@@ -6,7 +6,7 @@ import { JournalsListModuleConstants } from 'src/app/journals-list/common/journa
 import { JournalListEvent } from 'src/app/journals-list/common/journals-list.common'
 
 @Component({
-  selector: '[page=journal]',
+  selector: '[page=journals-list]',
   templateUrl: './journals-list.component.html',
   styleUrls: ['./journals-list.component.css']
 })

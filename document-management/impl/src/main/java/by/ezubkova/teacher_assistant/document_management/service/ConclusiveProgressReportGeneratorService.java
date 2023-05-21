@@ -2,8 +2,7 @@ package by.ezubkova.teacher_assistant.document_management.service;
 
 import static by.ezubkova.teacher_assistant.document_management.constant.Measurements.*;
 import static by.ezubkova.teacher_assistant.document_management.constant.Messages.*;
-import static com.lowagie.text.Element.ALIGN_CENTER;
-import static com.lowagie.text.Element.ALIGN_MIDDLE;
+import static com.lowagie.text.Element.*;
 import static com.lowagie.text.Font.DEFAULTSIZE;
 import static com.lowagie.text.Font.NORMAL;
 import static com.lowagie.text.PageSize.A4;
@@ -66,6 +65,9 @@ public class ConclusiveProgressReportGeneratorService {
 
       createHeader(table);
       range(0, properties.tracksPerPage()).forEach(index -> createResultsTrack(table, index));
+      var cell = createCell("Иванов Иван Иванович", 1, 19, false);
+      cell.setHorizontalAlignment(ALIGN_LEFT);
+      table.addCell(cell);
 
       document.add(table);
     }
@@ -127,20 +129,30 @@ public class ConclusiveProgressReportGeneratorService {
   }
 
   private void createResultsTrack(PdfPTable table, int trackIndex) {
-    createTrackRow(table, valueOf(1), false);
-    createTrackRow(table, valueOf(2), false);
-    createTrackRow(table, valueOf(3), false);
-    createTrackRow(table, valueOf(4), false);
+    createTrackRow(table, valueOf(1), false, trackIndex);
+    createTrackRow(table, valueOf(2), false, trackIndex);
+    createTrackRow(table, valueOf(3), false, trackIndex);
+    createTrackRow(table, valueOf(4), false, trackIndex);
 
     var lastTrackCellText = messages.getMessage(CPR_BODY_TIME_RANGE_YEAR, noArgs, getDefault());
-    createTrackRow(table, lastTrackCellText, true);
+    createTrackRow(table, lastTrackCellText, true, trackIndex);
   }
 
-  private void createTrackRow(PdfPTable table, String text, boolean lastTrackRow) {
-    range(0, CONCLUSIVE_PROGRESS_REPORT_TOTAL_COLUMNS)
-        .forEach(__ -> table.addCell(createDCell(text)));
+  private void createTrackRow(PdfPTable table, String text, boolean lastTrackRow, int ti) {
+//    range(0, CONCLUSIVE_PROGRESS_REPORT_TOTAL_COLUMNS)
+//        .forEach(__ -> table.addCell(createCell("1", DEFAULT_SPAN, DEFAULT_SPAN, false)));
 
-    CPR_TEMPLATES.forEach(tpl -> );
+    if(text.equals("1")) {
+      tmp1(table, ti);
+    } else if (text.equals("2")) {
+      tmp2(table, ti);
+    } else if (text.equals("3")) {
+      tmp3(table, ti);
+    } else if (text.equals("4")) {
+      tmp4(table, ti);
+    } else {
+      tmpYear(table, ti);
+    }
 
     var lastAppendedRow = table.getRow(table.getRows().size() - 1);
     var timeRangeCell = lastAppendedRow.getCells()[2];
@@ -153,6 +165,116 @@ public class ConclusiveProgressReportGeneratorService {
         cell.setBorderWidthBottom(1);
       });
     }
+  }
+
+  private void tmp1(PdfPTable table, int ti) {
+    table.addCell(createCell(valueOf(ti + 6) + "A", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("20", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("1", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("1", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("8", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("3", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("4", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("100", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("80", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("35", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("1", DEFAULT_SPAN, DEFAULT_SPAN, false));
+  }
+
+  private void tmp2(PdfPTable table, int ti) {
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("20", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("1", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("3", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("10", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("4", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("100", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("100", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("30", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("1", DEFAULT_SPAN, DEFAULT_SPAN, false));
+  }
+
+  private void tmp3(PdfPTable table, int ti) {
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("22", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("3", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("5", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("10", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("1", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("100", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("100", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("41", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+  }
+
+  private void tmp4(PdfPTable table, int it) {
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("22", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("4", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("1", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("5", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("8", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("2", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("90", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("78", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("32", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("1", DEFAULT_SPAN, DEFAULT_SPAN, false));
+  }
+
+  private void tmpYear(PdfPTable table, int ti) {
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("22", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("4", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("1", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("6", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("13", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("22", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("22", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("9", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("11", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("90", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("78", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("32", DEFAULT_SPAN, DEFAULT_SPAN, false));
+    table.addCell(createCell("1", DEFAULT_SPAN, DEFAULT_SPAN, false));
   }
 
   private PdfPCell createFixedHeightCell(String text) {

@@ -1,0 +1,47 @@
+.journal-main-mark-cell {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: var(--height-table-cell-default);
+  width: var(--width-table-cell-default);
+}
+
+.journal-main-mark-cell:hover {
+  background-color: var(--color-jrn-bg-white);
+}
+
+.journal-main-mark-cell > .mark-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  font-size: 1rem;
+  border-right: solid 1px var(--color-jrn-border);
+  border-bottom: solid 1px var(--color-jrn-border);
+}
+
+.journal-main-mark-cell > .mark-container[focused=true] {
+  border-color: var(--color-jrn-green);
+  background-color: #197d582a;
+}
+
+.journal-main-mark-cell > .mark-container > span {
+  cursor: default;
+}
+
+.journal-main-mark-cell > .mark-container[highlight=true]::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 8px;
+  height: 8px;
+
+  content: '';
+  background: linear-gradient(45deg, transparent 0 50%, red 50% 80%, transparent 80% 100%);
+}

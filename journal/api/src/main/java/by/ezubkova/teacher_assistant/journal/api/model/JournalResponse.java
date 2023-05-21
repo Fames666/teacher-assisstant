@@ -12,7 +12,9 @@ public class JournalResponse {
 
   private Character classLetter;
 
-  private Short year;
+  private AcademicSemesterResponse academicSemester;
+
+  private String leadTeacher;
 
   private List<JournalRowResponse> rows;
 }
