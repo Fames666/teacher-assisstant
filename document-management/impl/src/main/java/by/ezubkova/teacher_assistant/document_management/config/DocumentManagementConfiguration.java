@@ -1,15 +1,19 @@
 package by.ezubkova.teacher_assistant.document_management.config;
 
+import static by.ezubkova.teacher_assistant.journal.api.constant.JournalConstants.JOURNAL_MODULE_MSG_SRC;
 import static java.util.Locale.forLanguageTag;
 
+import by.ezubkova.teacher_assistant.common.factory.MessageSourceFactory;
 import java.util.Properties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@EnableConfigurationProperties(ConclusiveProgressReportProperties.class)
 @RequiredArgsConstructor
 public class DocumentManagementConfiguration {
 
@@ -21,15 +25,8 @@ public class DocumentManagementConfiguration {
   @Value("${application.messages.default-locale}")
   private final String defaultLocale;
 
-  @Bean
-  public MessageSource messageSource() {
-    var properties = new Properties();
-    properties.setProperty(MESSAGES_FILENAME, DEFAULT_ENCODING);
-
-    var messageSource = new TeacherAssistantMessageSource(messagesModulePrefix);
-    messageSource.setBasename(MESSAGES_FILENAME);
-    messageSource.setDefaultLocale(forLanguageTag(defaultLocale));
-    messageSource.setFileEncodings(properties);
-    return messageSource;
+  @Bean("document-management-message-source")
+  public MessageSource messageSource(MessageSourceFactory messageSourceFactory) {
+    return messageSourceFactory.createMessageSourceForModule("document-management-message-source");
   }
 }
