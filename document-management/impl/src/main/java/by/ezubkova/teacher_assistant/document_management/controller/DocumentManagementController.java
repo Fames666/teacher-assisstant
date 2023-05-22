@@ -40,4 +40,15 @@ public class DocumentManagementController {
     headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"Report.pdf\"");
     return new ResponseEntity<>(file, headers, OK);
   }
+
+  @GetMapping(value = "/lib/7816231823123423",
+              produces = MediaType.APPLICATION_PDF_VALUE)
+  public HttpEntity<byte[]> a()
+  throws IOException {
+    byte[] file = Files.readAllBytes(Paths.get("Katerina.pdf"));
+
+    var headers = new HttpHeaders();
+    headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"Katerina.pdf\"");
+    return new ResponseEntity<>(file, headers, OK);
+  }
 }

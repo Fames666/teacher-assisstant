@@ -10,17 +10,25 @@
       <span>Все теги</span>
       <i class="fa-solid fa-angle-down ico"></i>
     </button>
-    <button lib-ctl-id="favourites-btn" class="library-control-btn">
+    <button lib-ctl-id="favourites-btn"
+            class="library-control-btn"
+            [attr.clicked]="hideOnFav ? true : null"
+            (click)="onFavClicked()">
       <i class="fa-regular fa-star ico" visible-on-clicked="false"></i>
       <i class="fa-solid fa-star ico" visible-on-clicked="true"></i>
       <span>Избранное</span>
+    </button>
+    <button lib-ctl-id="add-btn"
+            class="library-control-btn"
+            (click)="onAddFileClicked()">
+      <i class="fa-solid fa-plus ico"></i>
     </button>
   </div>
   <div class="library-control-search-panel">
     <ng-container>
 
 
-      <div class="tooltip tooltip-position warning">
+      <!-- <div class="tooltip tooltip-position warning">
         <div class="tooltip-pointer-holder">
           <div class="tooltip-pointer tooltip-pointer-position"></div>
         </div>
@@ -30,12 +38,13 @@
           Вы ввели символы, недопустимые для использования в качестве имён каталогов и файлов.
           Результат поиска будет пустым.
         </span>
-      </div>
+      </div> -->
 
 
     </ng-container>
-    <div class="library-control-search-wrapper">
-      <input class="library-control-search" type="text" placeholder="Поиск">
+    <div class="library-control-search-wrapper"
+         (input)="onSearchChanged()">
+      <input class="library-control-search" type="text" placeholder="Поиск" [(ngModel)]="dummy">
     </div>
     <button lib-ctl-id="search-btn" class="library-control-btn">
       <i class="fa-solid fa-magnifying-glass ico"></i>
@@ -43,7 +52,8 @@
   </div>
 </div>
 <div class="library-content-area">
-  <div class="library-item">
+  <div class="library-item"
+       [class.hidden]="hideOnFav || hideOnSearch">
     <ng-container>
       <div class="library-item-preview-decoration background"></div>
     </ng-container>
@@ -85,7 +95,8 @@
       </div>
     </div>
   </div>
-  <div class="library-item">
+  <div class="library-item"
+       [class.hidden]="hideOnFav || hideOnSearch">
     <ng-container>
       <div class="library-item-preview-decoration background"></div>
     </ng-container>
@@ -98,7 +109,7 @@
         <img src="../../assets/icons/excel-icon.png"/>
       </div>
       <div class="library-item-preview-options hidden">
-        <span>Архив материалов 5В класса</span>
+        <span>7A класс, отчёты</span>
         <div class="library-item-preview-actions-wrapper">
           <button class="library-control-btn item-options-btn">
             <i class="fa-solid fa-folder-plus"></i>
@@ -126,7 +137,8 @@
       </div>
     </div>
   </div>
-  <div class="library-item">
+  <div class="library-item"
+       [class.hidden]="hideOnSearch">
     <ng-container>
       <!-- <div class="library-item-preview-decoration background"></div> -->
     </ng-container>
@@ -142,13 +154,15 @@
       <div class="library-item-preview-icons">
 
       </div>
-      <div class="library-item-preview-options hidden">
-        <span>Архив материалов 5В класса</span>
+      <div class="library-item-preview-options">
+        <span>Демидович</span>
         <div class="library-item-preview-actions-wrapper">
           <button class="library-control-btn item-options-btn">
             <i class="fa-solid fa-folder-plus"></i>
           </button>
-          <button class="library-control-btn item-options-btn">
+          <button class="library-control-btn item-options-btn"
+                  [class.active]="btnActive1"
+                  (click)="onSetBtnActive(1)">
             <i class="fa-regular fa-star ico"></i>
           </button>
         </div>
@@ -171,24 +185,33 @@
       </div>
     </div>
   </div>
-  <div class="library-item">
+  <div class="library-item"
+       [class.hidden]="hideAddedFile"
+       (click)="onFileClicked()">
     <ng-container>
-      <div class="library-item-preview-decoration background"></div>
+      <!-- <div class="library-item-preview-decoration background"></div> -->
     </ng-container>
-    <div class="library-item-preview folder">
+    <div class="library-item-preview preset-background example">
       <ng-container>
-        <div class="library-item-preview-decoration"></div>
+        <!-- <div class="library-item-preview-decoration"></div> -->
+      </ng-container>
+      <ng-container>
+        <div class="library-item-preview-decoration2">
+          <img src="../../assets/icons/pdf-icon.png"/>
+        </div>
       </ng-container>
       <div class="library-item-preview-icons">
-        <img src="../../assets/icons/excel-icon.png"/>
+
       </div>
-      <div class="library-item-preview-options hidden">
-        <span>Архив материалов 5В класса</span>
+      <div class="library-item-preview-options">
+        <span>Katerina</span>
         <div class="library-item-preview-actions-wrapper">
           <button class="library-control-btn item-options-btn">
             <i class="fa-solid fa-folder-plus"></i>
           </button>
-          <button class="library-control-btn item-options-btn">
+          <button class="library-control-btn item-options-btn active"
+                  [class.active]="btnActive2"
+                  (click)="onSetBtnActive(2)">
             <i class="fa-regular fa-star ico"></i>
           </button>
         </div>
@@ -196,40 +219,28 @@
     </div>
     <div class="library-item-info">
       <div class="library-item-info-group">
-        <img class="library-item-info__avatar" src="../../assets/images/avatar.jpg" alt="avatar"/>
-        <p class="library-item-info__author">Федченко Жанна Ивановна</p>
+        <img class="library-item-info__avatar" src="http://flatfull.com/themes/note/images/avatar_default.jpg" alt="avatar"/>
+        <p class="library-item-info__author">Teacher Test</p>
       </div>
       <div class="library-item-info-group">
         <div class="library-item-info__counter">
           <i class="fa-solid fa-star ico"></i>
-          <span>128</span>
+          <span>0</span>
         </div>
         <div class="library-item-info__counter highlighted">
           <i class="fa-solid fa-user ico"></i>
-          <span>128</span>
+          <span>1</span>
         </div>
       </div>
     </div>
   </div>
-  <div class="library-item">
-    <ng-container>
-      <div class="library-item-preview-decoration background"></div>
-    </ng-container>
-    <div class="library-item-preview folder">
-      <ng-container>
-        <div class="library-item-preview-decoration"></div>
-      </ng-container>
-    </div>
-  </div>
-  <div class="library-item">
-    <ng-container>
-      <div class="library-item-preview-decoration background"></div>
-    </ng-container>
-    <div class="library-item-preview folder">
-      <ng-container>
-        <div class="library-item-preview-decoration"></div>
-      </ng-container>
-    </div>
+</div>
+
+<div class="library-upload-window"
+     [class.hidden]="hideAddFileDialog">
+  <div class="library-upload-window-form">
+    <input type="file">
+    <button (click)="onConfirmFileClicked()">Добавить</button>
   </div>
 </div>
 

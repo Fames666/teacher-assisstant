@@ -167,15 +167,15 @@ public class ConclusiveProgressReportGeneratorService {
 
 //    var lastTrackCellText = messages.getMessage(CPR_BODY_TIME_RANGE_YEAR, noArgs, getDefault());
     var yearStudents = journals.get(0).getRows().size() + journals.get(1).getRows().size()
-        + journals.get(2).getRows().size() +journals.get(3).getRows().size();
-    createYearRow(table, yearStudents);
+        + journals.get(2).getRows().size() + journals.get(3).getRows().size();
+    createYearRow(table, journals.get(3).getRows().size(), yearStudents);
 
     teor = 0;
     pract = 0;
     marksCounts.entrySet().forEach(entry -> entry.setValue(0));
   }
 
-  private void createYearRow(PdfPTable table, int studentsAmount) {
+  private void createYearRow(PdfPTable table, int studentsAmount, int studentsDivider) {
     table.addCell(createCell("", DEFAULT_SPAN, DEFAULT_SPAN, false));
     table.addCell(createCell(String.valueOf(studentsAmount), DEFAULT_SPAN, DEFAULT_SPAN, false));
     table.addCell(createCell("год", DEFAULT_SPAN, DEFAULT_SPAN, false));
@@ -194,11 +194,11 @@ public class ConclusiveProgressReportGeneratorService {
     table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
     table.addCell(createCell("-", DEFAULT_SPAN, DEFAULT_SPAN, false));
 
-    table.addCell(createCell(calcKnowledgeQuality(5, studentsAmount,
+    table.addCell(createCell(calcKnowledgeQuality(5, studentsDivider,
                                                   String.valueOf(marksCounts.get(10)), String.valueOf(marksCounts.get(9)),
                                                   String.valueOf(marksCounts.get(8)), String.valueOf(marksCounts.get(7)),
                                                   String.valueOf(marksCounts.get(6)), String.valueOf(marksCounts.get(5))), DEFAULT_SPAN, DEFAULT_SPAN, false));
-    table.addCell(createCell(calcKnowledgeQuality(6, studentsAmount,
+    table.addCell(createCell(calcKnowledgeQuality(6, studentsDivider,
                                                   String.valueOf(marksCounts.get(10)), String.valueOf(marksCounts.get(9)),
                                                   String.valueOf(marksCounts.get(8)), String.valueOf(marksCounts.get(7)),
                                                   String.valueOf(marksCounts.get(6))), DEFAULT_SPAN, DEFAULT_SPAN, false));

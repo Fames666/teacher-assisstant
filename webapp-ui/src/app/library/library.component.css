@@ -67,7 +67,7 @@
   color: var(--color-orange-h42-s80-b100);
 }
 
-main[page=library] {
+*[page=library] {
   --color-text: var(--color-grey-h120-b45);
   --color-text-strong: var(--color-blue-h210-s41-b30);
   --color-border: var(--color-white-b87);
@@ -76,13 +76,14 @@ main[page=library] {
   --border-ctl: solid 1px var(--color-white-b87);
   --border-radius-ctl: 4px;
 
+  position: relative;
   padding: 40px 50px;
   width: 100%;
   height: 100%;
   overflow-y: auto;
 }
 
-main[page=library] p {
+*[page=library] p {
   margin: 0;
 }
 
@@ -117,7 +118,7 @@ main[page=library] p {
   width: max-content;
 }
 
-.library-control-sub-panel > button:first-child {
+.library-control-sub-panel > button:not(:last-child) {
   margin-right: 20px;
 }
 
@@ -251,6 +252,10 @@ main[page=library] p {
   position: relative;
 }
 
+.library-item.hidden {
+  display: none;
+}
+
 .library-item-preview {
   position: relative;
   display: flex;
@@ -272,6 +277,10 @@ main[page=library] p {
 
 .library-item-preview.preset-background {
   background: bottom no-repeat url('../../assets/images/demidovich.example.png');
+}
+
+.library-item-preview.preset-background.example {
+  background: center no-repeat url('../../assets/images/attach-ex.png');
 }
 
 .library-item-preview-decoration {
@@ -327,6 +336,10 @@ main[page=library] p {
 }
 
 .library-item-preview-options {
+  display: none;
+}
+
+.library-item:hover .library-item-preview-options {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -342,10 +355,6 @@ main[page=library] p {
   background: linear-gradient(0deg, #374b5ec5, transparent);
   border-bottom-left-radius: var(--border-radius-folder);
   border-bottom-right-radius: var(--border-radius-folder);
-}
-
-.library-item-preview-options.hidden {
-  display: none;
 }
 
 .library-item-preview-options > span {
@@ -370,6 +379,11 @@ main[page=library] p {
 
   width: 35px;
   height: 35px;
+}
+
+.library-control-btn.item-options-btn.active {
+  background-color: var(--color-cyan-h180-s60-b75);
+  color: #fefefe;
 }
 
 .library-item-info {
@@ -419,4 +433,44 @@ main[page=library] p {
 
 .library-item-info__counter.highlighted {
   color: var(--color-text-strong);
+}
+
+.library-upload-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(125, 125, 125, 0.6);
+}
+
+.library-upload-window.hidden {
+  display: none;
+}
+
+.library-upload-window-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  height: 20%;
+
+  border-radius: 8px;
+  background-color: #fefefe;
+}
+
+.library-upload-window-form > input {
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+.library-upload-window-form > button {
+  padding: 4px;
 }
