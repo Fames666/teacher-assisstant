@@ -66,6 +66,7 @@ import { MessageBoxComponent } from './messages-page/message-box/message-box.com
       { path: 'journal/:id', component: JournalPageComponent },
       { path: 'messages', component: MessagesPageComponent },
       { path: 'lib', component: LibraryComponent },
+      { path: 'notes', component: NotesPageComponent },
       { path: '', redirectTo: 'curriculum', pathMatch: 'full' }
     ])
   ],

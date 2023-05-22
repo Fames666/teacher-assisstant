@@ -2,6 +2,7 @@
   --color-nts-content-fg: var(--color-white-b99);
   --color-nts-text-light: var(--color-white-h86-s3-b100);
 
+  position: relative;
   width: 100%;
   height: 100%;
   color: var(--color-blue-h210-s41-b30);
@@ -23,6 +24,11 @@
   border-radius: 8px;
   background-color: var(--color-nts-content-fg);
   box-shadow: 0 0 6px -4px var(--color-grey);
+  cursor: pointer;
+}
+
+.note.hidden {
+  display: none;
 }
 
 .note-severity {
@@ -144,4 +150,51 @@
 
 .notes-add-btn>.ico {
   margin-right: 6px;
+}
+
+.notes-add-note-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(125, 125, 125, 0.6);
+}
+
+.notes-add-note-window.hidden {
+  display: none;
+}
+
+.notes-add-note-window-form {
+  padding: 20px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  background-color: #fefefe;
+}
+
+.notes-add-note-window-form > * {
+  margin-bottom: 20px;
+}
+
+.notes-add-note-window-form * {
+  outline: none;
+}
+
+.notes-add-note-window-form > .group > span {
+  margin-right: 10px;
+}
+
+.notes-add-note-window-form > textarea {
+  width: 100%;
+  height: 200px;
+  resize: none;
+}
+
+.notes-add-note-window-form > button {
+  padding: 4px;
 }
