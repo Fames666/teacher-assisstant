@@ -1,20 +1,33 @@
 <div class="card-details-container">
-  <button class="card-details-close-btn">
+  <button class="card-details-close-btn" (click)="closeBtnClick()">
     <i class="fa-solid fa-xmark ico"></i>
   </button>
 
   <div class="card-details-partition partition-left">
-    <h1 class="card-details-heading">Математика. 5В класс</h1>
+    <h1 class="card-details-heading">Предмет</h1>
     <div class="card-details-metadata">
-      <a class="card-details-metadata__number" href="">#403506</a>
+      <a class="card-details-metadata__number" href="">#513509</a>
       <span class="card-details-metadata__action-performer-role">Создатель</span>
-      <a class="card-details-metadata__action-performer" href="">Апполинария Швец,</a>
+      <a class="card-details-metadata__action-performer" href="">Teacher Test,</a>
       <span class="card-details-metadata__action">создано</span>
-      <span class="card-details-metadata__action-datetime">8 минут назад</span>
+      <span class="card-details-metadata__action-datetime">только что</span>
     </div>
 
     <div class="card-details-control-panel">
-      <button class="card-details-control-panel__add-btn">
+      <button class="card-details-control-panel__add-btn"
+              (click)="onAddBtnClicked()">
+        <select class="options"
+                [class.hidden]="hideOptions"
+                [(ngModel)]="selectedValue"
+                (change)="onSelect()">
+          <option value="" selected="{{ selectedValue === '' }}">- Выберите элемент -</option>
+          <option value="tags">Теги</option>
+          <option value="part">Участники</option>
+          <option value="desc">Описание</option>
+          <option value="files">Прикреплённые файлы</option>
+          <option value="links">Ссылки</option>
+          <option value="todo">Цели</option>
+        </select>
         <i class="fa-solid fa-plus ico"></i>
       </button>
       <div class="card-details-control-panel-group">
@@ -43,9 +56,9 @@
         <span class="card-details-property-key">Тип</span>
         <span class="card-details-property-value">Урок</span>
       </li>
-      <li class="card-details-property">
+      <li class="card-details-property" *ngIf="!hidePartic">
         <span class="card-details-property-key">Участники</span>
-        <span class="card-details-property-value participants">
+        <span class="card-details-property-value participants" *ngIf="!hideParticContent">
           <div class="card-participant-wrapper">
             <img src="../../assets/images/avatar.jpg" alt="avatar"/>
           </div>
@@ -61,28 +74,32 @@
           <div class="card-participant-wrapper">
             <img src="../../assets/images/avatar.jpg" alt="avatar"/>
           </div>
-          <span class="card-participants-counter">+9 участников</span>
+          <span class="card-participants-counter">+23 участников</span>
         </span>
       </li>
-      <li class="card-details-property">
+      <li class="card-details-property" *ngIf="!hideTags">
         <span class="card-details-property-key">Теги</span>
         <span class="card-details-property-value tags">
-          <div class="card-tag tag-red">Матем</div>
-          <div class="card-tag tag-yellow">Матем</div>
-          <div class="card-tag tag-green">Матем</div>
+          <div class="card-details-property-tag-input" *ngIf="!hideTagsInput">
+            <input type="text">
+            <button (click)="onTagConfirm()">Добавить</button>
+          </div>
+          <div class="card-tag tag-red" *ngIf="!hideTagsContent">Матем</div>
         </span>
       </li>
       <li class="card-details-property">
         <span class="card-details-property-key">Время начала</span>
-        <span class="card-details-property-value">15:30</span>
+        <span class="card-details-property-value">8:00</span>
       </li>
       <li class="card-details-property">
         <span class="card-details-property-key">Время окончания</span>
-        <span class="card-details-property-value">16:15</span>
+        <span class="card-details-property-value">8:45</span>
       </li>
     </ul>
 
-    <div class="card-details-description">
+    <div class="card-details-description"
+         id="descr"
+         [class.hidden]="hideDescription">
       <div class="card-details-h2-wrapper">
         <div class="card-details-h2-icon">
           <i class="fa-solid fa-bars-staggered ico"></i>
@@ -90,33 +107,53 @@
         <h2>Описание</h2>
       </div>
 
-      <span>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      <div class="card-details-description-content"
+           [class.hidden]="hideDescriptionContent">
+        <textarea></textarea>
+        <button (click)="onDescConfirm()">Добавить</button>
+      </div>
+      <span [class.hidden]="hideDescriptionText">
+        Описание для урока!!!
       </span>
     </div>
 
-    <div class="card-details-attachments">
+    <div class="card-details-attachments"
+         [class.hidden]="hideFiles">
       <div class="card-details-h2-wrapper">
         <div class="card-details-h2-icon">
           <i class="fa-solid fa-paperclip ico"></i>
         </div>
         <h2>Прикреплённые файлы</h2>
       </div>
-      <ul class="card-details-attachments-list">
+      <div class="card-details-attachments-selector"
+           [class.hidden]="hideFilesSelection">
+        <div>
+          <span class="att-selected" [class.hidden]="hideKaterina">Katerina.pdf </span>
+          <span class="att-selected" [class.hidden]="hideDemid">+ Демидович.pdf</span>
+        </div>
+        <select [(ngModel)]="attSelect" (change)="onAttSelect()">
+          <option value="" selected="{{ attSelect === '' }}">- Выберите файл -</option>
+          <option value="kat">Katerina.pdf</option>
+          <option value="dem">Демидович.pdf</option>
+        </select>
+        <button (click)="onFilesConfirm()">Добавить</button>
+      </div>
+      <ul class="card-details-attachments-list"
+          [class.hidden]="hideFilesContent">
         <li class="card-details-attachment">
           <div class="card-details-attachment-preview">
             <div class="card-details-attachment-decoration"></div>
             <!-- <img src="#" alt="CHLS"> -->
-            <span>CHLS</span>
+            <span>PDF</span>
           </div>
           <div class="card-details-attachment-metadata">
             <div class="card-details-attachment-metadata-row">
-              <span card-item-id="attachment-metadata-name">21marchpet.chls</span>
+              <span card-item-id="attachment-metadata-name">Katerina.pdf</span>
               <span card-item-id="attachment-metadata-size">(225.35 KB)</span>
             </div>
             <div class="card-details-attachment-metadata-row">
-              <span card-item-id="attachment-metadata-date">Added a day ago,</span>
-              <span card-item-id="attachment-metadata-author">Апполинария Швец</span>
+              <span card-item-id="attachment-metadata-date">Добавлено 5 мин. назад,</span>
+              <span card-item-id="attachment-metadata-author">Teacher Test</span>
             </div>
           </div>
         </li>
@@ -124,61 +161,78 @@
           <div class="card-details-attachment-preview">
             <div class="card-details-attachment-decoration"></div>
             <!-- <img src="#" alt="CHLS"> -->
-            <span>CHLS</span>
+            <span>PDF</span>
           </div>
           <div class="card-details-attachment-metadata">
             <div class="card-details-attachment-metadata-row">
-              <span card-item-id="attachment-metadata-name">21marchpet.chls</span>
-              <span card-item-id="attachment-metadata-size">(225.35 KB)</span>
+              <span card-item-id="attachment-metadata-name">Демидович.pdf</span>
+              <span card-item-id="attachment-metadata-size">(2.12 MB)</span>
             </div>
             <div class="card-details-attachment-metadata-row">
-              <span card-item-id="attachment-metadata-date">Added a day ago,</span>
-              <span card-item-id="attachment-metadata-author">Апполинария Швец</span>
+              <span card-item-id="attachment-metadata-date">Добавлено 2023-05-01,</span>
+              <span card-item-id="attachment-metadata-author">Федченко Жанна</span>
             </div>
           </div>
         </li>
       </ul>
     </div>
 
-    <div class="card-details-links">
+    <div class="card-details-links"
+         [class.hidden]="hideLinks">
       <div class="card-details-h2-wrapper">
         <div class="card-details-h2-icon">
           <i class="fa-solid fa-diagram-project ico"></i>
         </div>
         <h2>Ссылки</h2>
       </div>
-      <span>
-        http://localhost:8080/Lorem-Ipsum-is-simply-dummy-text-of-the-printing
+      <div class="card-details-links-input"
+           [class.hidden]="hideLinksInput">
+        <span class="separ-hint">Для разделения ссылок используйте перенос строки</span>
+        <textarea></textarea>
+        <button (click)="onLinksConfirm()">Добавить</button>
+      </div>
+      <span class="linkk"
+            [class.hidden]="hideLinksContent">
+        http://localhost:8080/some-link
       </span>
-      <span>
-        http://localhost:8080/Lorem-Ipsum-has-been-the-industrys-standard-dummy
+      <span class="linkk"
+            [class.hidden]="hideLinksContent">
+        http://localhost:8080/another-link
       </span>
     </div>
   </div>
 
   <div class="card-details-partition partition-right">
-    <div class="card-details-todo-section">
+    <div class="card-details-todo-section"
+         [class.hidden]="hideTodo">
       <div class="card-details-h2-wrapper">
         <div class="card-details-h2-icon">
           <i class="fa-solid fa-list-check ico"></i>
         </div>
         <h2>Цели</h2>
       </div>
-      <ul>
-        <li class="card-details-todo-goal done">
+      <div class="card-details-todo-input"
+           [class.hidden]="hideTodoInput">
+        <span class="separ-hint">Для разделения целей используйте перенос строки</span>
+        <textarea></textarea>
+        <button (click)="onTodoConfirm()">Добавить</button>
+      </div>
+      <ul [class.hidden]="hideTodoContent">
+        <li class="card-details-todo-goal pending">
           <div class="card-details-todo-status-icon">
-            <i class="fa-solid fa-check ico"></i>
+            <i class="fa-solid fa-minus ico"></i>
           </div>
           <span>Подготовить доклад к уроку</span>
         </li>
         <li class="card-details-todo-goal pending">
           <div class="card-details-todo-status-icon">
-            <i class="fa-solid fa-minus"></i>
+            <i class="fa-solid fa-minus ico"></i>
           </div>
-          <span>Занести отчёт перед уроком в учительскую</span>
+          <span>qwertyuiop</span>
         </li>
       </ul>
     </div>
+
     <div class="card-details-comments">
       <div class="card-details-h2-wrapper">
         <div class="card-details-h2-icon">
@@ -188,14 +242,17 @@
       </div>
       <div class="card-details-comments-textbox">
         <div class="card-details-comments-message-block_avatar-wrapper">
-          <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+          <img src="http://flatfull.com/themes/note/images/avatar_default.jpg" alt="avatar"/>
         </div>
         <div class="card-details-comments-textarea-wrapper">
-          <textarea class="card-details-comments-textarea" type="text" placeholder="Комментарий..."></textarea>
+          <textarea class="card-details-comments-textarea"
+                    type="text"
+                    placeholder="Комментарий..."
+                    [(ngModel)]="commentText"></textarea>
           <span class="card-details-comments-textarea-hint">Текст комментария не может быть пустым</span>
         </div>
         <div class="card-details-comments-textbox-control-block">
-          <button>
+          <button (click)="onCommentConfirm()">
             <i class="fa-solid fa-paper-plane ico"></i>
           </button>
           <button>
@@ -203,36 +260,37 @@
           </button>
         </div>
       </div>
-      <div class="card-details-comments-section">
+      <div class="card-details-comments-section"
+           [class.hidden]="hideComment">
         <div class="card-details-comment">
           <div class="card-details-comments-message-block_avatar-wrapper">
-            <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+            <img src="http://flatfull.com/themes/note/images/avatar_default.jpg" alt="avatar"/>
           </div>
           <div class="card-details-comment-data">
             <div class="card-details-comment-info">
-              <span class="card-details-comment-info-author">Фёдор Иван</span>
-              <span class="card-details-comment-info-datetime">09.04.2023 14:22</span>
+              <span class="card-details-comment-info-author">Teacher Test</span>
+              <span class="card-details-comment-info-datetime">только что</span>
             </div>
             <div class="card-details-comment-text">
-              is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </div>
-          </div>
-        </div>
-        <div class="card-details-comment">
-          <div class="card-details-comments-message-block_avatar-wrapper">
-            <img src="../../assets/images/avatar.jpg" alt="avatar"/>
-          </div>
-          <div class="card-details-comment-data">
-            <div class="card-details-comment-info">
-              <span class="card-details-comment-info-author">Фёдор Иван</span>
-              <span class="card-details-comment-info-datetime">09.04.2023 14:22</span>
-            </div>
-            <div class="card-details-comment-text">
-              is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              Какой-то комментарий
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="participants-input" *ngIf="!hideParticInput && !hidePartic">
+  <div class="participants-input-form">
+    <div>
+      <span>Класс</span>
+      <input type="text" max="2">
+    </div>
+    <div>
+      <span>Кабинет</span>
+      <input type="number">
+    </div>
+    <button (click)="onPartConfirm()">Добавить класс</button>
   </div>
 </div>

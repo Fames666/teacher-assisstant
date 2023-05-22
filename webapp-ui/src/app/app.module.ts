@@ -30,6 +30,8 @@ import { JournalActionFormComponent } from './journal-page/journal-action-form/j
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MessageBoxComponent } from './messages-page/message-box/message-box.component';
+import { CommonModule } from '@angular/common';
+import { DetailsServiceService } from './details-service.service';
 
 @NgModule({
   declarations: [
@@ -57,20 +59,22 @@ import { MessageBoxComponent } from './messages-page/message-box/message-box.com
     MessageBoxComponent
   ],
   imports: [
+    CommonModule,
     FormsModule,
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
+      { path: 'curriculum/card/:id', component: CardDetailsComponent },
       { path: 'curriculum', component: CurriculumComponent },
       { path: 'journals-list', component: JournalsListComponent },
       { path: 'journal/:id', component: JournalPageComponent },
       { path: 'messages', component: MessagesPageComponent },
       { path: 'lib', component: LibraryComponent },
       { path: 'notes', component: NotesPageComponent },
-      { path: '', redirectTo: 'curriculum', pathMatch: 'full' }
+      { path: '', redirectTo: 'curriculum', pathMatch: 'full' },
     ])
   ],
-  providers: [JournalsListService],
+  providers: [JournalsListService, DetailsServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

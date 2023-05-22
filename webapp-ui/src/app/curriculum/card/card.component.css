@@ -38,15 +38,15 @@ div[element=curriculum-card]:hover {
 }
 
 div[element=curriculum-card][type=lesson] .card-title {
-  background: linear-gradient(90deg, var(--color-bg-green-dark), 65%, #9198e5);
+  background-color: var(--color-bg-green-dark);
 }
 
 div[element=curriculum-card][type=kontrolnaya] .card-title {
-  background: linear-gradient(90deg, var(--color-bg-notifications), 65%, #9198e5);
+  background-color: var(--color-bg-notifications);
 }
 
 div[element=curriculum-card][type=subbotnik] .card-title {
-  background: linear-gradient(90deg, var(--color-bg-dark), 65%, #9198e5);
+  background-color: var(--color-bg-dark);
 }
 
 .card-title_primary {
@@ -74,7 +74,7 @@ div[element=curriculum-card][type=subbotnik] .card-title {
   background-color: var(--color-white-h86-s3-b100);
   border-radius: 5px;
 
-  animation: card-activity-indicator 1.5s linear 0s infinite alternate none;
+  /* animation: card-activity-indicator 1.5s linear 0s infinite alternate none; */
 }
 
 @keyframes card-activity-indicator {

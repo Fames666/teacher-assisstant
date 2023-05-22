@@ -1,7 +1,9 @@
 @import "./card/card.component.css";
 @import "./card-details/card-details.component.css";
+@import url('./tmp.css');
 
 *[page=curriculum] {
+  position: relative;  /* TODO remove */
   padding: 7px;
   width: 100%;
   height: 100%;
@@ -139,6 +141,10 @@
   margin-top: 10px;
 }
 
+.dashboard-block[collapsed] .dashboard-control .fa-angle-up {
+  transform: rotate(180deg);
+}
+
 .dashboard-weekdays {
   display: flex;
   align-items: center;
@@ -218,10 +224,14 @@
 }
 
 .curriculum-card-create-dialog {
-  display: flex;
+  display: none;
   padding: 5px 5px 5px 10px;
   background-color: var(--color-white-b99);
   box-shadow: 0 0 6px -3px var(--color-grey-h120-b45);
+}
+
+.dashboard-column:hover > .curriculum-card-create-dialog {
+  display: flex;
 }
 
 .curriculum-card-create-dialog-textarea {

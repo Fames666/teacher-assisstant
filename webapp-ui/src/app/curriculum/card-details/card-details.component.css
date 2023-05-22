@@ -9,7 +9,7 @@ div[window=card-details] {
   left: 0;
   z-index: var(--z-index-card-details);
 
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: start;
   padding: 20px;
@@ -19,6 +19,10 @@ div[window=card-details] {
   color: var(--color-blue-h210-s41-b30);
   background-color: var(--color-bg);
   overflow-y: auto;
+}
+
+div[window=card-details].visible {
+  display: flex;
 }
 
 /* Common styles start */
@@ -63,6 +67,7 @@ button {
   position: relative;
   padding: 45px 10px 20px 40px;
   width: 75%;
+  min-height: 100%;
 
   display: flex;
   flex-wrap: nowrap;

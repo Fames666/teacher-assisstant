@@ -28,37 +28,37 @@
     <ul class="dashboard-weekdays">
       <li class="dashboard-weekday">
         <span class="dashboard-weekday-title">Понедельник</span>  <!-- TODO: replace with variable -->
-        <span class="dashboard-counter">5</span>
-      </li>
-      <li class="dashboard-separator"></li>
-      <li class="dashboard-weekday">
-        <span class="dashboard-weekday-title">Вторник</span>
         <span class="dashboard-counter">1</span>
       </li>
       <li class="dashboard-separator"></li>
       <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Вторник</span>
+        <span class="dashboard-counter">{{ tueCounter }}</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
         <span class="dashboard-weekday-title">Среда</span>
-        <span class="dashboard-counter">124</span>
+        <span class="dashboard-counter">1</span>
       </li>
       <li class="dashboard-separator"></li>
       <li class="dashboard-weekday">
         <span class="dashboard-weekday-title">Четверг</span>
-        <span class="dashboard-counter">55</span>
-      </li>
-      <li class="dashboard-separator"></li>
-      <li class="dashboard-weekday">
-        <span class="dashboard-weekday-title">Пятница</span>
         <span class="dashboard-counter">0</span>
       </li>
       <li class="dashboard-separator"></li>
       <li class="dashboard-weekday">
+        <span class="dashboard-weekday-title">Пятница</span>
+        <span class="dashboard-counter">3</span>
+      </li>
+      <li class="dashboard-separator"></li>
+      <li class="dashboard-weekday">
         <span class="dashboard-weekday-title">Суббота</span>
-        <span class="dashboard-counter">2222</span>
+        <span class="dashboard-counter">0</span>
       </li>
       <li class="dashboard-separator"></li>
       <li class="dashboard-weekday">
         <span class="dashboard-weekday-title">Воскресенье</span>
-        <span class="dashboard-counter">228</span>
+        <span class="dashboard-counter">0</span>
       </li>
     </ul>
 
@@ -70,7 +70,7 @@
             <i class="fa-solid fa-ellipsis-vertical ico"></i>
           </li>
           <li class="dashboard-data-header__counter-wrapper">
-            <span class="dashboard-counter">1488</span>
+            <span class="dashboard-counter">{{ weekCounter }}</span>
           </li>
           <li class="dashboard-control">
             <i class="fa-solid fa-angle-up ico"></i>
@@ -80,12 +80,49 @@
 
       <ul class="dashboard-data-columns">
         <li dashboard-col-id="mon" class="dashboard-column">
-          <div element="curriculum-card" type="lesson"></div>
-          <div element="curriculum-card" type="lesson"></div>
-          <div class="curriculum-card-create-dialog error">
+          <div element="curriculum-card" type="lesson">
+            <div class="card-wrapper">
+              <div class="card-title">
+                <div class="card-title_primary">Физика</div>
+                <div class="card-title_secondary">7б класс, каб. 22</div>
+                <div class="card-activity-indicator-wrapper">
+                  <div class="card-activity-indicator"></div>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-timeline">
+                  <span>15:30</span>
+                  <div class="card-timeline-progress-bar"></div>
+                  <span>16:15</span>
+                </div>
+                <div class="card-participants">
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <span class="card-participants-counter">+9 участников</span>
+                </div>
+                <div class="card-tags">
+                  <div class="card-tag tag-green">Длинный тег тут</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-card-create-dialog">
             <div class="curriculum-card-create-dialog-textarea">
               <textarea placeholder="Введите название"></textarea>
-              <span class="curriculum-card-create-dialog-hint">Недопустимые символы в названии</span>
+              <!-- <span class="curriculum-card-create-dialog-hint">Недопустимые символы в названии</span> -->
             </div>
             <div class="curriculum-card-create-dialog-controls">
               <button>
@@ -99,25 +136,346 @@
         </li>
         <li class="dashboard-separator"></li>
         <li dashboard-col-id="tue" class="dashboard-column">
-          <div element="curriculum-card" type="kontrolnaya"></div>
-          <div element="curriculum-card" type="lesson"></div>
-          <div element="curriculum-card" type="kontrolnaya"></div>
+          <div element="curriculum-card"
+               type="lesson"
+               (click)="openClicked()"
+               [routerLink]="['/curriculum/card/1c105187-dfd5-447e-890e-ae987e65b57f']"
+               [class.hidden]="hideCard && !extraElements">
+            <div class="card-wrapper">
+              <div class="card-title">
+                <div class="card-title_primary">Предмет</div>
+                <div class="card-title_secondary" *ngIf="extraElements">5а класс, каб. 113</div>
+                <div class="card-activity-indicator-wrapper">
+                  <div class="card-activity-indicator"></div>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-timeline">
+                  <span>8:00</span>
+                  <div class="card-timeline-progress-bar"></div>
+                  <span>8:45</span>
+                </div>
+                <div class="card-participants" *ngIf="extraElements">
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar" />
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="http://flatfull.com/themes/note/images/avatar_default.jpg" alt="avatar" />
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="http://flatfull.com/themes/note/images/avatar_default.jpg" alt="avatar" />
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar" />
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="http://flatfull.com/themes/note/images/avatar_default.jpg" alt="avatar" />
+                  </div>
+                  <span class="card-participants-counter">+23 участников</span>
+                </div>
+                <div class="card-tags" *ngIf="extraElements">
+                  <div class="card-tag tag-red">Матем</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div element="curriculum-card" type="kontrolnaya">
+            <div class="card-wrapper">
+              <div class="card-title">
+                <div class="card-title_primary">математика</div>
+                <div class="card-title_secondary">5а класс, каб. 113</div>
+                <div class="card-activity-indicator-wrapper">
+                  <div class="card-activity-indicator"></div>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-timeline">
+                  <span>15:30</span>
+                  <div class="card-timeline-progress-bar"></div>
+                  <span>16:15</span>
+                </div>
+                <div class="card-participants">
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <span class="card-participants-counter">+9 участников</span>
+                </div>
+                <div class="card-tags">
+                  <div class="card-tag tag-red">Матем</div>
+                  <div class="card-tag tag-yellow">УрокUrok</div>
+                  <div class="card-tag tag-green">Длинный тег тут</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-card-create-dialog"
+               [class.hidden]="dialogHidden">
+            <div class="curriculum-card-create-dialog-textarea">
+              <textarea placeholder="Введите название" [(ngModel)]="dialogText"></textarea>
+              <!-- <span class="curriculum-card-create-dialog-hint">Недопустимые символы в названии</span> -->
+            </div>
+            <div class="curriculum-card-create-dialog-controls">
+              <button (click)="onDialogConfirm()">
+                <i class="fa-solid fa-check ico"></i>
+              </button>
+              <button>
+                <i class="fa-solid fa-xmark ico"></i>
+              </button>
+            </div>
+          </div>
         </li>
         <li class="dashboard-separator"></li>
         <li dashboard-col-id="wen" class="dashboard-column">
-          <div element="curriculum-card" type="subbotnik"></div>
+          <div element="curriculum-card" type="subbotnik">
+            <div class="card-wrapper">
+              <div class="card-title">
+                <div class="card-title_primary">Классный час</div>
+                <div class="card-title_secondary">5а класс, каб. 103</div>
+                <div class="card-activity-indicator-wrapper">
+                  <div class="card-activity-indicator"></div>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-timeline">
+                  <span>16:30</span>
+                  <div class="card-timeline-progress-bar"></div>
+                  <span>17:20</span>
+                </div>
+                <div class="card-participants">
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <span class="card-participants-counter">+9 участников</span>
+                </div>
+                <div class="card-tags">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-card-create-dialog">
+            <div class="curriculum-card-create-dialog-textarea">
+              <textarea placeholder="Введите название"></textarea>
+              <!-- <span class="curriculum-card-create-dialog-hint">Недопустимые символы в названии</span> -->
+            </div>
+            <div class="curriculum-card-create-dialog-controls">
+              <button>
+                <i class="fa-solid fa-check ico"></i>
+              </button>
+              <button>
+                <i class="fa-solid fa-xmark ico"></i>
+              </button>
+            </div>
+          </div>
         </li>
         <li class="dashboard-separator"></li>
-        <li dashboard-col-id="thu" class="dashboard-column"></li>
+        <li dashboard-col-id="thu" class="dashboard-column">
+          <div class="curriculum-card-create-dialog">
+            <div class="curriculum-card-create-dialog-textarea">
+              <textarea placeholder="Введите название"></textarea>
+              <!-- <span class="curriculum-card-create-dialog-hint">Недопустимые символы в названии</span> -->
+            </div>
+            <div class="curriculum-card-create-dialog-controls">
+              <button>
+                <i class="fa-solid fa-check ico"></i>
+              </button>
+              <button>
+                <i class="fa-solid fa-xmark ico"></i>
+              </button>
+            </div>
+          </div>
+        </li>
         <li class="dashboard-separator"></li>
         <li dashboard-col-id="fri" class="dashboard-column">
-          <div element="curriculum-card" type="kontrolnaya"></div>
-          <div element="curriculum-card" type="subbotnik"></div>
+          <div element="curriculum-card" type="kontrolnaya">
+            <div class="card-wrapper">
+              <div class="card-title">
+                <div class="card-title_primary">Физика</div>
+                <div class="card-title_secondary">11в класс, каб. 318</div>
+                <div class="card-activity-indicator-wrapper">
+                  <div class="card-activity-indicator"></div>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-timeline">
+                  <span>11:00</span>
+                  <div class="card-timeline-progress-bar"></div>
+                  <span>11:45</span>
+                </div>
+                <div class="card-participants">
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <span class="card-participants-counter">+9 участников</span>
+                </div>
+                <div class="card-tags">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div element="curriculum-card" type="lesson">
+            <div class="card-wrapper">
+              <div class="card-title">
+                <div class="card-title_primary">математика</div>
+                <div class="card-title_secondary">8г класс, каб. 113</div>
+                <div class="card-activity-indicator-wrapper">
+                  <div class="card-activity-indicator"></div>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-timeline">
+                  <span>15:30</span>
+                  <div class="card-timeline-progress-bar"></div>
+                  <span>16:15</span>
+                </div>
+                <div class="card-participants">
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <span class="card-participants-counter">+9 участников</span>
+                </div>
+                <div class="card-tags">
+                  <div class="card-tag tag-red">Матем</div>
+                  <div class="card-tag tag-yellow">УрокUrok</div>
+                  <div class="card-tag tag-green">Длинный тег тут</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div element="curriculum-card" type="subbotnik">
+            <div class="card-wrapper">
+              <div class="card-title">
+                <div class="card-title_primary">Субботник</div>
+                <div class="card-title_secondary">5а класс, каб. 103</div>
+                <div class="card-activity-indicator-wrapper">
+                  <div class="card-activity-indicator"></div>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-timeline">
+                  <span>15:30</span>
+                  <div class="card-timeline-progress-bar"></div>
+                  <span>16:15</span>
+                </div>
+                <div class="card-participants">
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <div class="card-participant-wrapper">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar"/>
+                  </div>
+                  <span class="card-participants-counter">+9 участников</span>
+                </div>
+                <div class="card-tags">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-card-create-dialog">
+            <div class="curriculum-card-create-dialog-textarea">
+              <textarea placeholder="Введите название"></textarea>
+              <!-- <span class="curriculum-card-create-dialog-hint">Недопустимые символы в названии</span> -->
+            </div>
+            <div class="curriculum-card-create-dialog-controls">
+              <button>
+                <i class="fa-solid fa-check ico"></i>
+              </button>
+              <button>
+                <i class="fa-solid fa-xmark ico"></i>
+              </button>
+            </div>
+          </div>
         </li>
         <li class="dashboard-separator"></li>
-        <li dashboard-col-id="sat" class="dashboard-column"></li>
+        <li dashboard-col-id="sat" class="dashboard-column">
+          <div class="curriculum-card-create-dialog">
+            <div class="curriculum-card-create-dialog-textarea">
+              <textarea placeholder="Введите название"></textarea>
+              <!-- <span class="curriculum-card-create-dialog-hint">Недопустимые символы в названии</span> -->
+            </div>
+            <div class="curriculum-card-create-dialog-controls">
+              <button>
+                <i class="fa-solid fa-check ico"></i>
+              </button>
+              <button>
+                <i class="fa-solid fa-xmark ico"></i>
+              </button>
+            </div>
+          </div>
+        </li>
         <li class="dashboard-separator"></li>
-        <li dashboard-col-id="sun" class="dashboard-column"></li>
+        <li dashboard-col-id="sun" class="dashboard-column">
+          <div class="curriculum-card-create-dialog">
+            <div class="curriculum-card-create-dialog-textarea">
+              <textarea placeholder="Введите название"></textarea>
+              <!-- <span class="curriculum-card-create-dialog-hint">Недопустимые символы в названии</span> -->
+            </div>
+            <div class="curriculum-card-create-dialog-controls">
+              <button>
+                <i class="fa-solid fa-check ico"></i>
+              </button>
+              <button>
+                <i class="fa-solid fa-xmark ico"></i>
+              </button>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
