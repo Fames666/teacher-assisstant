@@ -16,6 +16,7 @@
   --height-head: 48px;
   --height-footer: 60px;
 
+  position: relative;
   display: flex;
   align-items: stretch;
 
@@ -100,7 +101,6 @@
   justify-content: center;
   align-items: center;
 
-  padding-left: 1px;
   padding-bottom: 1px;
   width: 20px;
   height: 17px;
@@ -111,6 +111,10 @@
   color: var(--color-msg-text-dark);
   font-weight: bold;
   font-size: 0.65rem;
+}
+
+.messages-nav-panel-option.selected > .option-content-marker {
+  background-color: #fefefe;
 }
 
 .messages-nav-panel-option > .option-content-marker.hidden {
@@ -275,6 +279,10 @@
   color: var(--color-msg-text-grey);
 }
 
+.messages-contacts-panel__contact.hidden {
+  display: none;
+}
+
 .messages-contacts-panel__contact:nth-child(2n) {
   background-color: #eaeaea;
 }
@@ -315,4 +323,81 @@
 
 .messages-contacts-panel-controls > button > .ico {
   margin-right: 6px;
+}
+
+.messages-add-contact-panel {
+  position: absolute;
+  bottom: 100px;
+  right: 30px;
+
+  display: flex;
+  align-items: center;
+  padding: 15px;
+
+  border-radius: 6px;
+  background-color: #fefefe;
+  box-shadow: 0 0 6px -4px var(--color-grey);
+}
+
+.messages-add-contact-panel.hidden {
+  display: none;
+}
+
+.messages-add-contact-panel > input {
+  outline: none;
+}
+
+.messages-add-contact-panel > button {
+  margin-left: 4px;
+  padding: 4px;
+  width: max-content;
+}
+
+.messages-new-message-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(125, 125, 125, 0.6);
+}
+
+.messages-new-message-window.hidden {
+  display: none;
+}
+
+.messages-new-message-window-form {
+  padding: 30px;
+  width: 50%;
+  height: 80%;
+
+  border-radius: 8px;
+  background-color: #fefefe;
+}
+
+.messages-new-message-window-form__receiver {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  font-size: 1rem;
+}
+
+.messages-new-message-window-form > textarea {
+  margin-top: 30px;
+  width: 100%;
+  height: 80%;
+  resize: none;
+}
+
+.messages-new-message-window-form > button {
+  margin-top: 15px;
+  padding: 4px;
+  width: max-content;
 }

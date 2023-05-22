@@ -1,44 +1,53 @@
 <div class="messages-nav-panel">
   <div class="messages-nav-panel-head">
     <h1>Сообщения</h1>
-    <button>
+    <button (click)="onCreateMessageClick()">
       <i class="fa-solid fa-plus ico"></i>
     </button>
   </div>
   <ul class="messages-nav-panel-option-list">
-    <li class="messages-nav-panel-option">
+    <li class="messages-nav-panel-option"
+        [class.selected]="selectedElement === 'inbox'"
+        (click)="onAsideItemClick('inbox')">
       <div class="option-content-group">
         <i class="fa-solid fa-inbox ico"></i>
         <span>Входящие</span>
       </div>
-      <div class="option-content-marker">99</div>
+      <div class="option-content-marker">3</div>
     </li>
-    <li class="messages-nav-panel-option selected">
+    <li class="messages-nav-panel-option"
+        [class.selected]="selectedElement === 'sent'"
+        (click)="onAsideItemClick('sent')">
       <div class="option-content-group">
         <i class="fa-regular fa-envelope ico"></i>
         <span>Отправленные</span>
       </div>
+      <div class="option-content-marker" *ngIf="sentItemsAmount > 0">{{ sentItemsAmount }}</div>
     </li>
-    <li class="messages-nav-panel-option">
+    <li class="messages-nav-panel-option"
+        [class.selected]="selectedElement === 'important'"
+        (click)="onAsideItemClick('important')">
       <div class="option-content-group">
         <i class="fa-regular fa-bookmark ico"></i>
         <span>Важные</span>
       </div>
-      <div class="option-content-marker">3</div>
     </li>
-    <li class="messages-nav-panel-option">
+    <li class="messages-nav-panel-option"
+        [class.selected]="selectedElement === 'draft'"
+        (click)="onAsideItemClick('draft')">
       <div class="option-content-group">
         <i class="fa-solid fa-pencil ico"></i>
         <span>Черновики</span>
       </div>
       <div class="option-content-marker hidden">1</div>
     </li>
-    <li class="messages-nav-panel-option">
+    <li class="messages-nav-panel-option"
+        [class.selected]="selectedElement === 'spam'"
+        (click)="onAsideItemClick('spam')">
       <div class="option-content-group">
         <i class="fa-solid fa-circle-exclamation ico"></i>
         <span>Спам</span>
       </div>
-      <div class="option-content-marker">12</div>
     </li>
   </ul>
   <h3>Теги</h3>
@@ -76,35 +85,11 @@
       </button>
     </div>
   </div>
-  <div class="messages-main-body">
-    <ul>
-      <li class="messages-main__message">
-        <div class="avatar-wrapper">
-          <img _ngcontent-rud-c18="" src="../../assets/images/avatar.jpg" alt="avatar">
-        </div>
-        <span class="sender-name">Екатерина Зубкова</span>
-        <div class="tag">Рабочие</div>
-        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</span>
-        <span class="datetime">2ч назад</span>
-      </li>
-      <li class="messages-main__message">
-        <div class="avatar-wrapper">
-          <img _ngcontent-rud-c18="" src="http://flatfull.com/themes/note/images/avatar_default.jpg" alt="avatar">
-        </div>
-        <span class="sender-name">Петр Сидоров</span>
-        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</span>
-        <span class="datetime">2023-05-15 15:22</span>
-      </li>
-      <li class="messages-main__message">
-        <div class="avatar-wrapper">
-          <img _ngcontent-rud-c18="" src="../../assets/images/avatar.jpg" alt="avatar">
-        </div>
-        <span class="sender-name">Александра Швец</span>
-        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</span>
-        <span class="datetime">2023-05-14 11:20</span>
-      </li>
-    </ul>
-  </div>
+
+  <div class="messages-main-body"
+       element="message-box"
+       [changeBoxNotifier]="changeBoxSubject"></div>
+
   <form class="messages-main-search">
     <input type="search" placeholder="Поиск..."/>
     <button class="search-btn">
@@ -136,12 +121,42 @@
         <div class="tag-marker green"></div>
         <span>Ысламбек Ванов</span>
       </li>
+      <li class="messages-contacts-panel__contact"
+          [class.hidden]="hideHiddentContact">
+        <div class="tag-marker green"></div>
+        <span>Александр Шут</span>
+      </li>
     </ul>
   </div>
   <div class="messages-contacts-panel-controls">
-    <button>
+    <button (click)="onAddContactClick()">
       <i class="fa-solid fa-plus ico"></i>
       <span>Добавить</span>
     </button>
+  </div>
+</div>
+
+<div class="messages-add-contact-panel"
+     [class.hidden]="hideHiddentContactAdd">
+  <input type="text" placeholder="Введите ссылку">
+  <button (click)="onContactConfirmed()">Добавить</button>
+</div>
+
+<div class="messages-new-message-window"
+     [class.hidden]="hideNewMessageForm">
+  <div class="messages-new-message-window-form">
+    <div class="messages-new-message-window-form__receiver">
+      <span>Кому:</span>
+      <select>
+        <option>- Выберите пользователя из списка контактов -</option>
+        <option>Иван Иванов</option>
+        <option>Петр Петров</option>
+        <option>Сидор Сидоров</option>
+        <option>Ысламбек Ванов</option>
+        <option>Александр Шут</option>
+      </select>
+    </div>
+    <textarea></textarea>
+    <button (click)="onSendMessageClick()">Отправить</button>
   </div>
 </div>

@@ -167,13 +167,13 @@ div[element=nav] > * {
   width: 100%;
 }
 
-.navigation-option[selected] >
+.navigation-option.selected >
   .navigation-option__icon >
     .ico {
   color: var(--color-white-h86-s3-b100);
 }
 
-.navigation-option[selected] >
+.navigation-option.selected >
   .navigation-option__icon >
     .navigation-option__icon-bg::before {
   width: 100%;
