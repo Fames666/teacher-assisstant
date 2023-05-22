@@ -1,0 +1,104 @@
+*[element="curriculum-card"].hidden {
+  display: none;
+}
+
+#descr.hidden {
+  display: none;
+}
+
+.card-details-control-panel__add-btn {
+  position: relative;
+}
+
+.card-details-control-panel__add-btn > .options {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+.card-details-control-panel__add-btn > .options.hidden {
+  display: none;
+}
+
+.card-details-description > span.hidden {
+  display: none;
+}
+
+.card-details-description-content.hidden {
+  display: none;
+}
+
+.card-details-links-input > textarea,
+.card-details-description-content > textarea {
+  width: 80%;
+  height: 100px;
+  resize: none;
+}
+
+.card-details-todo-input > button,
+.card-details-links-input > button,
+.card-details-description-content > button {
+  margin-left: 10px;
+  padding: 4px;
+}
+
+.card-details-comments-section.hidden,
+.card-details-todo-input.hidden,
+.card-details-todo-section.hidden,
+.card-details-links-input.hidden,
+.card-details-links.hidden,
+.att-selected.hidden,
+.card-details-attachments-selector.hidden,
+.card-details-attachments-list.hidden,
+.card-details-attachments.hidden {
+  display: none;
+}
+
+.linkk.hidden {
+  display: none !important;
+}
+
+.separ-hint {
+  font-size: 0.7rem;
+}
+
+.card-details-todo-input > textarea {
+  width: 70%;
+  height: 80px;
+  resize: none;
+}
+
+.card-details-todo-section > ul.hidden {
+  display: none;
+}
+
+.participants-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(125, 125, 125, 0.6);
+}
+
+.participants-input-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  border-radius: 8px;
+  background-color: #fefefe;
+}
+
+.participants-input-form > * {
+  margin-bottom: 10px;
+}
+
+.participants-input-form > div > span {
+  margin-right: 10px;
+}

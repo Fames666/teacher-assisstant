@@ -1,6 +1,9 @@
 <header></header>
 
-<!-- <div window="card-details"></div> -->
+<div window="card-details" class="visible"
+     *ngIf="showDetails"
+     (onClose)="onClose()"
+     (onOpen)="onOpen()"></div>
 <!-- <main page="sign-in"></main> -->
 
 <div class="body-container">
