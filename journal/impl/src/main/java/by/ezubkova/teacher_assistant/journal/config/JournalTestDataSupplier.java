@@ -31,7 +31,7 @@ import org.springframework.context.annotation.Profile;
 /**
  * REMOVE @GeneratedValue FROM ENTITIES BEFORE USE
  */
-@Profile("generate-test-data")
+//@Profile("generate-test-data")
 @Configuration("JournalTestDataSupplier")
 @Transactional
 public class JournalTestDataSupplier {

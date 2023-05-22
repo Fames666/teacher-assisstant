@@ -1,5 +1,6 @@
 package by.ezubkova.teacher_assistant;
 
+import by.ezubkova.teacher_assistant.journal.config.JournalTestDataSupplier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -11,6 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class Application {
 
   public static void main(String[] args) {
-    SpringApplication.run(Application.class, args);
+    var ctx = SpringApplication.run(Application.class, args);
+    ((JournalTestDataSupplier) (ctx.getBean("JournalTestDataSupplier"))).initDb();
   }
 }

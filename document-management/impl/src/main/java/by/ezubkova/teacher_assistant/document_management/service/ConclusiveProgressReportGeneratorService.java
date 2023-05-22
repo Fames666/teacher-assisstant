@@ -166,7 +166,9 @@ public class ConclusiveProgressReportGeneratorService {
     createTrackRow(table, "", journals.get(3));
 
 //    var lastTrackCellText = messages.getMessage(CPR_BODY_TIME_RANGE_YEAR, noArgs, getDefault());
-    createYearRow(table, journals.get(3).getRows().size());
+    var yearStudents = journals.get(0).getRows().size() + journals.get(1).getRows().size()
+        + journals.get(2).getRows().size() +journals.get(3).getRows().size();
+    createYearRow(table, yearStudents);
 
     teor = 0;
     pract = 0;
@@ -278,7 +280,7 @@ public class ConclusiveProgressReportGeneratorService {
     int sum = 0;
     for (var count : counts) {
       int intCount = Integer.parseInt(count);
-      sum += intCount * i;
+      sum += intCount;
       --i;
       if (i < limit) {
         break;
