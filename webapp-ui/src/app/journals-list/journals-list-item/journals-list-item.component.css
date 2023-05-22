@@ -39,6 +39,10 @@
   color: var(--color-text-lighter);
 }
 
+.journals-list-item-group > .ico:hover {
+  cursor: pointer;
+}
+
 .journals-list-item-group > .fa-sort {
   font-size: 0.75rem;
 }

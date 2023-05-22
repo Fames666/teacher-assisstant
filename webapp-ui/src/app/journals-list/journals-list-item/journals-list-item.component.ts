@@ -4,6 +4,7 @@ import { JournalsListService } from 'src/app/journals-list/service/journals-list
 import { JournalsListModuleConstants } from 'src/app/journals-list/common/journals-list.common';
 import { JournalListEvent } from 'src/app/journals-list/common/journals-list.common';
 import { JournalUserPreview } from 'src/app/journals-list/model/journals-list.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: '[element=journals-list-item]',
@@ -11,6 +12,8 @@ import { JournalUserPreview } from 'src/app/journals-list/model/journals-list.mo
   styleUrls: ['./journals-list-item.component.css']
 })
 export class JournalsListItemComponent implements OnInit {
+
+  private reportUrl = "http://localhost:8080/documents/progress-report?class=5&letter=А&year=2023"
 
   @Input() id?: number;
   @Input() journalFullName?: string;
@@ -23,7 +26,8 @@ export class JournalsListItemComponent implements OnInit {
   private _clicked: boolean;
   private _service: JournalsListService;
 
-  constructor(service: JournalsListService) {
+  constructor(private readonly httpCleint: HttpClient,
+              service: JournalsListService) {
     this._clicked = false;
     this._service = service;
   }
@@ -42,6 +46,15 @@ export class JournalsListItemComponent implements OnInit {
     });
   }
 
+  public onReportBtnClick(): void {
+    this.httpCleint.get(this.reportUrl, {
+      headers: {
+        "Accept": "application/pdf"
+      },
+      responseType: 'blob'
+    }).subscribe(response => this.downloadFile(response))
+  }
+
   public formatListItemIndex(): string {
     return this._service.formatListItemIndex(this.listItemIndex);
   }
@@ -50,6 +63,13 @@ export class JournalsListItemComponent implements OnInit {
     if (parentEvent.eventCode === JournalsListModuleConstants.UPDATE_CLICKED_STATE_EVENT_CODE) {
       this._clicked = this.id === parentEvent.journalId;
     }
+  }
+
+  private downloadFile(data: any) {
+    console.log(data);
+    const blob = new Blob([data], { type: 'application/pdf' });
+    const url= window.URL.createObjectURL(blob);
+    window.open(url);
   }
 
   public get clicked(): boolean {
