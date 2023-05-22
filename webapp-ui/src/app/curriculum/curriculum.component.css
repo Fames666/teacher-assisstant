@@ -1,7 +1,7 @@
 @import "./card/card.component.css";
 @import "./card-details/card-details.component.css";
 
-main[page=curriculum] {
+*[page=curriculum] {
   padding: 7px;
   width: 100%;
   height: 100%;
@@ -10,7 +10,7 @@ main[page=curriculum] {
   overflow-y: auto;
 }
 
-main[page=curriculum] ul {
+*[page=curriculum] ul {
   display: flex;
   padding: 0;
   margin: 0;

@@ -1,16 +1,16 @@
-import {NgModule, SecurityContext} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {MarkdownModule} from 'ngx-markdown';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { NgModule, SecurityContext } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { MarkdownModule } from 'ngx-markdown';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {HeaderComponent} from './header/header.component';
-import {NavigationComponent} from './navigation/navigation.component';
-import {CurriculumComponent} from './curriculum/curriculum.component';
-import {BreadcrumbsComponent} from './breadcrumbs/breadcrumbs.component';
-import {CardComponent} from './curriculum/card/card.component';
-import {CardDetailsComponent} from './curriculum/card-details/card-details.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { CurriculumComponent } from './curriculum/curriculum.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { CardComponent } from './curriculum/card/card.component';
+import { CardDetailsComponent } from './curriculum/card-details/card-details.component';
 import { JournalsListItemComponent } from './journals-list/journals-list-item/journals-list-item.component';
 import { JournalStudentsItemComponent } from './journals-list/journal-students-item/journal-students-item.component';
 import { JournalsListComponent } from './journals-list/journals-list.component';
@@ -28,6 +28,7 @@ import { JournalDateBlockComponent } from './journal-page/journal-date-block/jou
 import { JournalCellComponent } from './journal-page/journal-cell/journal-cell.component';
 import { JournalActionFormComponent } from './journal-page/journal-action-form/journal-action-form.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -56,9 +57,13 @@ import { FormsModule } from '@angular/forms';
   imports: [
     FormsModule,
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    MarkdownModule.forRoot({ loader: HttpClient, sanitize: SecurityContext.NONE })
+    RouterModule.forRoot([
+      { path: 'curriculum', component: CurriculumComponent },
+      { path: 'journals-list', component: JournalsListComponent },
+      { path: 'journal/:id', component: JournalPageComponent },
+      { path: '', redirectTo: 'curriculum', pathMatch: 'full' }
+    ])
   ],
   providers: [JournalsListService],
   bootstrap: [AppComponent]
