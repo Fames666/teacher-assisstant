@@ -1,0 +1,13 @@
+<ul>
+  <ng-template ngFor let-msg [ngForOf]="currentInbox">
+    <li class="messages-main__message">
+      <div class="avatar-wrapper">
+        <img _ngcontent-rud-c18="" src="{{ msg.avatar }}" alt="avatar">
+      </div>
+      <span class="sender-name">{{ msg.name }}</span>
+      <div class="tag" *ngIf="msg.tag !== null">{{ msg.tag }}</div>
+      <span>{{ msg.message }}</span>
+      <span class="datetime">{{ msg.datetime }}</span>
+    </li>
+  </ng-template>
+</ul>

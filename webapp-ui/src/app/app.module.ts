@@ -29,6 +29,7 @@ import { JournalCellComponent } from './journal-page/journal-cell/journal-cell.c
 import { JournalActionFormComponent } from './journal-page/journal-action-form/journal-action-form.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { MessageBoxComponent } from './messages-page/message-box/message-box.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { RouterModule } from '@angular/router';
     JournalRowComponent,
     JournalDateBlockComponent,
     JournalCellComponent,
-    JournalActionFormComponent
+    JournalActionFormComponent,
+    MessageBoxComponent
   ],
   imports: [
     FormsModule,
@@ -62,6 +64,7 @@ import { RouterModule } from '@angular/router';
       { path: 'curriculum', component: CurriculumComponent },
       { path: 'journals-list', component: JournalsListComponent },
       { path: 'journal/:id', component: JournalPageComponent },
+      { path: 'messages', component: MessagesPageComponent },
       { path: '', redirectTo: 'curriculum', pathMatch: 'full' }
     ])
   ],
