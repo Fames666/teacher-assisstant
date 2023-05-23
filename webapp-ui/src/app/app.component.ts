@@ -10,12 +10,14 @@ import { DetailsServiceService } from './details-service.service';
 export class AppComponent implements OnInit {
   title = 'webapp-ui';
   showDetails = false;
+  showLogin = true;
 
   constructor(private readonly detailsService: DetailsServiceService,
               private readonly router: Router) { }
 
   ngOnInit(): void {
     this.detailsService?.detailsNotifier.subscribe(event => this.onOpen());
+    this.detailsService?.loginNotifier.subscribe(event => this.onOpenLogin());
   }
 
   onClose() {
@@ -25,5 +27,14 @@ export class AppComponent implements OnInit {
 
   onOpen() {
     this.showDetails = true;
+  }
+
+  onCloseLogin(): void {
+    this.showLogin = false;
+    this.router.navigate(['/curriculum'])
+  }
+
+  onOpenLogin(): void {
+    this.showLogin = true;
   }
 }

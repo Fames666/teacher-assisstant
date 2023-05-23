@@ -26,11 +26,15 @@
   <button class="search-btn">
     <i class="fa-solid fa-magnifying-glass ico ico--light"></i>  <!-- TODO: replace with approp. icon -->
   </button>
-  <div class="log-in-wrapper">
+  <div class="log-in-wrapper" (click)="onLoginClicked()">
     <div class="avatar-wrapper admin">
       <img src="../../assets/images/red-star.png" alt="avatar"/>
     </div>
     <span class="nickname">admin_8125</span>
     <i class="fa-solid fa-caret-down ico ico--light"></i>
   </div>
+</div>
+
+<div class="header-logout" *ngIf="showExitBtn" (click)=onExitClicked()>
+  <span>Выйти</span>
 </div>

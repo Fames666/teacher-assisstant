@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: '[page=sign-in]',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class SignInComponent {
 
+  @Output("onCloseLogin") public eventEmitter = new EventEmitter<string>(true);
+
+  onCloseLogin(): void {
+    setTimeout(_ => this.eventEmitter.emit('close'), 800);
+  }
 }

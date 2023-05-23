@@ -8,6 +8,7 @@
 @import url('./messages-page/messages-page.component.css');
 @import url('./notes-page/notes-page.component.css');
 @import url('./journal-page/journal-page.component.css');
+@import url('./admin-journals-page/admin-journals-page.component.css');
 
 .body-container {
   display: flex;

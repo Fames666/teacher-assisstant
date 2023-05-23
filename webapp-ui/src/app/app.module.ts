@@ -32,9 +32,11 @@ import { RouterModule } from '@angular/router';
 import { MessageBoxComponent } from './messages-page/message-box/message-box.component';
 import { CommonModule } from '@angular/common';
 import { DetailsServiceService } from './details-service.service';
+import { AdminJournalsPageComponent } from './admin-journals-page/admin-journals-page.component';
+import { AdminUsersPageComponent } from './admin-users-page/admin-users-page.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HeaderComponent,
     NavigationComponent,
@@ -56,8 +58,10 @@ import { DetailsServiceService } from './details-service.service';
     JournalDateBlockComponent,
     JournalCellComponent,
     JournalActionFormComponent,
-    MessageBoxComponent
-  ],
+    MessageBoxComponent,
+    AdminJournalsPageComponent,
+      AdminUsersPageComponent
+   ],
   imports: [
     CommonModule,
     FormsModule,
@@ -71,7 +75,10 @@ import { DetailsServiceService } from './details-service.service';
       { path: 'messages', component: MessagesPageComponent },
       { path: 'lib', component: LibraryComponent },
       { path: 'notes', component: NotesPageComponent },
-      { path: '', redirectTo: 'curriculum', pathMatch: 'full' },
+      { path: 'sign-in/complete', redirectTo: '/curriculum', pathMatch: 'full' },
+      { path: 'sign-in', component: CurriculumComponent },
+      { path: 'admin/journals', component: AdminJournalsPageComponent },
+      { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
     ])
   ],
   providers: [JournalsListService, DetailsServiceService],

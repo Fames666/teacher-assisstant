@@ -1,0 +1,218 @@
+<div class="admin-journals-control">
+  <button (click)="onAddJournal()">Добавить журнал</button>
+</div>
+
+<div class="admin-journals-add-journal-panel" *ngIf="showJournalDialog">
+  <div class="admin-journals-add-journal-panel-form">
+    <div class="name">
+      <span>Журнал </span>
+      <input type="text">
+      <span> класса, четверть </span>
+      <input type="number">
+    </div>
+    <div class="add-lead-teacher">
+      <span>Выберите классного руководителя</span>
+      <select>
+        <option>ZOpa</option>
+        <option>AA</option>
+        <option>QQ</option>
+      </select>
+    </div>
+    <div class="add-students">
+      <span>Выберите студентов</span>
+      <div class="picker">
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>  
+      </div>
+    </div>
+    <button class="confirm" (click)="onConfirmJournal()">Принять</button>
+  </div>
+</div>
+
+<div class="admin-journals-add-student-panel" *ngIf="showStudentDialog">
+  <div class="admin-journals-add-student-panel-form">
+    <div class="add-students">
+      <span>Выберите студентов</span>
+      <div class="picker">
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>
+        <div>
+          <input type="checkbox">
+          <span>Ivan Ivanov</span>
+        </div>  
+      </div>
+    </div>
+    <button class="confirm" (click)="onConfirmStudent()">Принять</button>
+  </div>
+</div>
+
+<div class="scrollable-container">
+  <ul class="admin-journals-list">
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div (click)="onAddStudent()">
+        добавить
+      </div>
+    </li>
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div>
+        pencil
+      </div>
+    </li>
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div>
+        pencil
+      </div>
+    </li>
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div>
+        pencil
+      </div>
+    </li>
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div>
+        pencil
+      </div>
+    </li>
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div>
+        pencil
+      </div>
+    </li>
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div>
+        pencil
+      </div>
+    </li>
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div>
+        pencil
+      </div>
+    </li>
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div>
+        pencil
+      </div>
+    </li>
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div>
+        pencil
+      </div>
+    </li>
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div>
+        pencil
+      </div>
+    </li>
+    <li class="admin-journals-item">
+      <span>Журнал 5В класса, четверть 1</span>
+      <div>
+        pencil
+      </div>
+    </li>
+    <li class="admin-journals-item" *ngIf="showJournal">
+      <span>Журнал 11А класса, четверть 4</span>
+      <div>
+        pencil
+      </div>
+    </li>
+  </ul>
+</div>

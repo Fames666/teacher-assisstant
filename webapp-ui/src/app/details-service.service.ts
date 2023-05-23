@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 export class DetailsServiceService {
 
   public detailsNotifier = new Subject<string>();
+  public loginNotifier = new Subject<string>();
 
   constructor() { }
 }

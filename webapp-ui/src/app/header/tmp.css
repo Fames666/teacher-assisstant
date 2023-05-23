@@ -1,0 +1,13 @@
+.header-logout {
+    position: absolute;
+    top: 50px;
+    right: 0;
+
+    padding: 8px;
+    width: 100px;
+    height: max-content;
+
+    color: var(--color-text-light);
+    background-color: var(--color-bg-darker);
+    cursor: pointer;
+}
