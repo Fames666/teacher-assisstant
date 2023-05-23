@@ -1,3 +1,102 @@
-<p>
-  admin-users-page works!
-</p>
+<div class="admin-journals-control">
+  <button (click)="onAddUser()">Добавить пользователя</button>
+</div>
+
+<div class="admin-journals-add-journal-panel" *ngIf="showUserDialog">
+  <div class="admin-journals-add-journal-panel-form users">
+    <div class="name">
+      <span>Имя </span>
+      <input type="text">
+    </div>
+    <div class="name">
+      <span>Фамилия </span>
+      <input type="text">
+    </div>
+    <div class="name">
+      <span>Отчество (необяз.) </span>
+      <input type="text">
+    </div>
+    <div class="name">
+      <span>Логин </span>
+      <input type="text">
+    </div>
+    <div class="name">
+      <span>Пароль </span>
+      <input type="password">
+    </div>
+    <div class="add-students users">
+      <span>Роли</span>
+      <div class="picker">
+        <div>
+          <input type="checkbox"> <span>Ученик</span>
+        </div>
+        <div>
+          <input type="checkbox"> <span>Учитель</span>
+        </div>
+        <div>
+          <input type="checkbox"> <span>Админ</span>
+        </div>
+      </div>
+    </div>
+    <button class="confirm" (click)="onConfirmUser()">Принять</button>
+  </div>
+</div>
+
+<div class="admin-journals-add-journal-panel" *ngIf="showEditUserDialog">
+  <div class="admin-journals-add-journal-panel-form users">
+    <div class="name">
+      <span>Имя </span>
+      <input type="text" placeholder="Павел">
+    </div>
+    <div class="name">
+      <span>Фамилия </span>
+      <input type="text" placeholder="Пётр">
+    </div>
+    <div class="name">
+      <span>Отчество (необяз.) </span>
+      <input type="text" placeholder="Васильевич">
+    </div>
+    <div class="name">
+      <span>Логин </span>
+      <input type="text" placeholder="mumba_yumba">
+    </div>
+    <div class="name">
+      <span>Пароль </span>
+      <input type="password">
+    </div>
+    <div class="add-students users">
+      <span>Роли</span>
+      <div class="picker">
+        <div>
+          <input type="checkbox" [checked]="activeCheckbox1"> <span>Ученик</span>
+        </div>
+        <div>
+          <input type="checkbox" [checked]="activeCheckbox2"> <span>Учитель</span>
+        </div>
+        <div>
+          <input type="checkbox"> <span>Админ</span>
+        </div>
+      </div>
+    </div>
+    <button class="confirm" (click)="onConfirmEditUser()">Принять</button>
+  </div>
+</div>
+
+<div class="scrollable-container">
+  <ul class="admin-journals-list">
+    <li class="admin-journals-item flex">
+      <span>Иванов Иван Иванович</span>
+      <div>
+        <div>изменить</div>
+        <div class="red-text">удалить</div>
+      </div>
+    </li>
+    <li class="admin-journals-item flex" *ngIf="showUser">
+      <span>Пётр Павел Васильевич</span>
+      <div>
+        <div (click)="onEditUser()">изменить</div>
+        <div class="red-text" (click)="onDeleteUser()">удалить</div>
+      </div>
+    </li>
+  </ul>
+</div>

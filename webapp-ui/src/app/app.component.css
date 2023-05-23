@@ -9,6 +9,7 @@
 @import url('./notes-page/notes-page.component.css');
 @import url('./journal-page/journal-page.component.css');
 @import url('./admin-journals-page/admin-journals-page.component.css');
+@import url('./admin-users-page/admin-users-page.component.css');
 
 .body-container {
   display: flex;

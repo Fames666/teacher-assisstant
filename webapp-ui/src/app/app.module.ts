@@ -78,6 +78,7 @@ import { AdminUsersPageComponent } from './admin-users-page/admin-users-page.com
       { path: 'sign-in/complete', redirectTo: '/curriculum', pathMatch: 'full' },
       { path: 'sign-in', component: CurriculumComponent },
       { path: 'admin/journals', component: AdminJournalsPageComponent },
+      { path: 'admin/users', component: AdminUsersPageComponent },
       { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
     ])
   ],
